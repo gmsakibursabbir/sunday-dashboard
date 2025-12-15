@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="light" class="scroll-smooth">
+<html lang="fr" data-theme="light" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -26,6 +26,10 @@
 </head>
 
 <body class="login-bg p-4 min-h-screen flex flex-col relative overflow-x-hidden">
+  <div class="hidden xl:block ">
+    <img src="./images/browser-container.png" alt="browser-container"
+      class="w-full h-[calc(100vh-156px)] object-contain absolute top-[78px] lg:left-3/6 xl:left-[47%] 2xl:left-2/6 3xl:left-2/6 pointer-events-none">
+  </div>
 
   <main class="flex-grow w-full flex flex-col">
     <section class="flex flex-col bg-white p-6 rounded-[16px] xl:max-w-[705px] w-full flex-1">
@@ -38,10 +42,11 @@
         <!-- language dropdown -->
         <div class="relative">
           <button id="langBtn"
-            class="flex items-center gap-2 px-3 py-[11px] border border-[#E7E9E9] rounded-[12px] bg-white hover:bg-gray-50 transition-colors">
-            <img src="https://hatscripts.github.io/circle-flags/flags/fr.svg" width="20" height="20" alt="fr"
-              class="rounded-full">
-            <span class="font-archivo text-base font-medium text-[#14201F]">Français</span>
+            class="flex items-center gap-2 w-[134px] md:w-[147px] h-[42px] flex justify-between items-center border border-[#E7E9E9] rounded-[12px] bg-white hover:bg-gray-50 transition-colors px-3">
+            <div class="flex items-center  gap-2">
+              <img src="https://flagcdn.com/w40/fr.png" alt="fr" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">Français</span>
+            </div>
             <svg id="langArrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
               xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200">
               <path d="M4 6L8 10L12 6" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
@@ -51,16 +56,14 @@
 
           <!-- Dropdown Menu -->
           <div id="langDropdown"
-            class="hidden absolute top-full right-0 mt-2 w-[144px] bg-white border border-[#E7E9E9] rounded-[12px] shadow-lg z-50 overflow-hidden">
+            class="hidden absolute top-full right-0 mt-2 w-[134px] md:w-[147px] bg-white border border-[#E7E9E9] rounded-[12px] shadow-lg z-50 overflow-hidden">
             <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-gray-50 transition-colors">
-              <img src="https://hatscripts.github.io/circle-flags/flags/fr.svg" width="20" height="20" alt="fr"
-                class="rounded-full">
-              <span class="font-archivo text-[14px] font-medium text-[#14201F]">Français</span>
+              <img src="https://flagcdn.com/w40/fr.png" alt="fr" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">Français</span>
             </a>
             <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-gray-50 transition-colors">
-              <img src="https://hatscripts.github.io/circle-flags/flags/us.svg" width="20" height="20" alt="en"
-                class="rounded-full">
-              <span class="font-archivo text-[14px] font-medium text-[#14201F]">English</span>
+              <img src="https://flagcdn.com/w40/us.png" alt="en" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">English</span>
             </a>
           </div>
         </div>
@@ -76,7 +79,7 @@
           <p class="font-archivo text-[16px] font-normal text-[#666E6D] leading-[150%] text-center mt-2">Connectez-vous
             avec votre e-mail et votre mot de passe</p>
         </div>
-        <form id="loginForm" class="flex flex-col w-full lg:max-w-[379px] mx-auto mt-[32[x]]">
+        <form id="loginForm" class="flex flex-col w-full md:max-w-[379px] mx-auto mt-[32[x]]">
           <!-- Email -->
           <div class="flex flex-col gap-2 mb-3">
             <label for="email" class="font-archivo text-[14px] font-medium text-[#14201F] leading-[150%]">Email</label>
@@ -206,10 +209,7 @@
     </section>
   </main>
   <!-- right image position -->
-  <div
-    class="hidden xl:block fixed top-1/2 right-0 -translate-y-1/2 translate-x-[4%] xl:translate-x-[50%] pointer-events-none">
-    <img src="./images/browser-container.png" alt="browser-container" class="w-[1147px] h-auto object-contain">
-  </div>
+
 
   <script src="./js/index.js"></script>
 </body>

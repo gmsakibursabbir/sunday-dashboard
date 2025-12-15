@@ -185,6 +185,35 @@ document.addEventListener("DOMContentLoaded", () => {
         langArrow.classList.remove("rotate-180");
       }
     });
+
+    // Handle language selection
+    const langOptions = langDropdown.querySelectorAll("a");
+    const langBtnImg = langBtn.querySelector("img");
+    const langBtnText = langBtn.querySelector("span");
+
+    langOptions.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Get the selected flag and text from the clicked option
+        const selectedImg = option.querySelector("img");
+        const selectedText = option.querySelector("span");
+
+        // Update the button with selected values
+        if (langBtnImg && selectedImg) {
+          langBtnImg.src = selectedImg.src;
+          langBtnImg.alt = selectedImg.alt;
+        }
+        if (langBtnText && selectedText) {
+          langBtnText.textContent = selectedText.textContent;
+        }
+
+        // Close dropdown
+        langDropdown.classList.add("hidden");
+        langArrow.classList.remove("rotate-180");
+      });
+    });
   }
   // Login Form Logic
   const togglePasswordBtn = document.getElementById("togglePasswordBtn");
