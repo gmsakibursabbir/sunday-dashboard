@@ -215,26 +215,97 @@ document.addEventListener("DOMContentLoaded", () => {
       });
     });
   }
-  // Login Form Logic
-  const togglePasswordBtn = document.getElementById("togglePasswordBtn");
-  const passwordInput = document.getElementById("password");
-  const eyeOpen = document.getElementById("eyeOpen");
-  const eyeClosed = document.getElementById("eyeClosed");
 
-  if (togglePasswordBtn && passwordInput && eyeOpen && eyeClosed) {
-    togglePasswordBtn.addEventListener("click", () => {
-      if (passwordInput.type === "password") {
-        passwordInput.type = "text";
-        eyeOpen.classList.add("hidden");
-        eyeClosed.classList.remove("hidden");
+  // Helper function for masked input logic
+  function initMaskedInput(input) {
+    const realValue = input.value;
+    input.setAttribute("data-real-value", realValue);
+    input.value = "*".repeat(realValue.length);
+    input.classList.add("font-verdana"); // Apply font for consistent asterisk display
+
+    input.addEventListener("input", (e) => {
+      const currentMaskedValue = e.target.value;
+      const oldRealValue = e.target.getAttribute("data-real-value") || "";
+      let newRealValue = "";
+
+      // Determine if a character was added or deleted
+      if (currentMaskedValue.length > oldRealValue.length) {
+        // Character added: append to real value
+        const addedChar = currentMaskedValue[currentMaskedValue.length - 1];
+        newRealValue = oldRealValue + addedChar;
+      } else if (currentMaskedValue.length < oldRealValue.length) {
+        // Character deleted: remove from real value
+        newRealValue = oldRealValue.slice(0, currentMaskedValue.length);
       } else {
-        passwordInput.type = "password";
-        eyeOpen.classList.remove("hidden");
-        eyeClosed.classList.add("hidden");
+        // Value changed but length is same (e.g., paste, or overwrite)
+        // For simplicity, if length is same, assume it's an overwrite or paste
+        // and treat the new input as the real value for now, then mask it.
+        // A more robust solution might compare char by char.
+        newRealValue = currentMaskedValue;
       }
+
+      e.target.setAttribute("data-real-value", newRealValue);
+      e.target.value = "*".repeat(newRealValue.length);
     });
   }
 
+  // Find all password inputs
+  const passwordInputs = document.querySelectorAll(".js-password-input");
+  passwordInputs.forEach((input) => {
+    // Setup toggle button if it exists nearby
+    const container = input.closest(".relative");
+    // Use structural selector: the button inside the wrapper
+    const toggleBtn = container ? container.querySelector("button") : null;
+
+    if (toggleBtn) {
+      // Find icons by order since IDs might be duplicated or unique
+      const svgs = toggleBtn.querySelectorAll("svg");
+      const eyeOpen = svgs[0];
+      const eyeClosed = svgs[1];
+
+      // Apply type text first
+      input.type = "text";
+      input.classList.add("masked-password");
+
+      initMaskedInput(input);
+
+      if (eyeOpen && eyeClosed) {
+        // Remove old listeners by cloning
+        const newBtn = toggleBtn.cloneNode(true);
+        toggleBtn.parentNode.replaceChild(newBtn, toggleBtn);
+
+        // Re-query eyes inside new button because we cloned it
+        const newSvgs = newBtn.querySelectorAll("svg");
+        const newEyeOpen = newSvgs[0];
+        const newEyeClosed = newSvgs[1];
+
+        newBtn.addEventListener("click", () => {
+          const isMasked = input.classList.contains("masked-password");
+          const real = input.getAttribute("data-real-value") || "";
+
+          if (isMasked) {
+            // Show Plain
+            input.value = real;
+            input.classList.remove("masked-password");
+            input.classList.remove("font-verdana"); // safety
+            newEyeOpen.classList.add("hidden");
+            newEyeClosed.classList.remove("hidden");
+          } else {
+            // Mask
+            input.classList.add("masked-password");
+            input.value = "*".repeat(real.length);
+            newEyeOpen.classList.remove("hidden");
+            newEyeClosed.classList.add("hidden");
+          }
+        });
+      }
+    } else {
+      // Even if no toggle button, still init masking logic
+      input.type = "text";
+      input.classList.add("masked-password");
+      initMaskedInput(input);
+    }
+  });
   const rememberMeContainer = document.getElementById("rememberMeContainer");
   const rememberCheckbox = document.getElementById("rememberCheckbox");
   const rememberCheckmark = document.getElementById("rememberCheckmark");
@@ -269,19 +340,23 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   const loginBtn = document.getElementById("loginBtn");
+  const passwordInputMain = document.getElementById("password");
   const passwordError = document.getElementById("passwordError");
 
-  if (loginBtn && passwordInput && passwordError) {
+  if (loginBtn && passwordInputMain && passwordError) {
     loginBtn.addEventListener("click", (e) => {
       e.preventDefault();
       const email = document.getElementById("email").value;
-      const password = passwordInput.value;
+      // READ REAL VALUE from data attribute or value
+      const password =
+        passwordInputMain.getAttribute("data-real-value") ||
+        passwordInputMain.value;
 
       // Validation - password must be "123"
       if (!email || !password || password !== "123") {
         // Show error state
-        passwordInput.classList.add("border-[#D54033]");
-        passwordInput.classList.remove("border-[#DCDEDE]");
+        passwordInputMain.classList.add("border-[#D54033]");
+        passwordInputMain.classList.remove("border-[#DCDEDE]");
         passwordError.classList.remove("hidden");
         passwordError.classList.add("flex");
         return;
@@ -292,11 +367,55 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // Reset error on input
-    passwordInput.addEventListener("input", () => {
-      passwordInput.classList.remove("border-[#D54033]");
-      passwordInput.classList.add("border-[#DCDEDE]");
+    passwordInputMain.addEventListener("input", () => {
+      passwordInputMain.classList.remove("border-[#D54033]");
+      passwordInputMain.classList.add("border-[#DCDEDE]");
       passwordError.classList.add("hidden");
       passwordError.classList.remove("flex");
     });
+  }
+});
+
+// Global functions for Phone Dropdown (needed for inline onclick in HTML)
+window.toggleDropdown = function (menuId, iconId) {
+  const menu = document.getElementById(menuId);
+  const icon = document.getElementById(iconId);
+  if (menu) menu.classList.toggle("hidden");
+  if (icon) icon.classList.toggle("rotate-180");
+};
+
+window.selectPhoneCountry = function (countryCode, dialingCode, countryName) {
+  const btnText = document.getElementById("country-code-text");
+  const menu = document.getElementById("menu-phone-country");
+  const icon = document.getElementById("icon-phone-country");
+  const btnImg = document.querySelector(".group-dropdown img"); // Current selected flag
+
+  // Update text
+  if (btnText) btnText.textContent = dialingCode;
+
+  // Update flag
+  if (btnImg) {
+    // We can construct the URL based on the country code or find the image in the clicked item
+    // For simplicity, let's just use the CDN link pattern
+    btnImg.src = `https://circle-flags.cdn.skk.moe/flags/${countryCode}.svg`;
+    btnImg.alt = countryCode.toUpperCase();
+  }
+
+  // Close dropdown
+  if (menu) menu.classList.add("hidden");
+  if (icon) icon.classList.remove("rotate-180");
+};
+
+// Close phone dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("menu-phone-country");
+  const icon = document.getElementById("icon-phone-country");
+  const dropdownContainer = document.querySelector(".group-dropdown");
+
+  if (menu && dropdownContainer && !menu.classList.contains("hidden")) {
+    if (!dropdownContainer.contains(e.target)) {
+      menu.classList.add("hidden");
+      if (icon) icon.classList.remove("rotate-180");
+    }
   }
 });

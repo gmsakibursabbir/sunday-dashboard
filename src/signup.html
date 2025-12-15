@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login - Forgot Password (OTP)</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css">
+
+
+  <link rel="stylesheet" href="./css/style.min.css">
+
+</head>
+
+<body class="login-bg p-4 min-h-screen flex flex-col relative overflow-x-hidden">
+  <div class="hidden xl:block ">
+    <img src="./images/browser-container.png" alt="browser-container"
+      class="w-full h-[calc(100vh-156px)] object-contain absolute top-[78px] lg:left-3/6 xl:left-[47%] 2xl:left-2/6 3xl:left-2/6 pointer-events-none">
+  </div>
+
+  <main class="flex-grow w-full flex flex-col">
+    <section class="flex flex-col bg-white p-6 rounded-[16px] xl:max-w-[705px] w-full flex-1">
+      <!-- top -->
+      <div class="flex justify-between items-center pb-6">
+        <!-- logo -->
+        <a href="#">
+          <img src="./images/logo.png" alt="logo" class="w-full max-w-[115px] ">
+        </a>
+        <!-- language dropdown -->
+        <div class="relative">
+          <button id="langBtn"
+            class="flex items-center gap-2 w-[134px] md:w-[147px] h-[42px] flex justify-between items-center border border-[#E7E9E9] rounded-[12px] bg-white hover:bg-gray-50 transition-colors px-3">
+            <div class="flex items-center  gap-2">
+              <img src="https://flagcdn.com/w40/fr.png" alt="fr" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">Français</span>
+            </div>
+            <svg id="langArrow" width="16" height="16" viewBox="0 0 16 16" fill="none"
+              xmlns="http://www.w3.org/2000/svg" class="transition-transform duration-200">
+              <path d="M4 6L8 10L12 6" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+
+          <!-- Dropdown Menu -->
+          <div id="langDropdown"
+            class="hidden absolute top-full right-0 mt-2 w-[134px] md:w-[147px] bg-white border border-[#E7E9E9] rounded-[12px] shadow-lg z-50 overflow-hidden">
+            <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-gray-50 transition-colors">
+              <img src="https://flagcdn.com/w40/fr.png" alt="fr" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">Français</span>
+            </a>
+            <a href="#" class="flex items-center gap-2 px-4 py-2.5 hover:bg-gray-50 transition-colors">
+              <img src="https://flagcdn.com/w40/us.png" alt="en" class="rounded-full w-5 h-5 object-cover">
+              <span class="font-archivo text-sm lg:text-base font-medium text-[#14201F]">English</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- bottom -->
+      <div class="w-full flex-grow flex flex-col justify-center items-center md:max-w-[480px] mx-auto">
+        <div class="py-8 border-b border-[#E7E9E9] w-full">
+          <h1 class="font-archivo text-2xl lg:text-[28px] font-semibold text-[#14201F] leading-[120%] text-center">Votre
+            aventure commence ici
+          </h1>
+        </div>
+        <form id="loginForm" class="flex flex-col w-full lg:max-w-[432px]  mx-auto mt-[24px] mb-8">
+          <!-- name -->
+          <div class="flex flex-col gap-2 mb-3">
+            <label for="email" class="font-archivo text-[14px] font-medium text-[#14201F] leading-[150%]">Nom
+              complet</label>
+            <input type="email" id="email" name="email" placeholder="Ex : Fikri" autocomplete="off"
+              class="w-full py-[15px] px-[12px] border border-[#DCDEDE] rounded-[12px] placeholder:text-[#898F8F] text-base font-normal font-archivo focus:outline-none focus:border-[#0167A0] transition-colors">
+          </div>
+          <!-- Email -->
+          <div class="flex flex-col gap-2 mb-3">
+            <label for="email" class="font-archivo text-[14px] font-medium text-[#14201F] leading-[150%]">Email</label>
+            <input type="email" id="email" name="email" placeholder="Entrez votre email" autocomplete="off"
+              class="w-full py-[15px] px-[12px] border border-[#DCDEDE] rounded-[12px] placeholder:text-[#898F8F] text-base font-normal font-archivo focus:outline-none focus:border-[#0167A0] transition-colors">
+          </div>
+          <!-- phone Number -->
+          <div class="mb-3">
+            <label class="block text-sm text-[#161924] font-medium mb-[6px]">Phone number</label>
+            <div
+              class="flex h-[56px] border border-[#DCDEDE] rounded-[12px] focus-within:border-[#0167A0] relative z-30 p-1 ">
+              <!-- Country Code Dropdown -->
+              <div class="relative group-dropdown h-full">
+                <button type="button" onclick="toggleDropdown('menu-phone-country', 'icon-phone-country')"
+                  class="h-full px-3 bg-[#F3F4F4] flex items-center gap-2  cursor-pointer rounded-[8px] outline-none">
+                  <div class="w-5 h-5 rounded-full overflow-hidden shrink-0">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/cm.svg" alt="CM"
+                      class="w-full h-full object-cover">
+                  </div>
+                  <span id="country-code-text" class="text-base text-[#14201F] font-medium">+237</span>
+                  <svg id="icon-phone-country" class="transition-transform duration-300" width="8" height="4"
+                    viewBox="0 0 8 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 0L4 4L8 0" fill="#161924" />
+                  </svg>
+
+                </button>
+                <!-- Dropdown Menu -->
+                <div id="menu-phone-country"
+                  class="hidden absolute top-[calc(100%+10px)] left-0 w-[240px] bg-white border border-[#E5E7EB] rounded-[12px] shadow-lg max-h-[200px] overflow-y-auto z-50">
+                  <div onclick="selectPhoneCountry('cm', '+237', 'Cameroun')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/cm.svg" alt="CM"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+237</span> <span
+                      class="text-gray-400">Cameroun</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('fr', '+33', 'France')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/fr.svg" alt="FR"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+33</span> <span
+                      class="text-gray-400">France</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('us', '+1', 'USA')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/us.svg" alt="US"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+1</span> <span class="text-gray-400">USA</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('gb', '+44', 'UK')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/gb.svg" alt="GB"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+44</span> <span class="text-gray-400">UK</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('de', '+49', 'Germany')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/de.svg" alt="DE"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+49</span> <span
+                      class="text-gray-400">Germany</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('ga', '+241', 'Gabon')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/ga.svg" alt="GA"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+241</span> <span
+                      class="text-gray-400">Gabon</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('ng', '+234', 'Nigeria')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/ng.svg" alt="NG"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+234</span> <span
+                      class="text-gray-400">Nigeria</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('sn', '+221', 'Senegal')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/sn.svg" alt="SN"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+221</span> <span
+                      class="text-gray-400">Senegal</span>
+                  </div>
+                  <div onclick="selectPhoneCountry('ci', '+225', 'Ivory Coast')"
+                    class="px-4 py-3 hover:bg-[#F6F8FA] cursor-pointer text-sm text-[#101010] flex items-center gap-3">
+                    <img src="https://circle-flags.cdn.skk.moe/flags/ci.svg" alt="CI"
+                      class="w-5 h-5 rounded-full object-cover"> <span>+225</span> <span class="text-gray-400">Ivory
+                      Coast</span>
+                  </div>
+                </div>
+              </div>
+              <input type="tel" placeholder="Entrer le numéro"
+                class="flex-1 px-3 outline-none placeholder:text-[#898F8F] text-base font-normal font-archivo bg-transparent h-full rounded-r-[12px]">
+            </div>
+          </div>
+          <!-- Password - 123 -->
+          <div class="flex flex-col gap-2 mb-3">
+            <label for="password" class="font-archivo text-[14px] font-medium text-[#14201F] leading-[150%]">Mot de
+              passe</label>
+            <div class="relative">
+              <input type="password" id="password" name="password" placeholder="Entrez votre mot de passe"
+                autocomplete="off"
+                class="js-password-input w-full py-[15px] px-[12px] border border-[#DCDEDE] rounded-[12px] placeholder:text-[#898F8F] text-base font-normal font-archivo focus:outline-none focus:border-[#0167A0] transition-colors">
+              <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#14201F] cursor-pointer"
+                id="togglePasswordBtn">
+                <svg id="eyeOpen" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.59813 10.3892C2.46729 10.1467 2.46729 9.85252 2.59813 9.61002C4.17479 6.69419 7.08729 4.16669 9.99979 4.16669C12.9123 4.16669 15.8248 6.69419 17.4015 9.61085C17.5323 9.85335 17.5323 10.1475 17.4015 10.39C15.8248 13.3059 12.9123 15.8334 9.99979 15.8334C7.08729 15.8334 4.17479 13.3059 2.59813 10.3892Z"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M11.7678 8.23223C12.7441 9.20854 12.7441 10.7915 11.7678 11.7678C10.7915 12.7441 9.20854 12.7441 8.23223 11.7678C7.25592 10.7915 7.25592 9.20854 8.23223 8.23223C9.20854 7.25592 10.7915 7.25592 11.7678 8.23223"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg id="eyeClosed" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.0002 15.8333C9.29857 15.8333 8.59607 15.685 7.91357 15.4208" stroke="#14201F"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M17.4017 10.39C15.825 13.3058 12.9125 15.8333 10 15.8333" stroke="#14201F" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M15.8989 7.43414C16.4748 8.10831 16.9864 8.84331 17.4014 9.61081C17.5323 9.85331 17.5323 10.1475 17.4014 10.39"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M4.1665 15.8334L15.8332 4.16669" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M8.14424 11.8558C7.11924 10.8308 7.11924 9.16832 8.14424 8.14332C9.16924 7.11832 10.8317 7.11832 11.8567 8.14332"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.2031 5.79669C12.914 4.79919 11.4565 4.16669 9.99979 4.16669C7.08729 4.16669 4.17479 6.69419 2.59813 9.61085C2.46729 9.85335 2.46729 10.1475 2.59813 10.39C3.38646 11.8475 4.50813 13.2075 5.79646 14.2042"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- Confirm Password - 123 -->
+          <div class="flex flex-col gap-2">
+            <label for="confirmPassword"
+              class="font-archivo text-[14px] font-medium text-[#14201F] leading-[150%]">Confirmer
+              le Mot de passe</label>
+            <div class="relative">
+              <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Entrez votre mot de passe"
+                autocomplete="off"
+                class="js-password-input w-full py-[15px] px-[12px] border border-[#DCDEDE] rounded-[12px] placeholder:text-[#898F8F] text-base font-normal font-archivo focus:outline-none focus:border-[#0167A0] transition-colors">
+              <button type="button" class="absolute right-4 top-1/2 -translate-y-1/2 text-[#14201F] cursor-pointer"
+                id="toggleConfirmPasswordBtn">
+                <svg id="eyeOpenConfirm" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M2.59813 10.3892C2.46729 10.1467 2.46729 9.85252 2.59813 9.61002C4.17479 6.69419 7.08729 4.16669 9.99979 4.16669C12.9123 4.16669 15.8248 6.69419 17.4015 9.61085C17.5323 9.85335 17.5323 10.1475 17.4015 10.39C15.8248 13.3059 12.9123 15.8334 9.99979 15.8334C7.08729 15.8334 4.17479 13.3059 2.59813 10.3892Z"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M11.7678 8.23223C12.7441 9.20854 12.7441 10.7915 11.7678 11.7678C10.7915 12.7441 9.20854 12.7441 8.23223 11.7678C7.25592 10.7915 7.25592 9.20854 8.23223 8.23223C9.20854 7.25592 10.7915 7.25592 11.7678 8.23223"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+                <svg id="eyeClosedConfirm" class="hidden" width="20" height="20" viewBox="0 0 20 20" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10.0002 15.8333C9.29857 15.8333 8.59607 15.685 7.91357 15.4208" stroke="#14201F"
+                    stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M17.4017 10.39C15.825 13.3058 12.9125 15.8333 10 15.8333" stroke="#14201F" stroke-width="1.8"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M15.8989 7.43414C16.4748 8.10831 16.9864 8.84331 17.4014 9.61081C17.5323 9.85331 17.5323 10.1475 17.4014 10.39"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M4.1665 15.8334L15.8332 4.16669" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path
+                    d="M8.14424 11.8558C7.11924 10.8308 7.11924 9.16832 8.14424 8.14332C9.16924 7.11832 10.8317 7.11832 11.8567 8.14332"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M14.2031 5.79669C12.914 4.79919 11.4565 4.16669 9.99979 4.16669C7.08729 4.16669 4.17479 6.69419 2.59813 9.61085C2.46729 9.85335 2.46729 10.1475 2.59813 10.39C3.38646 11.8475 4.50813 13.2075 5.79646 14.2042"
+                    stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </button>
+            </div>
+          </div>
+
+          <!-- Options -->
+          <div class="flex flex-col justify-center items-center gap-4 max-w-[316px] mx-auto mt-8">
+            <div class="flex items-center gap-2 cursor-pointer group" id="rememberMeContainer">
+              <!-- Custom Checkbox -->
+              <div id="rememberCheckbox"
+                class="w-5 h-5 rounded-full border border-[#DCDEDE] flex items-center justify-center transition-all group-hover:border-[#0167A0]">
+
+                <svg id="rememberCheckmark" class="hidden" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <path d="M10 3L4.5 8.5L2 6" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+              </div>
+              <input type="checkbox" id="rememberMeInput" class="hidden">
+              <span
+                class="font-archivo text-[14px] text-[#14201F] font-normal group-hover:text-[#0167A0] transition-colors">J’accepte
+                <a href="#" class="text-[#0189D5]">les termes et conditions d’utilisation</a></span>
+            </div>
+            <!-- Login Button -->
+            <a href="#" id="loginBtn"
+              class="w-full min-h-[48px] rounded-[14px] ovbtn text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">Créer
+              un compte</a>
+
+            <!-- Sign Up Link -->
+            <div class="text-center font-archivo text-[14px] font-normal text-[#14201F]">Vous n'avez pas de compte ? <a
+                href="#" class="text-[#0167A0] font-medium hover:underline">Inscrivez-vous</a>
+            </div>
+          </div>
+
+          <!-- Divider -->
+          <div class="flex items-center gap-[6px] max-w-[291px] mx-auto w-full my-6">
+            <div class="flex-1 h-px bg-[linear-gradient(90deg,#DCDEDE_50%,transparent_50%)] bg-[length:6px_2px]"></div>
+            <span class="font-archivo text-[12px] text-[#898F8F] font-normal">Ou</span>
+            <div class="flex-1 h-px bg-[linear-gradient(90deg,#DCDEDE_50%,transparent_50%)] bg-[length:6px_2px]"></div>
+          </div>
+
+          <!-- Google Login -->
+          <a href="#"
+            class="w-full h-[48px] rounded-[14px] button-v3 cursor-pointer flex items-center justify-center gap-1 hover:bg-gray-50 transition-colors">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M5.8243 11.5646L5.30218 13.5137L3.39381 13.5541C2.82349 12.4963 2.5 11.286 2.5 9.99988C2.5 8.75621 2.80246 7.5834 3.33859 6.55072H3.339L5.03798 6.8622L5.78223 8.55098C5.62646 9.00511 5.54156 9.49261 5.54156 9.99988C5.54162 10.5504 5.64134 11.0779 5.8243 11.5646Z"
+                fill="#FBBB00" />
+              <path
+                d="M17.3691 8.59863C17.4552 9.05232 17.5001 9.52087 17.5001 9.99972C17.5001 10.5367 17.4437 11.0604 17.3361 11.5657C16.971 13.2849 16.017 14.7861 14.6955 15.8485L14.6951 15.8481L12.5551 15.7389L12.2523 13.8482C13.1292 13.3339 13.8145 12.5291 14.1755 11.5657H10.165V8.59863H14.234H17.3691Z"
+                fill="#518EF8" />
+              <path
+                d="M14.6946 15.8486L14.695 15.849C13.4097 16.8821 11.777 17.5002 9.99971 17.5002C7.14354 17.5002 4.66032 15.9038 3.39355 13.5545L5.82404 11.5649C6.45741 13.2553 8.08804 14.4586 9.99971 14.4586C10.8214 14.4586 11.5912 14.2365 12.2517 13.8487L14.6946 15.8486Z"
+                fill="#28B446" />
+              <path
+                d="M14.787 4.22663L12.3573 6.21577C11.6737 5.78844 10.8655 5.54159 9.99976 5.54159C8.04481 5.54159 6.38369 6.80009 5.78205 8.55107L3.33879 6.5508H3.33838C4.5866 4.14422 7.10114 2.5 9.99976 2.5C11.8195 2.5 13.4881 3.14822 14.787 4.22663Z"
+                fill="#F14336" />
+            </svg>
+
+            <span class="font-archivo text-base font-medium text-[#14201F]">Connectez-vous avec Google</span>
+          </a>
+
+
+        </form>
+      </div>
+    </section>
+  </main>
+  <!-- right image position -->
+
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>

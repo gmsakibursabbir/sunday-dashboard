@@ -20,6 +20,25 @@
   --color-red: #b9142f; */
   --color-primary: #14201f;
 }
+/* Password input - show asterisks instead of dots */
+input[type="password"] {
+  /* No special CSS, we will handle masking via JS.
+     But we style the text color for when we toggle to show password */
+  color: #14201f;
+}
+
+/* Class for our JS masked input */
+.masked-password {
+  font-family: "Verdana", sans-serif;
+  letter-spacing: 0.125em;
+  color: #adb1b1;
+}
+
+input::placeholder {
+  font-family: var(--font-archivo);
+  letter-spacing: normal;
+  color: #898f8f;
+}
 body {
   font-family: var(--font-archivo);
   color: var(--color-primary);
@@ -174,8 +193,7 @@ header {
   box-shadow: 0px 4px 12px rgba(20, 32, 31, 0.02);
 }
 .button-v3 {
-background: linear-gradient(180deg, #FFFFFF 0%, #F6F7F7 100%);
-border-top: 1px solid #FFFFFF;
-box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #DCDEDD;
-
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
+  border-top: 1px solid #ffffff;
+  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
 }
