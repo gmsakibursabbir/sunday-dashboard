@@ -419,25 +419,3 @@ document.addEventListener("click", (e) => {
     }
   }
 });
-
-// Connection Points Card Selection Logic
-document.addEventListener("DOMContentLoaded", () => {
-  const cards = document.querySelectorAll(".connection-card");
-
-  if (cards.length > 0) {
-    cards.forEach((card) => {
-      card.addEventListener("click", () => {
-        // Toggle selection state independently
-        if (card.classList.contains("border-[#0189D5]")) {
-          // Deselect
-          card.classList.remove("border-[#0189D5]");
-          card.classList.add("border-[#E7E9E9]");
-        } else {
-          // Select
-          card.classList.remove("border-[#E7E9E9]");
-          card.classList.add("border-[#0189D5]");
-        }
-      });
-    });
-  }
-});
