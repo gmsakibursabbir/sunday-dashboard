@@ -441,3 +441,169 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+
+// Password Strength Meter Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const passwordInput = document.getElementById("password"); // Use existing input
+  const strengthMeter = document.getElementById("strengthMeter");
+  const strengthText = document.getElementById("strength-text");
+
+  // Requirement items
+  const reqSymbol = document.getElementById("req-symbol");
+  const reqUppercase = document.getElementById("req-uppercase");
+  const reqLength = document.getElementById("req-length");
+  const reqNumber = document.getElementById("req-number");
+
+  // Meter bars
+  const meters = [
+    document.getElementById("meter-1"),
+    document.getElementById("meter-2"),
+    document.getElementById("meter-3"),
+    document.getElementById("meter-4"),
+  ];
+
+  if (
+    !passwordInput ||
+    !strengthMeter ||
+    !strengthText ||
+    !reqSymbol ||
+    !reqUppercase ||
+    !reqLength ||
+    !reqNumber
+  ) {
+    return; // Exit if elements not found (e.g. on login page)
+  }
+
+  // Regex for requirements
+  const regexLower = /[a-z]/;
+  const regexUpper = /[A-Z]/;
+  const regexNumber = /[0-9]/;
+  const regexSymbol = /[^A-Za-z0-9]/;
+
+  function updateRequirement(element, met) {
+    const iconBox = element.querySelector(".icon-box");
+    //const textSpan = element.querySelector("span");
+
+    if (met) {
+      // REQUIREMENT MET
+      if (iconBox) {
+        iconBox.classList.remove("text-[#898F8F]");
+        iconBox.classList.add("text-[#28B446]"); // Green
+      }
+      // textSpan?.classList.remove("text-[#14201F]");
+      // textSpan?.classList.add("text-[#28B446]");
+    } else {
+      // REQUIREMENT NOT MET
+      if (iconBox) {
+        iconBox.classList.add("text-[#898F8F]"); // Gray
+        iconBox.classList.remove("text-[#28B446]");
+      }
+      // textSpan?.classList.add("text-[#14201F]");
+      // textSpan?.classList.remove("text-[#28B446]");
+    }
+  }
+
+  function monitorPasswordStrength() {
+    // If masked input is used, we need the real value
+    // The previous code sets 'data-real-value' on the input
+    const realValue =
+      passwordInput.getAttribute("data-real-value") !== null
+        ? passwordInput.getAttribute("data-real-value")
+        : passwordInput.value;
+
+    const value = realValue || "";
+
+    // 1. Toggle Visibility
+    if (value.length > 0) {
+      strengthMeter.classList.remove("hidden");
+    } else {
+      strengthMeter.classList.add("hidden");
+      return; // Stop processing if empty
+    }
+
+    // 2. Check Requirements
+    const hasLower = regexLower.test(value); // Not explicitly tracked in UI but part of strength usually
+    const hasUpper = regexUpper.test(value);
+    const hasNumber = regexNumber.test(value);
+    const hasSymbol = regexSymbol.test(value);
+    const hasLength = value.length >= 8;
+
+    updateRequirement(reqUppercase, hasUpper);
+    updateRequirement(reqNumber, hasNumber);
+    updateRequirement(reqSymbol, hasSymbol);
+    updateRequirement(reqLength, hasLength);
+
+    // 3. Calculate Strength Score (0 to 4)
+    // We base score on the number of met requirements from the UI list (4 items + maybe length)
+    // Actually the requirements are: Symbol, Uppercase, Length, Number (4 total)
+    let score = 0;
+    if (hasSymbol) score++;
+    if (hasUpper) score++;
+    if (hasNumber) score++;
+    if (hasLength) score++;
+
+    // 4. Update Bars and Text
+    // Colors:
+    // 1 bar: Red (#D54033) "Faible"
+    // 2 bars: Orange (#FBBB00) "Moyen"
+    // 3 bars: Blue (#0189D5) ? "Bon"
+    // 4 bars: Green (#28B446) "Fort"
+
+    // Reset all bars to default gray
+    meters.forEach((meter) => {
+      meter.className = "h-1 flex-1 rounded-full bg-[#E7E9E9] transition-all";
+    });
+
+    let colorClass = "";
+    let statusText = "Faible";
+    let activeBars = 0;
+
+    if (score <= 1) {
+      colorClass = "bg-[#D54033]"; // Red
+      statusText = "Faible";
+      activeBars = 1;
+    } else if (score === 2) {
+      colorClass = "bg-[#FBBB00]"; // Orange/Yellow
+      statusText = "Moyen";
+      activeBars = 2;
+    } else if (score === 3) {
+      colorClass = "bg-[#0189D5]"; // Blue
+      statusText = "Bon";
+      activeBars = 3;
+    } else if (score === 4) {
+      colorClass = "bg-[#28B446]"; // Green
+      statusText = "Fort";
+      activeBars = 4;
+    }
+
+    // Apply color to active bars
+    for (let i = 0; i < activeBars; i++) {
+        if(meters[i]) {
+            meters[i].classList.remove("bg-[#E7E9E9]");
+            meters[i].classList.add(colorClass.replace("bg-[", "").replace("]", "").startsWith("#") ? "bg-[" + colorClass.split("[")[1] : colorClass);
+            // Since I am using tailwind arbitrary values, I need to be careful with string manipulation or just set exact class.
+            // Cleaner way:
+            meters[i].className = `h-1 flex-1 rounded-full transition-all ${colorClass}`;
+        }
+    }
+    
+    // Update Text
+    strengthText.textContent = statusText;
+    strengthText.className = "text-xs font-medium ml-1 transition-colors";
+    // Set text color to match the bars
+    const textColor = colorClass.replace("bg-", "text-"); // e.g. text-[#D54033]
+    strengthText.classList.add(textColor);
+
+  }
+
+  // Bind to Input
+  // Since mask logic might update 'value' or 'data-real-value', we should listen to 'input'
+  // AND maybe a custom event if the mask script doesn't fire input properly on algorithmic updates?
+  // The 'input' event fires when user types. The mask script also updates value.
+  // We need to ensure we read data-real-value.
+
+  passwordInput.addEventListener("input", monitorPasswordStrength);
+  
+  // Also run once on load in case there is a value
+  monitorPasswordStrength();
+});

@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Sunday Events</title>
+  <title>Connection points 2</title>
   <!-- facions -->
   <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
@@ -12,9 +12,11 @@
   <link rel="manifest" href="./favicon/site.webmanifest" />
 
   <!-- google font  -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
   <!-- custom font  -->
   <link rel="stylesheet" href="./fonts/stylesheet.css" />
 
@@ -25,7 +27,7 @@
   <header class="flex flex-row sticky top-0 left-0 w-full z-[99999] bg-[#F9FAFA]">
     <!-- left side  -->
     <div
-      class="flex justify-between items-center px-3 py-4 md:min-w-[240px] md:w-[240px] w-1/2 h-full border-r border-b border-[#E7E9E9]">
+      class="flex justify-between items-center px-3 py-4 md:min-w-[239px] md:w-[240px] w-1/2 h-[64px] border-b border-[#E7E9E9]">
       <a href="index.html">
         <img src="./images/logo.png" alt="logo" class="w-[94px]" />
       </a>
@@ -35,44 +37,20 @@
       </button>
     </div>
     <!-- right side start  -->
-    <div class="md:w-full w-1/2 flex justify-between items-center px-4 py-3.5 border-b border-[#E7E9E9]">
-      <ul class="md:flex hidden flex-row items-center gap-2 min-w-[240px]">
-        <li>
-          <a href="#" class="">
-            <h1 class="font-archivo text-sm font-semibold text-[#666E6D]">
-              Tableau de bord
-            </h1>
-          </a>
-        </li>
-        <li>
-          <span class="font-archivo text-sm font-normal text-[#666E6D] md:block hidden">
-            /
-          </span>
-        </li>
-        <li>
-          <a href="#"
-            class="font-archivo text-sm font-semibold text-[#0167A0] py-[6px] px-[10px] bg-white flex justify-center items-center rounded-full shadow-header">
-            Évènements
-          </a>
-        </li>
-      </ul>
-      <div class="w-full">
-        <ul class="flex flex-row items-center justify-end gap-2">
-          <li class="">
-            <a href=""
-              class="shadow bg-white p-2 rounded-lg flex justify-center items-center gap-2 text-sm font-medium">
-              <img src="./images/notification.svg" alt="notification" />
-            </a>
-          </li>
-          <li class="">
-            <a href=""
-              class="shadow bg-white py-2 px-3 rounded-lg flex justify-center items-center gap-2 text-sm font-medium">
-              <img src="./images/help.svg" alt="notification" />
-              <span>Aide</span>
-            </a>
-          </li>
-        </ul>
+    <div
+      class="md:w-full w-1/2 flex flex-row justify-end md:justify-between items-center px-4 py-3.5 border-b border-l border-[#E7E9E9] h-[64px] md:h-[94px] md:bg-white">
+      <div class="w-full md:block hidden">
+        <h1 class="text-primary font-archivo text-2xl font-semibold">Créer un point de vente</h1>
+        <p class="text-[#616161] font-archivo text-sm mt">Formulaire de création</p>
       </div>
+      <a href=""
+        class=" bg-white border-[1px] border-[#E8E8E8] p-2 rounded-lg flex justify-center items-center gap-2 text-sm font-medium w-8 h-8 self-center">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </a>
+
     </div>
   </header>
   <main class="flex flex-row flex-1 h-full overflow-hidden">
@@ -668,527 +646,62 @@
     <div class="main mainContent w-[calc(100%-240px)] ml-auto p-3 h-full overflow-y-auto" role="main" tabindex="-1">
       <!-- page title start  -->
       <div class="md:hidden pb-4">
-        <ul class="flex flex-row items-center gap-2">
-          <li>
-            <a href="#" class="">
-              <h1 class="font-archivo text-sm font-semibold text-[#666E6D]">
-                Tableau de bord
-              </h1>
-            </a>
-          </li>
-          <li>
-            <span class="font-archivo text-sm font-normal text-[#666E6D]">
-              /
-            </span>
-          </li>
-          <li>
-            <a href="#"
-              class="font-archivo text-sm font-semibold text-[#0167A0] py-[6px] px-[10px] bg-white flex justify-center items-center rounded-full shadow-header">
-              Évènements
-            </a>
-          </li>
-        </ul>
+        <h1 class="text-primary font-archivo text-lg font-semibold">Créer un point de vente</h1>
+        <p class="text-[#616161] font-archivo text-sm mt">Formulaire de création</p>
       </div>
       <!-- page title end  -->
       <!-- wrapper start  -->
-      <div class="bg-white h-full rounded-[16px]">
-        <!-- top start  -->
-        <div class="pt-[32px] pb-4 px-[32px]">
-          <div class="flex flex-row justify-between items-center">
-            <h1 class="text-xl text-[#14201F] font-archivo font-semibold leading-[120%]">
-              Points de connexion
-            </h1>
-            <button
-              class="px-4 py-[10px] w-auto rounded-[12px] ovbtn text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
-                width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M3.33301 8H12.6663" stroke="white" stroke-width="1.25" stroke-linecap="round"
-                  stroke-linejoin="round" />
-                <path d="M8 3.3335V12.6668" stroke="white" stroke-width="1.25" stroke-linecap="round"
-                  stroke-linejoin="round" />
-              </svg>
+      <div class="bg-white p-4 h-auto max-w-[726px] mx-auto rounded-[12px] mt-2 border-[1px] border-[#E8E8E8]">
+        <div class="p-4 border-[1px] border-[#F3F4F4] rounded-[12px] bg-[#F9FAFA]">
+          <div class="p-4 border-[1px] border-[#F3F4F4] rounded-[12px] bg-[#F9FAFA]">
+            <form action="" class="space-y-4">
+              <div class="space-y-[6px]">
+                <label for="name" class="font-archivo font-medium text-sm text-[#14201F]">Nom du point de
+                  connexion</label>
+                <input type="text" id="name" placeholder="Super Sunday"
+                  class="w-full h-[48px] px-4 rounded-[12px] border border-[#DCDEDE] bg-white text-sm text-[#14201F] placeholder:text-[#898F8F] outline-none focus:border-[#0189D5] transition-colors" />
+              </div>
 
-              Créer point de connexion
-            </button>
+              <div class="grid grid-cols-2 gap-4">
+                <div class="space-y-[6px]">
+                  <label for="address" class="font-archivo font-medium text-sm text-[#14201F]">Adresse</label>
+                  <input type="text" id="address" placeholder="Cameroun douala, bonaberi Rue de manguier |"
+                    class="w-full h-[48px] px-4 rounded-[12px] border border-[#DCDEDE] bg-white text-xs text-[#14201F] placeholder:text-[#898F8F] outline-none focus:border-[#0189D5] transition-colors" />
+                </div>
+                <div class="space-y-[6px]">
+                  <label for="location" class="font-archivo font-medium text-sm text-[#14201F]">Lieu</label>
+                  <input type="text" id="location" placeholder="Cameroun douala, bonaberi Rue de manguier"
+                    class="w-full h-[48px] px-4 rounded-[12px] border border-[#DCDEDE] bg-white text-xs text-[#14201F] placeholder:text-[#898F8F] outline-none focus:border-[#0189D5] transition-colors" />
+                </div>
+              </div>
+
+              <div class="space-y-[6px]">
+                <label for="city" class="font-archivo font-medium text-sm text-[#14201F]">Ville</label>
+                <input type="text" id="city" placeholder="Douala"
+                  class="w-full h-[48px] px-4 rounded-[12px] border border-[#DCDEDE] bg-white text-sm text-[#14201F] placeholder:text-[#898F8F] outline-none focus:border-[#0189D5] transition-colors" />
+              </div>
+            </form>
           </div>
         </div>
-        <!-- divider -->
-        <div class="px-4">
-          <div class="h-[1px] bg-[#DCDEDE] w-full "></div>
-        </div>
-        <!-- search -->
-        <div class="pt-[30px] px-4 pb-4 border-b border-[#E7E9E9]">
-          <label
-            class="flex flex-row items-center px-2 py-3 rounded-[8px] border border-[#E7E9E9] gap-[6px] max-w-[291px] cursor-text">
-            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <circle cx="7.37251" cy="7.37227" r="4.70796" stroke="#14201F" stroke-width="1.25" stroke-linecap="round"
+
+        <div class="pt-6 flex flex-row justify-center gap-6 items-center">
+          <a href="#"
+            class="min-h-[48px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer max-w-[220px]">
+
+            <span>Annuler</span>
+          </a>
+          <button
+            class="w-full max-w-[220px] min-h-[48px] rounded-[12px] ovbtn text-white font-semibold text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">Créer le point de connexion <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+              xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.7334 9.98356H16.2251" stroke="white" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
-              <path d="M13.3356 13.3354L10.7012 10.7009" stroke="#14201F" stroke-width="1.25" stroke-linecap="round"
-                stroke-linejoin="round" />
+              <path d="M11.2354 4.99023L16.2662 10.0002L11.2354 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
             </svg>
 
-            <input type="text" placeholder="Rechercher point de connexion"
-              class="w-full text-[#101010] placeholder:text-[#898F8F] text-xs bg-transparent outline-none border-none" />
-          </label>
+          </button>
+
         </div>
-        <!-- top end  -->
-
-        <!-- bottom start  -->
-        <div class="p-7 lg:p-10">
-          <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-
-            <!-- 1 -->
-            <div id="card-1"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 2 -->
-            <div id="card-2"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 3 -->
-            <div id="card-3"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 3 -->
-            <div id="card-4"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 5 -->
-            <div id="card-5"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 6 -->
-            <div id="card-6"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 7 -->
-            <div id="card-7"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-            <!-- 8 -->
-            <div id="card-8"
-              class="connection-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
-              <div><svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path
-                    d="M0 10C0 4.47715 4.47715 0 10 0H26C31.5228 0 36 4.47715 36 10V26C36 31.5228 31.5228 36 26 36H10C4.47715 36 0 31.5228 0 26V10Z"
-                    fill="#D9EDF9" />
-                  <path d="M7.5 17.25L9 15.75L10.5 17.25" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path d="M28.5 18.75L27 20.25L25.5 18.75" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
-                    stroke-linejoin="round" />
-                  <path
-                    d="M10.6777 12.79C12.3097 10.501 14.9747 9 17.9997 9C22.9697 9 26.9997 13.03 26.9997 18C26.9997 18.684 26.9167 19.348 26.7727 19.988"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M25.3217 12.79C23.0197 13.564 20.5627 14 17.9997 14C15.4367 14 12.9797 13.564 10.6777 12.79"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M25.3181 23.2058C23.6871 25.4948 21.0221 26.9958 17.9961 26.9958C13.0261 26.9958 8.99609 22.9658 8.99609 17.9958C8.99609 17.3118 9.07909 16.6478 9.22309 16.0078"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M10.6748 23.2061C12.9768 22.4321 15.4338 21.9961 17.9968 21.9961C20.5598 21.9961 23.0168 22.4321 25.3188 23.2061"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M18 27C20.0711 27 21.75 22.9706 21.75 18C21.75 13.0294 20.0711 9 18 9C15.9289 9 14.25 13.0294 14.25 18C14.25 22.9706 15.9289 27 18 27Z"
-                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-              </div>
-              <div class="flex flex-row justify-between flex-1">
-                <!-- s1 -->
-                <div>
-                  <h4 class="text-[#101828] font-archivo font-medium text-base leading-[120%]">TP Link</h4>
-                  <p class="max-w-[206px] text-[#4A5565] font-archivo text-xs leading-[150%] mt-2">Douala,
-                    Av. du Général de Gaulle PALAIS DES CONGRES</p>
-                </div>
-                <!-- s2 -->
-                <button
-                  class="w-8 h-8 flex items-center justify-center rounded-[10px] bg-transparent group-hover:bg-white">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M17.5 10V10C17.5 14.1425 14.1425 17.5 10 17.5V17.5C5.8575 17.5 2.5 14.1425 2.5 10V10C2.5 5.8575 5.8575 2.5 10 2.5V2.5C14.1425 2.5 17.5 5.8575 17.5 10Z"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 10.0008C9.68717 10.1733 9.82717 10.3133 9.99967 10.3117C10.1722 10.3117 10.3122 10.1717 10.3122 9.99918C10.3122 9.82668 10.1722 9.68668 9.99967 9.68668C9.82717 9.68751 9.68717 9.82751 9.68717 10.0008"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 6.66735C9.68717 6.83985 9.82717 6.97985 9.99967 6.97818C10.1722 6.97818 10.3122 6.83818 10.3122 6.66568C10.3122 6.49318 10.1722 6.35318 9.99967 6.35318C9.82717 6.35402 9.68717 6.49402 9.68717 6.66735"
-                      stroke="#898F8F" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M9.68717 13.3343C9.68717 13.5068 9.82717 13.6468 9.99967 13.6452C10.1722 13.6452 10.3122 13.5052 10.3122 13.3327C10.3122 13.1602 10.1722 13.0202 9.99967 13.0202C9.82717 13.021 9.68717 13.161 9.68717 13.3343"
-                      stroke="#898F8F" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-
-                </button>
-
-              </div>
-            </div>
-
-            <!-- card end -->
-          </div>
-        </div>
-        <!-- bottom end  -->
       </div>
       <!-- wrapper end  -->
     </div>

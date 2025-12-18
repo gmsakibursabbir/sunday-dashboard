@@ -419,3 +419,446 @@ document.addEventListener("click", (e) => {
     }
   }
 });
+// for the accordion functionality on sidebar
+document.addEventListener("DOMContentLoaded", () => {
+  const accordions = document.querySelectorAll(".accordion");
+
+  accordions.forEach((accordion) => {
+    const trigger = accordion.querySelector(".accordion-trigger");
+    const content = accordion.querySelector(".accordion-content");
+    const icon = accordion.querySelector(".accordion-icon");
+
+    trigger.addEventListener("click", () => {
+      content.classList.toggle("open");
+      icon.classList.toggle("rotated");
+      accordion.classList.toggle("active");
+    });
+  });
+});
+
+// dropdown menu functionality
+const btn = document.getElementById("userDropdownBtn");
+const dropdown = document.getElementById("userDropdown");
+const arrow = document.getElementById("arrowIcon");
+
+if (btn && dropdown && arrow) {
+  btn.addEventListener("click", () => {
+    dropdown.classList.toggle("hidden");
+    arrow.classList.toggle("rotate-180");
+  });
+}
+
+// for the side bar toggle
+(function () {
+  const sidebar = document.getElementById("main-sidebar");
+  const main = document.querySelector(".mainContent");
+  const toggle = document.getElementById("sidebar-toggle");
+
+  if (!sidebar || !main || !toggle) return;
+
+  const cls = {
+    desktopClose: "sidebar-closed",
+    mobileOpen: "sidebar-mobile-open",
+    mainFull: "main--full",
+  };
+
+  const isDesktop = () => window.innerWidth >= 768;
+
+  function openMobile() {
+    sidebar.classList.add(cls.mobileOpen);
+    toggle.setAttribute("aria-expanded", "true");
+  }
+  function closeMobile() {
+    sidebar.classList.remove(cls.mobileOpen);
+    toggle.setAttribute("aria-expanded", "false");
+  }
+  function toggleDesktop() {
+    const closed = sidebar.classList.toggle(cls.desktopClose);
+    main.classList.toggle(cls.mainFull, closed);
+    toggle.setAttribute("aria-expanded", String(!closed));
+  }
+
+  toggle.addEventListener("click", () => {
+    if (isDesktop()) {
+      sidebar.classList.remove(cls.mobileOpen);
+      toggleDesktop();
+    } else {
+      sidebar.classList.contains(cls.mobileOpen) ? closeMobile() : openMobile();
+    }
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape" && sidebar.classList.contains(cls.mobileOpen)) {
+      closeMobile();
+    }
+  });
+
+  window.addEventListener("resize", () => {
+    if (isDesktop()) {
+      sidebar.classList.remove(cls.mobileOpen);
+    } else {
+      sidebar.classList.remove(cls.desktopClose);
+      main.classList.remove(cls.mainFull);
+    }
+  });
+
+  toggle.setAttribute("aria-expanded", isDesktop() ? "true" : "false");
+})();
+
+// Reusable Modal Logic
+window.AppModal = {
+  modal: null,
+  title: null,
+  message: null,
+  image: null,
+  actionBtn: null,
+
+  init: function () {
+    this.modal = document.getElementById("modal");
+    if (!this.modal) return;
+
+    this.title = document.getElementById("modal-title");
+    this.message = document.getElementById("modal-message");
+    this.image = document.getElementById("modal-image");
+    this.actionBtn = document.getElementById("modal-action");
+
+    // Close on click outside content
+    this.modal.addEventListener("click", (e) => {
+      // If clicking the backdrop (not the inner content)
+      if (e.target === this.modal) {
+        this.hide();
+      }
+    });
+
+    // Close on action button click (default behavior, can be overridden)
+    if (this.actionBtn) {
+      this.actionBtn.addEventListener("click", (e) => {
+        // e.preventDefault(); // Optional, depending on if it's a link
+        this.hide();
+      });
+    }
+  },
+
+  show: function ({ title, message, imageSrc, buttonText, onAction }) {
+    if (!this.modal) this.init();
+    if (!this.modal) return; // Still no modal? Exit.
+
+    if (title && this.title) this.title.textContent = title;
+    if (message && this.message) this.message.textContent = message;
+    if (imageSrc && this.image) this.image.src = imageSrc;
+    if (buttonText && this.actionBtn) this.actionBtn.textContent = buttonText;
+
+    // Handle custom action
+    if (onAction && this.actionBtn) {
+      // Remove old listeners to prevent stacking?
+      // Cloning node is a quick way to clear listeners
+      const newBtn = this.actionBtn.cloneNode(true);
+      this.actionBtn.parentNode.replaceChild(newBtn, this.actionBtn);
+      this.actionBtn = newBtn;
+
+      this.actionBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        onAction();
+        this.hide();
+      });
+    } else if (this.actionBtn) {
+      // Reset to simple close if no action provided
+      const newBtn = this.actionBtn.cloneNode(true);
+      this.actionBtn.parentNode.replaceChild(newBtn, this.actionBtn);
+      this.actionBtn = newBtn;
+      this.actionBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        this.hide();
+      });
+    }
+
+    this.modal.classList.remove("hidden");
+  },
+
+  hide: function () {
+    if (!this.modal) this.init();
+    if (this.modal) {
+      this.modal.classList.add("hidden");
+    }
+  },
+};
+
+// Initialize modal logic on load
+document.addEventListener("DOMContentLoaded", () => {
+  if (window.AppModal) window.AppModal.init();
+
+  // Language Dropdown Logic
+  const langBtn = document.getElementById("langBtn");
+  const langDropdown = document.getElementById("langDropdown");
+  const langArrow = document.getElementById("langArrow");
+
+  if (langBtn && langDropdown && langArrow) {
+    langBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle("hidden");
+      langArrow.classList.toggle("rotate-180");
+    });
+
+    // Close when clicking outside
+    document.addEventListener("click", (e) => {
+      if (!langBtn.contains(e.target) && !langDropdown.contains(e.target)) {
+        langDropdown.classList.add("hidden");
+        langArrow.classList.remove("rotate-180");
+      }
+    });
+
+    // Handle language selection
+    const langOptions = langDropdown.querySelectorAll("a");
+    const langBtnImg = langBtn.querySelector("img");
+    const langBtnText = langBtn.querySelector("span");
+
+    langOptions.forEach((option) => {
+      option.addEventListener("click", (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        // Get the selected flag and text from the clicked option
+        const selectedImg = option.querySelector("img");
+        const selectedText = option.querySelector("span");
+
+        // Update the button with selected values
+        if (langBtnImg && selectedImg) {
+          langBtnImg.src = selectedImg.src;
+          langBtnImg.alt = selectedImg.alt;
+        }
+        if (langBtnText && selectedText) {
+          langBtnText.textContent = selectedText.textContent;
+        }
+
+        // Close dropdown
+        langDropdown.classList.add("hidden");
+        langArrow.classList.remove("rotate-180");
+      });
+    });
+  }
+
+  // Helper function for masked input logic
+  function initMaskedInput(input) {
+    const realValue = input.value;
+    input.setAttribute("data-real-value", realValue);
+    input.value = "*".repeat(realValue.length);
+    input.classList.add("font-verdana"); // Apply font for consistent asterisk display
+
+    input.addEventListener("input", (e) => {
+      const currentMaskedValue = e.target.value;
+      const oldRealValue = e.target.getAttribute("data-real-value") || "";
+      let newRealValue = "";
+
+      // Determine if a character was added or deleted
+      if (currentMaskedValue.length > oldRealValue.length) {
+        // Character added: append to real value
+        const addedChar = currentMaskedValue[currentMaskedValue.length - 1];
+        newRealValue = oldRealValue + addedChar;
+      } else if (currentMaskedValue.length < oldRealValue.length) {
+        // Character deleted: remove from real value
+        newRealValue = oldRealValue.slice(0, currentMaskedValue.length);
+      } else {
+        // Value changed but length is same (e.g., paste, or overwrite)
+        // For simplicity, if length is same, assume it's an overwrite or paste
+        // and treat the new input as the real value for now, then mask it.
+        // A more robust solution might compare char by char.
+        newRealValue = currentMaskedValue;
+      }
+
+      e.target.setAttribute("data-real-value", newRealValue);
+      e.target.value = "*".repeat(newRealValue.length);
+    });
+  }
+
+  // Find all password inputs
+  const passwordInputs = document.querySelectorAll(".js-password-input");
+  passwordInputs.forEach((input) => {
+    // Setup toggle button if it exists nearby
+    const container = input.closest(".relative");
+    // Use structural selector: the button inside the wrapper
+    const toggleBtn = container ? container.querySelector("button") : null;
+
+    if (toggleBtn) {
+      // Find icons by order since IDs might be duplicated or unique
+      const svgs = toggleBtn.querySelectorAll("svg");
+      const eyeOpen = svgs[0];
+      const eyeClosed = svgs[1];
+
+      // Apply type text first
+      input.type = "text";
+      input.classList.add("masked-password");
+
+      initMaskedInput(input);
+
+      if (eyeOpen && eyeClosed) {
+        // Remove old listeners by cloning
+        const newBtn = toggleBtn.cloneNode(true);
+        toggleBtn.parentNode.replaceChild(newBtn, toggleBtn);
+
+        // Re-query eyes inside new button because we cloned it
+        const newSvgs = newBtn.querySelectorAll("svg");
+        const newEyeOpen = newSvgs[0];
+        const newEyeClosed = newSvgs[1];
+
+        newBtn.addEventListener("click", () => {
+          const isMasked = input.classList.contains("masked-password");
+          const real = input.getAttribute("data-real-value") || "";
+
+          if (isMasked) {
+            // Show Plain
+            input.value = real;
+            input.classList.remove("masked-password");
+            input.classList.remove("font-verdana"); // safety
+            newEyeOpen.classList.add("hidden");
+            newEyeClosed.classList.remove("hidden");
+          } else {
+            // Mask
+            input.classList.add("masked-password");
+            input.value = "*".repeat(real.length);
+            newEyeOpen.classList.remove("hidden");
+            newEyeClosed.classList.add("hidden");
+          }
+        });
+      }
+    } else {
+      // Even if no toggle button, still init masking logic
+      input.type = "text";
+      input.classList.add("masked-password");
+      initMaskedInput(input);
+    }
+  });
+  const rememberMeContainer = document.getElementById("rememberMeContainer");
+  const rememberCheckbox = document.getElementById("rememberCheckbox");
+  const rememberCheckmark = document.getElementById("rememberCheckmark");
+  const rememberMeInput = document.getElementById("rememberMeInput");
+
+  function toggleRememberMe() {
+    rememberMeInput.checked = !rememberMeInput.checked;
+    if (rememberMeInput.checked) {
+      // Checked state: blue background, no border, white checkmark
+      rememberCheckbox.classList.remove("border-[#DCDEDE]", "border");
+      rememberCheckbox.classList.add("bg-[#0189D1]");
+      rememberCheckmark.classList.remove("hidden");
+    } else {
+      // Unchecked state: gray border, no background
+      rememberCheckbox.classList.add("border-[#DCDEDE]", "border");
+      rememberCheckbox.classList.remove("bg-[#0189D1]");
+      rememberCheckmark.classList.add("hidden");
+    }
+  }
+
+  if (
+    rememberMeContainer &&
+    rememberCheckbox &&
+    rememberCheckmark &&
+    rememberMeInput
+  ) {
+    rememberMeContainer.addEventListener("click", (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleRememberMe();
+    });
+  }
+
+  const loginBtn = document.getElementById("loginBtn");
+  const passwordInputMain = document.getElementById("password");
+  const passwordError = document.getElementById("passwordError");
+
+  if (loginBtn && passwordInputMain && passwordError) {
+    loginBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const email = document.getElementById("email").value;
+      // READ REAL VALUE from data attribute or value
+      const password =
+        passwordInputMain.getAttribute("data-real-value") ||
+        passwordInputMain.value;
+
+      // Validation - password must be "123"
+      if (!email || !password || password !== "123") {
+        // Show error state
+        passwordInputMain.classList.add("border-[#D54033]");
+        passwordInputMain.classList.remove("border-[#DCDEDE]");
+        passwordError.classList.remove("hidden");
+        passwordError.classList.add("flex");
+        return;
+      }
+
+      // Success - redirect
+      window.location.href = "./index.html";
+    });
+
+    // Reset error on input
+    passwordInputMain.addEventListener("input", () => {
+      passwordInputMain.classList.remove("border-[#D54033]");
+      passwordInputMain.classList.add("border-[#DCDEDE]");
+      passwordError.classList.add("hidden");
+      passwordError.classList.remove("flex");
+    });
+  }
+});
+
+// Global functions for Phone Dropdown (needed for inline onclick in HTML)
+window.toggleDropdown = function (menuId, iconId) {
+  const menu = document.getElementById(menuId);
+  const icon = document.getElementById(iconId);
+  if (menu) menu.classList.toggle("hidden");
+  if (icon) icon.classList.toggle("rotate-180");
+};
+
+window.selectPhoneCountry = function (countryCode, dialingCode, countryName) {
+  const btnText = document.getElementById("country-code-text");
+  const menu = document.getElementById("menu-phone-country");
+  const icon = document.getElementById("icon-phone-country");
+  const btnImg = document.querySelector(".group-dropdown img"); // Current selected flag
+
+  // Update text
+  if (btnText) btnText.textContent = dialingCode;
+
+  // Update flag
+  if (btnImg) {
+    // We can construct the URL based on the country code or find the image in the clicked item
+    // For simplicity, let's just use the CDN link pattern
+    btnImg.src = `https://circle-flags.cdn.skk.moe/flags/${countryCode}.svg`;
+    btnImg.alt = countryCode.toUpperCase();
+  }
+
+  // Close dropdown
+  if (menu) menu.classList.add("hidden");
+  if (icon) icon.classList.remove("rotate-180");
+};
+
+// Close phone dropdown when clicking outside
+document.addEventListener("click", (e) => {
+  const menu = document.getElementById("menu-phone-country");
+  const icon = document.getElementById("icon-phone-country");
+  const dropdownContainer = document.querySelector(".group-dropdown");
+
+  if (menu && dropdownContainer && !menu.classList.contains("hidden")) {
+    if (!dropdownContainer.contains(e.target)) {
+      menu.classList.add("hidden");
+      if (icon) icon.classList.remove("rotate-180");
+    }
+  }
+});
+
+// Connection Points Card Selection Logic
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".connection-card");
+
+  if (cards.length > 0) {
+    cards.forEach((card) => {
+      card.addEventListener("click", () => {
+        // Toggle selection state independently
+        if (card.classList.contains("border-[#0189D5]")) {
+          // Deselect
+          card.classList.remove("border-[#0189D5]");
+          card.classList.add("border-[#E7E9E9]");
+        } else {
+          // Select
+          card.classList.remove("border-[#E7E9E9]");
+          card.classList.add("border-[#0189D5]");
+        }
+      });
+    });
+  }
+});
