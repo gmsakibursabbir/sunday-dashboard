@@ -578,22 +578,27 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Apply color to active bars
     for (let i = 0; i < activeBars; i++) {
-        if(meters[i]) {
-            meters[i].classList.remove("bg-[#E7E9E9]");
-            meters[i].classList.add(colorClass.replace("bg-[", "").replace("]", "").startsWith("#") ? "bg-[" + colorClass.split("[")[1] : colorClass);
-            // Since I am using tailwind arbitrary values, I need to be careful with string manipulation or just set exact class.
-            // Cleaner way:
-            meters[i].className = `h-1 flex-1 rounded-full transition-all ${colorClass}`;
-        }
+      if (meters[i]) {
+        meters[i].classList.remove("bg-[#E7E9E9]");
+        meters[i].classList.add(
+          colorClass.replace("bg-[", "").replace("]", "").startsWith("#")
+            ? "bg-[" + colorClass.split("[")[1]
+            : colorClass
+        );
+        // Since I am using tailwind arbitrary values, I need to be careful with string manipulation or just set exact class.
+        // Cleaner way:
+        meters[
+          i
+        ].className = `h-1 flex-1 rounded-full transition-all ${colorClass}`;
+      }
     }
-    
+
     // Update Text
     strengthText.textContent = statusText;
     strengthText.className = "text-xs font-medium ml-1 transition-colors";
     // Set text color to match the bars
     const textColor = colorClass.replace("bg-", "text-"); // e.g. text-[#D54033]
     strengthText.classList.add(textColor);
-
   }
 
   // Bind to Input
@@ -603,7 +608,135 @@ document.addEventListener("DOMContentLoaded", () => {
   // We need to ensure we read data-real-value.
 
   passwordInput.addEventListener("input", monitorPasswordStrength);
-  
+
   // Also run once on load in case there is a value
   monitorPasswordStrength();
+});
+
+// Close new filter dropdowns when clicking outside
+document.addEventListener("click", (e) => {
+  const dropdowns = [
+    { menuId: "menu-package", iconId: "icon-package" },
+    { menuId: "menu-events", iconId: "icon-events" },
+    { menuId: "menu-status", iconId: "icon-status" },
+  ];
+
+  dropdowns.forEach(({ menuId, iconId }) => {
+    const menu = document.getElementById(menuId);
+    const icon = document.getElementById(iconId);
+
+    if (menu && !menu.classList.contains("hidden")) {
+      const container = menu.parentElement; // The relative div
+
+      if (container && !container.contains(e.target)) {
+        menu.classList.add("hidden");
+        if (icon) icon.classList.remove("rotate-180");
+      }
+    }
+  });
+});
+
+// --- Pagination Logic ---
+class TablePagination {
+  constructor(tableId, pageSize = 5) {
+    this.table = document.getElementById(tableId);
+    if (!this.table) return;
+
+    this.pageSize = pageSize;
+    this.currentPage = 1;
+    // Query rows directly from tbody to avoid selecting header row
+    this.rows = Array.from(this.table.querySelectorAll("tbody tr"));
+    this.totalPages = Math.ceil(this.rows.length / this.pageSize);
+
+    // Elements
+    this.currentPageText = document.getElementById("current-page-text");
+    this.totalPagesText = document.getElementById("total-pages-text");
+    this.prevBtn = document.getElementById("prev-page");
+    this.nextBtn = document.getElementById("next-page");
+    this.numbersContainer = document.getElementById("pagination-numbers");
+
+    this.init();
+  }
+
+  init() {
+    if (this.totalPagesText) this.totalPagesText.textContent = this.totalPages;
+    this.addEventListeners();
+    this.render();
+  }
+
+  addEventListeners() {
+    if (this.prevBtn) {
+      this.prevBtn.addEventListener("click", () => {
+        if (this.currentPage > 1) {
+          this.currentPage--;
+          this.render();
+        }
+      });
+    }
+
+    if (this.nextBtn) {
+      this.nextBtn.addEventListener("click", () => {
+        if (this.currentPage < this.totalPages) {
+          this.currentPage++;
+          this.render();
+        }
+      });
+    }
+  }
+
+  render() {
+    // Update Text
+    if (this.currentPageText)
+      this.currentPageText.textContent = this.currentPage;
+
+    // Update Button State
+    if (this.prevBtn) this.prevBtn.disabled = this.currentPage === 1;
+    if (this.nextBtn)
+      this.nextBtn.disabled = this.currentPage === this.totalPages;
+
+    // Show/Hide Rows
+    const start = (this.currentPage - 1) * this.pageSize;
+    const end = start + this.pageSize;
+
+    this.rows.forEach((row, index) => {
+      if (index >= start && index < end) {
+        row.style.display = "";
+      } else {
+        row.style.display = "none";
+      }
+    });
+
+    // Render Numbers
+    this.renderNumbers();
+  }
+
+  renderNumbers() {
+    if (!this.numbersContainer) return;
+    this.numbersContainer.innerHTML = "";
+
+    for (let i = 1; i <= this.totalPages; i++) {
+      this.addNumberBtn(i);
+    }
+  }
+
+  addNumberBtn(i) {
+    const btn = document.createElement("button");
+    btn.textContent = i;
+    // Updated styling for pixel perfect design (white on gray pill)
+    btn.className = `w-[26px] h-[26px] flex items-center justify-center rounded-[6px] text-sm transition-all ${
+      i === this.currentPage
+        ? "bg-white text-[#1D2939] shadow-sm font-semibold"
+        : "text-[#475467] hover:text-[#1D2939] font-medium"
+    }`;
+    btn.onclick = () => {
+      this.currentPage = i;
+      this.render();
+    };
+    this.numbersContainer.appendChild(btn);
+  }
+}
+
+// Initialize Pagination on Load
+document.addEventListener("DOMContentLoaded", () => {
+  new TablePagination("reservations-table", 10);
 });
