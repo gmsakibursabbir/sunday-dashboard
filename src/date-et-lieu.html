@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information de base</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="hidden md:flex flex-col w-[264px] bg-[#F6F6F6] rounded-[16px] px-4 py-5 mr-6 h-full overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8]">
+      <h2 class="text-xs font-archivo font-medium text-[#666E6D] mb-6 uppercase tracking-wider">Créer un évènement</h2>
+
+      <div class="flex flex-col gap-1 relative">
+        <!-- Connecting Line (Visual only, behind steps) -->
+        <div class="absolute left-[15px] top-4 bottom-4 w-[1px] bg-[#E7E9E9] -z-10 hidden"></div>
+
+        <!-- Step 1: Active -->
+        <div class="flex flex-row items-center gap-3 p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo font-semibold text-sm shrink-0">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="font-archivo text-sm font-medium text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-row items-center gap-3 group p-2 bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo font-semibold text-sm shrink-0">
+            2</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-row items-center gap-3 group p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-white border border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo font-medium text-sm shrink-0">
+            3</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-row items-center gap-3 group p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-white border border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo font-medium text-sm shrink-0">
+            4</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flex flex-row items-center gap-3 group p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-white border border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo font-medium text-sm shrink-0">
+            5</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div class="flex flex-row items-center gap-3 group p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-white border border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo font-medium text-sm shrink-0">
+            6</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div class="flex flex-row items-center gap-3 group p-2 hover:bg-white rounded-[8px]">
+          <div
+            class="w-5 h-5 rounded-full bg-white border border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo font-medium text-sm shrink-0">
+            7</div>
+          <span class="font-archivo text-sm font-normal text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div class="flex-1 flex flex-col bg-white rounded-[16px] h-full overflow-hidden relative">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-start shrink-0">
+        <div>
+          <h1 class="text-2xl font-archivo font-bold text-[#14201F] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#666E6D]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+
+        </button>
+      </div>
+
+      <!-- Scrollable Form Content -->
+      <div class="flex-1 overflow-y-auto p-4">
+        <div class="max-w-[800px] mx-auto w-full border border-[#E7E9E9] rounded-[16px] p-4">
+          <div class="mb-8">
+            <h2 class="text-xl font-archivo font-bold text-[#14201F] mb-1">Date et lieu</h2>
+          </div>
+
+          <!-- Date de l'évènement Section -->
+          <div class="bg-[#D9EDF9] rounded-[12px] p-4 mb-4">
+            <h3 class="text-base font-archivo font-bold text-[#14201F] mb-4">Date de l’évènement</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-4">
+              <!-- Date de début -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Date de début</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.24692 2.49707V4.99811" stroke="#161924" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="2.49609" y="3.74756" width="15.0062" height="13.7557" rx="3" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.08173 9.1665H7.59401C8.03488 9.1665 8.42629 9.44862 8.5657 9.86686V9.86686C8.67947 10.2082 8.60582 10.5842 8.37168 10.8573L6.24805 13.3349H8.74909" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.24805 10.0002C6.24805 9.53976 6.6213 9.1665 7.08173 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0837 9.1665H12.596C13.0368 9.1665 13.4282 9.44862 13.5677 9.86686V9.86686C13.6814 10.2082 13.6078 10.5842 13.3736 10.8573L11.25 13.3349H13.751" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.25 10.0002C11.25 9.53976 11.6233 9.1665 12.0837 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  </div>
+                  <!-- Using a simple calendar icon, but the screenshot has a specific "22" inside -->
+                  <!-- Let's use a generic calendar icon for now or match closely -->
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                   <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.24692 2.49707V4.99811" stroke="#161924" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="2.49609" y="3.74756" width="15.0062" height="13.7557" rx="3" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.08173 9.1665H7.59401C8.03488 9.1665 8.42629 9.44862 8.5657 9.86686V9.86686C8.67947 10.2082 8.60582 10.5842 8.37168 10.8573L6.24805 13.3349H8.74909" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.24805 10.0002C6.24805 9.53976 6.6213 9.1665 7.08173 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0837 9.1665H12.596C13.0368 9.1665 13.4282 9.44862 13.5677 9.86686V9.86686C13.6814 10.2082 13.6078 10.5842 13.3736 10.8573L11.25 13.3349H13.751" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.25 10.0002C11.25 9.53976 11.6233 9.1665 12.0837 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  </div>
+                  <input type="text" placeholder="dd/mm/yyyy"
+                    class="bg-white pl-10 w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Heure de début -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Heure de début</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="7.5" stroke="#14201F" stroke-width="1.5" />
+                      <path d="M10 6.66666V10L12.5 12.5" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <input type="text" placeholder="__:__"
+                    class="bg-white pl-10 w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Date de fin -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Date de fin</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M6.24692 2.49707V4.99811" stroke="#161924" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="2.49609" y="3.74756" width="15.0062" height="13.7557" rx="3" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M7.08173 9.1665H7.59401C8.03488 9.1665 8.42629 9.44862 8.5657 9.86686V9.86686C8.67947 10.2082 8.60582 10.5842 8.37168 10.8573L6.24805 13.3349H8.74909" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M6.24805 10.0002C6.24805 9.53976 6.6213 9.1665 7.08173 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M12.0837 9.1665H12.596C13.0368 9.1665 13.4282 9.44862 13.5677 9.86686V9.86686C13.6814 10.2082 13.6078 10.5842 13.3736 10.8573L11.25 13.3349H13.751" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M11.25 10.0002C11.25 9.53976 11.6233 9.1665 12.0837 9.1665" stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
+
+                  </div>
+                  <input type="text" placeholder="dd/mm/yyyy"
+                    class="bg-white pl-10 w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Heure de fin -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Heure de fin</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="10" cy="10" r="7.5" stroke="#14201F" stroke-width="1.5" />
+                      <path d="M10 6.66666V10L12.5 12.5" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <input type="text" placeholder="__:__"
+                    class="bg-white pl-10 w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lieu de l'évènement Section -->
+          <div class="bg-[#E9FBFE] rounded-[12px] p-4">
+            <h3 class="text-base font-archivo font-bold text-[#14201F] mb-4">Lieu de l’évènement</h3>
+
+            <!-- Type Toggle -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
+              <!-- Physical (Active) -->
+              <div
+                class="cursor-pointer bg-white border border-[#0167A0] rounded-[12px] p-3 flex items-center gap-3 shadow-none relative">
+                <div class="w-5 h-5 rounded-full border-[5px] border-[#1070A6] bg-white shrink-0"></div>
+                <!-- Active radio style -->
+                <span class="font-archivo text-sm font-medium text-[#14201F]">Lieu physique</span>
+              </div>
+
+              <!-- Online -->
+              <div class="cursor-pointer bg-white border border-none rounded-[12px] p-3 flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full border border-[#D0D2D2] bg-white shrink-0"></div>
+                <span class="font-archivo text-sm font-medium text-[#14201F]">En ligne</span>
+              </div>
+
+              <!-- Hybrid -->
+              <div class="cursor-pointer bg-white border border-none rounded-[12px] p-3 flex items-center gap-3">
+                <div class="w-5 h-5 rounded-full border border-[#D0D2D2] bg-white shrink-0"></div>
+                <span class="font-archivo text-sm font-medium text-[#14201F]">Hybride</span>
+              </div>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <!-- Nom du lieu -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Nom du lieu</label>
+                <input type="text" placeholder="Ex: Palais des Congrès"
+                  class="bg-white w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+              </div>
+
+              <!-- Pays & Ville -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Pays</label>
+                  <input type="text" placeholder="Ex : Pays"
+                    class="bg-white w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+                <div>
+                  <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Ville</label>
+                  <input type="text" placeholder="Ex : Douala"
+                    class="bg-white w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Adresse complète -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Adresse complète</label>
+                <input type="text" placeholder="Ex: Avenue de la Réunification, Bonanjo"
+                  class="bg-white w-full px-4 py-3 rounded-[12px] border border-none  text-[#1B1B1B] placeholder:text-[#9EA3A3] focus:outline-none focus:ring-0 font-archivo text-sm">
+              </div>
+            </div>
+          </div>
+
+
+
+        </div>
+        <!-- Add Button -->
+        <button
+          class="w-full mt-[10px] border border-[#E7E9E9] bg-[#FAFAFA] rounded-[16px] py-3 text-[#535858] font-archivo font-medium text-sm flex items-center justify-center gap-2 hover:bg-gray-100 transition-colors max-w-[372px] mx-auto">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M13.3332 2.5H6.6665C4.36532 2.5 2.49984 4.36548 2.49984 6.66667V13.3333C2.49984 15.6345 4.36532 17.5 6.6665 17.5H13.3332C15.6343 17.5 17.4998 15.6345 17.4998 13.3333V6.66667C17.4998 4.36548 15.6343 2.5 13.3332 2.5Z"
+              stroke="#535858" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M7 10H13" stroke="#535858" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M10 13V7" stroke="#535858" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M13.3335 5.83334H14.1668" stroke="#535858" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M5.8335 14.1667H6.66683" stroke="#535858" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+          Ajouter une nouvelle date et lieu
+        </button>
+      </div>
+
+      <!-- Footer -->
+      <div class="px-8 py-5 border-t border-[#E7E9E9] flex justify-between items-center bg-white shrink-0">
+        <button
+          class="px-6 py-2.5 rounded-[12px] border border-[#E7E9E9] text-[#14201F] font-archivo font-medium text-sm hover:bg-gray-50 transition-colors shadow-sm">
+          Retour
+        </button>
+
+        <div class="flex items-center gap-4">
+          <button
+            class="flex items-center gap-2 px-6 py-2.5 rounded-[12px] border border-[#E7E9E9] text-[#1B1B1B] font-archivo font-medium text-sm hover:bg-gray-50 transition-colors shadow-sm">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M2.66602 13.3333H13.3327" stroke="#1B1B1B" stroke-width="1.33" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M4 2.66666H12C12.7364 2.66666 13.3333 3.26361 13.3333 3.99999V10.6667C13.3333 11.403 12.7364 12 12 12H4C3.26362 12 2.66666 11.403 2.66666 10.6667V3.99999C2.66666 3.26361 3.26362 2.66666 4 2.66666Z"
+                stroke="#1B1B1B" stroke-width="1.33" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M10.6667 2.66666V5.33332H8.66666" stroke="#1B1B1B" stroke-width="1.33" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+            Enregistrer au brouillon
+          </button>
+
+          <button
+            class="px-6 py-2.5 rounded-[12px] bg-[#0167A0] text-white font-archivo font-medium text-sm flex items-center gap-2 hover:bg-[#015a8b] transition-colors shadow-sm">
+            Continuer
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.33398 8H12.6673" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M8.66602 4L12.666 8L8.66602 12" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
