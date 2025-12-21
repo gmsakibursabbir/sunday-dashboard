@@ -1,0 +1,799 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Création forfait</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
+
+      <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
+      <h2 class="hidden md:block text-xs font-archivo font-medium text-[#969696] mb-3 leading-[150%]">Créer un évènement
+      </h2>
+
+      <div
+        class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-2 md:gap-1 relative w-full">
+        <!-- Connecting Line Horizontal (Mobile) -->
+        <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
+
+        <!-- Step 1: Active -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
+            3</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            4</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            5</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            6</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            7</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div
+      class="flex-1 flex flex-col bg-white rounded-[12px] h-full overflow-hidden relative border-[1px] border-[#E8E8E8]">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-center shrink-0">
+        <div>
+          <h1 class="text-xl lg:text-2xl font-archivo font-bold text-[#0B0B0B] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#616161]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Form Content -->
+      <div class="flex-1 overflow-y-auto p-4">
+        <div class="max-w-[726px] mx-auto w-full border border-[#E8E8E8] rounded-[12px] p-4">
+          <div class="mb-4">
+            <h2 class="text-xl font-archivo font-semibold text-[#14201F] leading-[150%]">Forfait</h2>
+            <p class="font-archivo text-sm text-[#616161] leading-[150%] mt-2">Définissez les différents types de
+              billets et leurs tarifs</p>
+          </div>
+          <!-- waring -->
+          <div
+            class="p-4 rounded-[12px] bg-[#FDF4F3] border-[1px] border-[#FCD0CC] flex flex-row justify-between items-center gap-3">
+            <div class="flex flex-row items-center gap-3">
+              <div class="w-9 h-9 rounded-[8px] warningbg flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path
+                    d="M9.99982 13.3333C9.88482 13.3333 9.79149 13.4267 9.79232 13.5417C9.79232 13.6567 9.88565 13.75 10.0007 13.75C10.1157 13.75 10.209 13.6567 10.209 13.5417C10.209 13.4267 10.1157 13.3333 9.99982 13.3333"
+                    stroke="#D54033" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6.17833 17.0117L2.98833 13.8217C2.67583 13.5092 2.5 13.085 2.5 12.6433V7.35667C2.5 6.915 2.67583 6.49083 2.98833 6.17833L6.17833 2.98833C6.49083 2.67583 6.915 2.5 7.35667 2.5H12.6425C13.0842 2.5 13.5083 2.67583 13.8208 2.98833L17.0108 6.17833C17.3242 6.49083 17.5 6.915 17.5 7.35667V12.6425C17.5 13.0842 17.3242 13.5083 17.0117 13.8208L13.3333 17.5H7.35667C6.915 17.5 6.49083 17.3242 6.17833 17.0117V17.0117Z"
+                    stroke="#D54033" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M10.0007 10.4167V6.25" stroke="#D54033" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </svg>
+
+              </div>
+              <p class="font-archivo text-sm text-[#666E6D] leading-[150%]">Calculez vos revenus avec le simulateur de
+                prix en <a href="#" class="text-[#0189D5] underline">cliquant ici !</a> 👈🏼</p>
+            </div>
+            <button class="cursor-pointer"><svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 4L4 12" stroke="#ADB1B1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M4 4L12 12" stroke="#ADB1B1" stroke-width="1.5" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </svg>
+            </button>
+          </div>
+          <!-- cards -->
+          <div class="grid grid-cols-2 md:grid-cols-4
+           gap-4 mt-4">
+            <!-- 1 -->
+            <div class="p-[17px] rounded-[14px] bg-[#EFF6FF] border-[1px] border-[#BEDBFF] text-center">
+              <h3 class="text-[#1C398E] font-archivo font-semibold text-[24px] leading-[120%]">0</h3>
+              <p class="font-archivo text-sm text-[#155DFC] font-medium mt-1">Nombres de forfaits</p>
+            </div>
+            <!-- 2 -->
+            <div class="p-[17px] rounded-[14px] bg-[#F0FDF4] border-[1px] border-[#B9F8CF] text-center">
+              <h3 class="text-[#0D542B] font-archivo font-semibold text-[24px] leading-[120%]">0</h3>
+              <p class="font-archivo text-sm text-[#00A63E] font-medium mt-1">Places totales</p>
+            </div>
+            <!-- 3 -->
+            <div class="p-[17px] rounded-[14px] bg-[#FAF5FF] border-[1px] border-[#E9D4FF] text-center">
+              <h3 class="text-[#59168B] font-archivo font-semibold text-[24px] leading-[120%]">0</h3>
+              <p class="font-archivo text-sm text-[#9810FA] font-medium mt-1">Nombres de forfaits</p>
+            </div>
+            <!-- 4 -->
+            <div class="p-[17px] rounded-[14px] bg-[#FFF7ED] border-[1px] border-[#FFD6A7] text-center">
+              <h3 class="text-[#7E2A0C] font-archivo font-semibold text-[24px] leading-[120%]">0</h3>
+              <p class="font-archivo text-sm text-[#F54900] font-medium mt-1">Nombres de forfaits</p>
+            </div>
+          </div>
+          <!-- Points de connexion (Optionnel) -->
+          <div
+            class="flex flex-col items-center bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+            <svg width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M53.3333 21.3333H10.6667C9.19391 21.3333 8 22.5272 8 23.9999V29.3333C8 30.806 9.19391 31.9999 10.6667 31.9999H53.3333C54.8061 31.9999 56 30.806 56 29.3333V23.9999C56 22.5272 54.8061 21.3333 53.3333 21.3333Z"
+                stroke="#99A1AF" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M32 21.3333V55.9999" stroke="#99A1AF" stroke-width="5.33333" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path
+                d="M50.6673 32V50.6667C50.6673 52.0812 50.1054 53.4377 49.1052 54.4379C48.105 55.4381 46.7485 56 45.334 56H18.6673C17.2528 56 15.8963 55.4381 14.8961 54.4379C13.8959 53.4377 13.334 52.0812 13.334 50.6667V32"
+                stroke="#99A1AF" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M20.0007 21.3335C18.2325 21.3335 16.5368 20.6311 15.2866 19.3809C14.0364 18.1307 13.334 16.435 13.334 14.6669C13.334 12.8987 14.0364 11.2031 15.2866 9.95281C16.5368 8.70257 18.2325 8.00019 20.0007 8.00019C22.5731 7.95537 25.0941 9.20355 27.2346 11.582C29.3752 13.9604 31.0361 17.3586 32.0006 21.3335C32.9652 17.3586 34.6261 13.9604 36.7667 11.582C38.9072 9.20355 41.4282 7.95537 44.0006 8.00019C45.7688 8.00019 47.4645 8.70257 48.7147 9.95281C49.9649 11.2031 50.6673 12.8987 50.6673 14.6669C50.6673 16.435 49.9649 18.1307 48.7147 19.3809C47.4645 20.6311 45.7688 21.3335 44.0006 21.3335"
+                stroke="#99A1AF" stroke-width="5.33333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <p class="font-archivo text-base text-[#ADB1B1] leading-[150%] text-center">Aucun forfait créé</p>
+            <p class="font-archivo text-base font-medium text-[#4F5857] leading-[150%] text-center">Commencez par
+              créer/ajouter votre forfait pour cet événement</p>
+            <div class="flex lg:flex-row flex-col items-center gap-4 max-w-[616px] mx-auto w-full">
+              <a href="#"
+                class="min-h-[48px] w-full rounded-[14px] button-v2 text-[#016EAA] font-medium text-base transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+                <span>Ajouter un point de connexion</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <circle cx="11.9739" cy="11.9734" r="5.52667" stroke="#0189D5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M11.9753 10.417V13.5337" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.5346 11.9753H10.418" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M4.11875 11.9344C1.96042 9.77608 1.96042 6.27691 4.11875 4.11941C6.27708 1.96191 9.77625 1.96108 11.9338 4.11941"
+                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+              </a>
+              <a href="#"
+                class="min-h-[48px] w-full rounded-[14px] ovbbtn2 text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                <span>Créer un point de connexion</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6.66667 8.33333H4.16667C3.24583 8.33333 2.5 7.5875 2.5 6.66667V4.16667C2.5 3.24583 3.24583 2.5 4.16667 2.5H6.66667C7.5875 2.5 8.33333 3.24583 8.33333 4.16667V6.66667C8.33333 7.5875 7.5875 8.33333 6.66667 8.33333Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.8327 8.33333H13.3327C12.4118 8.33333 11.666 7.5875 11.666 6.66667V4.16667C11.666 3.24583 12.4118 2.5 13.3327 2.5H15.8327C16.7535 2.5 17.4993 3.24583 17.4993 4.16667V6.66667C17.4993 7.5875 16.7535 8.33333 15.8327 8.33333Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6.66667 17.4998H4.16667C3.24583 17.4998 2.5 16.754 2.5 15.8332V13.3332C2.5 12.4123 3.24583 11.6665 4.16667 11.6665H6.66667C7.5875 11.6665 8.33333 12.4123 8.33333 13.3332V15.8332C8.33333 16.754 7.5875 17.4998 6.66667 17.4998Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M14.5827 12.5V16.6667" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M16.6667 14.5832H12.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+
+              </a>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <!-- Footer -->
+      <div class="p-5  flex justify-between items-center ftshadow shrink-0 overflow-x-auto scrollbar-hide gap-4">
+        <a href="#"
+          class="min-h-[40px] rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[130px] shrink-0">
+
+
+          <span>Retour</span>
+        </a>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6687 9.16651V6.29895C16.6687 5.88117 16.5027 5.48049 16.2073 5.18507L13.9808 2.9586C13.6853 2.66309 13.2845 2.49707 12.8666 2.49707H4.16345C3.2426 2.49707 2.49609 3.24357 2.49609 4.16443V15.0023C2.49609 15.9231 3.2426 16.6696 4.16345 16.6696H9.16554"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12.494 2.49707V5.936C12.4938 6.33882 12.1673 6.66533 11.7645 6.66547H7.38767C6.98486 6.66533 6.65835 6.33882 6.6582 5.936V2.49707"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.83015 16.6694V11.9392C5.82366 11.3615 6.26665 10.878 6.84268 10.834H9.99855" stroke="#14201F"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="14.5836" cy="14.5855" r="3.75156" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.7504 14.0029L14.2911 15.4623L13.416 14.5863" stroke="#14201F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+            <span>Enregistrer au brouillon</span>
+          </a>
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Continuer</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.73242 9.98356H16.2241" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2363 4.99023L16.2672 10.0002L11.2363 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- modal -->
+  <div id="modal" class="fixed inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[16px] shadow-lg max-w-[768px] w-full mx-auto new-drop-shadow">
+        <!-- header -->
+        <div class="px-6 py-[38px] flex flex-row justify-between items-center border-b-[1px] border-[#E5E5E5]">
+          <div>
+            <h3 class="text-[#0B0B0B] font-archivo font-semibold text-[20px] leading-[120%]">Ajouter un forfait</h3>
+          </div>
+          <!-- close button -->
+          <button id="modal-action" class="cursor-pointer p-2">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M18 6L6 18" stroke="#6A7282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M6 6L18 18" stroke="#6A7282" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+
+
+        <!-- body -->
+        <div class="p-6">
+          <div class=" bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] gap-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-[17px] gap-y-[16px]">
+              <!-- card-1 -->
+              <div
+                class="bg-white rounded-[10px] flex flex-col items-start border-[1px] border-[#E5E7EB] min-h-[186px]">
+                <!-- top -->
+                <div class="pt-[9px] px-[14px] pb-[12px] rounded-t-[10px] billets-one text-white w-full">
+                  <!-- 1 -->
+                  <div class="flex flex-row justify-between items-center gap-[10px] w-full">
+                    <span class="text-[13px] font-semibold leading-[150%]">Gratuit</span>
+                    <button class="cursor-pointer"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.38084 0.907935C7.41157 0.845856 7.45903 0.793601 7.51788 0.757066C7.57673 0.720532 7.64462 0.701172 7.71388 0.701172C7.78315 0.701172 7.85104 0.720532 7.90989 0.757066C7.96874 0.793601 8.0162 0.845856 8.04693 0.907935L9.66657 4.18859C9.77327 4.40452 9.93077 4.59134 10.1256 4.733C10.3203 4.87466 10.5466 4.96694 10.7849 5.00192L14.407 5.53199C14.4756 5.54193 14.5401 5.57088 14.5932 5.61556C14.6462 5.66024 14.6857 5.71888 14.7071 5.78482C14.7286 5.85077 14.7311 5.92141 14.7145 5.98874C14.6979 6.05607 14.6628 6.11741 14.6132 6.16582L11.9937 8.71659C11.8209 8.88493 11.6917 9.09274 11.617 9.32212C11.5424 9.55149 11.5246 9.79557 11.5653 10.0333L12.1837 13.6372C12.1958 13.7058 12.1884 13.7764 12.1623 13.841C12.1362 13.9056 12.0925 13.9616 12.0361 14.0025C11.9798 14.0435 11.913 14.0677 11.8435 14.0726C11.774 14.0774 11.7046 14.0626 11.6431 14.0299L8.40521 12.3275C8.19187 12.2155 7.9545 12.1569 7.71353 12.1569C7.47256 12.1569 7.2352 12.2155 7.02185 12.3275L3.78467 14.0299C3.7232 14.0624 3.65383 14.077 3.58446 14.0721C3.51508 14.0672 3.44848 14.0429 3.39223 14.002C3.33598 13.9611 3.29235 13.9052 3.26628 13.8407C3.24021 13.7762 3.23277 13.7057 3.24479 13.6372L3.86249 10.034C3.9033 9.79616 3.88562 9.55193 3.81099 9.32241C3.73635 9.09289 3.607 8.88497 3.43409 8.71659L0.814617 6.16652C0.764551 6.11817 0.729072 6.05672 0.712223 5.98919C0.695374 5.92165 0.697832 5.85074 0.719316 5.78453C0.740801 5.71833 0.780448 5.65948 0.833742 5.61471C0.887036 5.56994 0.951833 5.54103 1.02075 5.53129L4.64217 5.00192C4.88074 4.96721 5.1073 4.87505 5.30235 4.73337C5.49741 4.59169 5.65511 4.40474 5.7619 4.18859L7.38084 0.907935Z"
+                          stroke="white" stroke-width="1.40229" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg></button>
+                  </div>
+                  <!-- 2 -->
+                  <span class="block text-[11px] pt-[9px]">20 places</span>
+                  <!-- 3 -->
+                  <span class="block text-[19px] font-semibold leading-[120%] pt-[9px]">0 XAF</span>
+                </div>
+                <!-- bottom -->
+                <div class="px-[14px] pt-[14px] pb-[19px] rounded-b-[10px] w-full">
+
+                  <ul class="flex flex-col items-start justify-between gap-[10px]">
+                    <li class="text-[#364153] text-[10px] leading-[150%]">Avantages inclus :</li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                  </ul>
+                  <div
+                    class="flex items-center justify-between pt-[14px] border-t-[1px] border-[#E5E7EB] w-full flex-1 gap-[14px] mt-[14px]">
+                    <a href="#"
+                      class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                          stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                      <span>Modifier</span>
+                    </a>
+                    <button
+                      class="bg-[#F9FAFA] rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- card-2 -->
+              <div
+                class="bg-white rounded-[10px] flex flex-col items-start border-[1px] border-[#E5E7EB] min-h-[186px]">
+                <!-- top -->
+                <div class="pt-[9px] px-[14px] pb-[12px] rounded-t-[10px] billets-two text-white w-full">
+                  <!-- 1 -->
+                  <div class="flex flex-row justify-between items-center gap-[10px] w-full">
+                    <span class="text-[13px] font-semibold leading-[150%]">Standard</span>
+                    <button class="cursor-pointer"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.38084 0.907935C7.41157 0.845856 7.45903 0.793601 7.51788 0.757066C7.57673 0.720532 7.64462 0.701172 7.71388 0.701172C7.78315 0.701172 7.85104 0.720532 7.90989 0.757066C7.96874 0.793601 8.0162 0.845856 8.04693 0.907935L9.66657 4.18859C9.77327 4.40452 9.93077 4.59134 10.1256 4.733C10.3203 4.87466 10.5466 4.96694 10.7849 5.00192L14.407 5.53199C14.4756 5.54193 14.5401 5.57088 14.5932 5.61556C14.6462 5.66024 14.6857 5.71888 14.7071 5.78482C14.7286 5.85077 14.7311 5.92141 14.7145 5.98874C14.6979 6.05607 14.6628 6.11741 14.6132 6.16582L11.9937 8.71659C11.8209 8.88493 11.6917 9.09274 11.617 9.32212C11.5424 9.55149 11.5246 9.79557 11.5653 10.0333L12.1837 13.6372C12.1958 13.7058 12.1884 13.7764 12.1623 13.841C12.1362 13.9056 12.0925 13.9616 12.0361 14.0025C11.9798 14.0435 11.913 14.0677 11.8435 14.0726C11.774 14.0774 11.7046 14.0626 11.6431 14.0299L8.40521 12.3275C8.19187 12.2155 7.9545 12.1569 7.71353 12.1569C7.47256 12.1569 7.2352 12.2155 7.02185 12.3275L3.78467 14.0299C3.7232 14.0624 3.65383 14.077 3.58446 14.0721C3.51508 14.0672 3.44848 14.0429 3.39223 14.002C3.33598 13.9611 3.29235 13.9052 3.26628 13.8407C3.24021 13.7762 3.23277 13.7057 3.24479 13.6372L3.86249 10.034C3.9033 9.79616 3.88562 9.55193 3.81099 9.32241C3.73635 9.09289 3.607 8.88497 3.43409 8.71659L0.814617 6.16652C0.764551 6.11817 0.729072 6.05672 0.712223 5.98919C0.695374 5.92165 0.697832 5.85074 0.719316 5.78453C0.740801 5.71833 0.780448 5.65948 0.833742 5.61471C0.887036 5.56994 0.951833 5.54103 1.02075 5.53129L4.64217 5.00192C4.88074 4.96721 5.1073 4.87505 5.30235 4.73337C5.49741 4.59169 5.65511 4.40474 5.7619 4.18859L7.38084 0.907935Z"
+                          stroke="white" stroke-width="1.40229" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg></button>
+                  </div>
+                  <!-- 2 -->
+                  <span class="block text-[11px] pt-[9px]">20 places</span>
+                  <!-- 3 -->
+                  <span class="block text-[19px] font-semibold leading-[120%] pt-[9px]">2000 XAF</span>
+                </div>
+                <!-- bottom -->
+                <div class="px-[14px] pt-[14px] pb-[19px] rounded-b-[10px] w-full">
+
+                  <ul class="flex flex-col items-start justify-between gap-[10px]">
+                    <li class="text-[#364153] text-[10px] leading-[150%]">Avantages inclus :</li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                  </ul>
+                  <div
+                    class="flex items-center justify-between pt-[14px] border-t-[1px] border-[#E5E7EB] w-full flex-1 gap-[14px] mt-[14px]">
+                    <a href="#"
+                      class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                          stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                      <span>Modifier</span>
+                    </a>
+                    <button
+                      class="bg-[#F9FAFA] rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- card-3 -->
+              <div
+                class="bg-white rounded-[10px] flex flex-col items-start border-[1px] border-[#E5E7EB] min-h-[186px]">
+                <!-- top -->
+                <div class="pt-[9px] px-[14px] pb-[12px] rounded-t-[10px] billets-three text-white w-full">
+                  <!-- 1 -->
+                  <div class="flex flex-row justify-between items-center gap-[10px] w-full">
+                    <span class="text-[13px] font-semibold leading-[150%]">VIP</span>
+                    <button class="cursor-pointer"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.38084 0.907935C7.41157 0.845856 7.45903 0.793601 7.51788 0.757066C7.57673 0.720532 7.64462 0.701172 7.71388 0.701172C7.78315 0.701172 7.85104 0.720532 7.90989 0.757066C7.96874 0.793601 8.0162 0.845856 8.04693 0.907935L9.66657 4.18859C9.77327 4.40452 9.93077 4.59134 10.1256 4.733C10.3203 4.87466 10.5466 4.96694 10.7849 5.00192L14.407 5.53199C14.4756 5.54193 14.5401 5.57088 14.5932 5.61556C14.6462 5.66024 14.6857 5.71888 14.7071 5.78482C14.7286 5.85077 14.7311 5.92141 14.7145 5.98874C14.6979 6.05607 14.6628 6.11741 14.6132 6.16582L11.9937 8.71659C11.8209 8.88493 11.6917 9.09274 11.617 9.32212C11.5424 9.55149 11.5246 9.79557 11.5653 10.0333L12.1837 13.6372C12.1958 13.7058 12.1884 13.7764 12.1623 13.841C12.1362 13.9056 12.0925 13.9616 12.0361 14.0025C11.9798 14.0435 11.913 14.0677 11.8435 14.0726C11.774 14.0774 11.7046 14.0626 11.6431 14.0299L8.40521 12.3275C8.19187 12.2155 7.9545 12.1569 7.71353 12.1569C7.47256 12.1569 7.2352 12.2155 7.02185 12.3275L3.78467 14.0299C3.7232 14.0624 3.65383 14.077 3.58446 14.0721C3.51508 14.0672 3.44848 14.0429 3.39223 14.002C3.33598 13.9611 3.29235 13.9052 3.26628 13.8407C3.24021 13.7762 3.23277 13.7057 3.24479 13.6372L3.86249 10.034C3.9033 9.79616 3.88562 9.55193 3.81099 9.32241C3.73635 9.09289 3.607 8.88497 3.43409 8.71659L0.814617 6.16652C0.764551 6.11817 0.729072 6.05672 0.712223 5.98919C0.695374 5.92165 0.697832 5.85074 0.719316 5.78453C0.740801 5.71833 0.780448 5.65948 0.833742 5.61471C0.887036 5.56994 0.951833 5.54103 1.02075 5.53129L4.64217 5.00192C4.88074 4.96721 5.1073 4.87505 5.30235 4.73337C5.49741 4.59169 5.65511 4.40474 5.7619 4.18859L7.38084 0.907935Z"
+                          stroke="white" stroke-width="1.40229" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg></button>
+                  </div>
+                  <!-- 2 -->
+                  <span class="block text-[11px] pt-[9px]">20 places</span>
+                  <!-- 3 -->
+                  <span class="block text-[19px] font-semibold leading-[120%] pt-[9px]">5000 XAF</span>
+                </div>
+                <!-- bottom -->
+                <div class="px-[14px] pt-[14px] pb-[19px] rounded-b-[10px] w-full">
+
+                  <ul class="flex flex-col items-start justify-between gap-[10px]">
+                    <li class="text-[#364153] text-[10px] leading-[150%]">Avantages inclus :</li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                  </ul>
+                  <div
+                    class="flex items-center justify-between pt-[14px] border-t-[1px] border-[#E5E7EB] w-full flex-1 gap-[14px] mt-[14px]">
+                    <a href="#"
+                      class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                          stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                      <span>Modifier</span>
+                    </a>
+                    <button
+                      class="bg-[#F9FAFA] rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- card-4 -->
+              <div
+                class="bg-white rounded-[10px] flex flex-col items-start border-[1px] border-[#E5E7EB] min-h-[186px]">
+                <!-- top -->
+                <div class="pt-[9px] px-[14px] pb-[12px] rounded-t-[10px] billets-four text-white w-full">
+                  <!-- 1 -->
+                  <div class="flex flex-row justify-between items-center gap-[10px] w-full">
+                    <span class="text-[13px] font-semibold leading-[150%]">Premium</span>
+                    <button class="cursor-pointer"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.38084 0.907935C7.41157 0.845856 7.45903 0.793601 7.51788 0.757066C7.57673 0.720532 7.64462 0.701172 7.71388 0.701172C7.78315 0.701172 7.85104 0.720532 7.90989 0.757066C7.96874 0.793601 8.0162 0.845856 8.04693 0.907935L9.66657 4.18859C9.77327 4.40452 9.93077 4.59134 10.1256 4.733C10.3203 4.87466 10.5466 4.96694 10.7849 5.00192L14.407 5.53199C14.4756 5.54193 14.5401 5.57088 14.5932 5.61556C14.6462 5.66024 14.6857 5.71888 14.7071 5.78482C14.7286 5.85077 14.7311 5.92141 14.7145 5.98874C14.6979 6.05607 14.6628 6.11741 14.6132 6.16582L11.9937 8.71659C11.8209 8.88493 11.6917 9.09274 11.617 9.32212C11.5424 9.55149 11.5246 9.79557 11.5653 10.0333L12.1837 13.6372C12.1958 13.7058 12.1884 13.7764 12.1623 13.841C12.1362 13.9056 12.0925 13.9616 12.0361 14.0025C11.9798 14.0435 11.913 14.0677 11.8435 14.0726C11.774 14.0774 11.7046 14.0626 11.6431 14.0299L8.40521 12.3275C8.19187 12.2155 7.9545 12.1569 7.71353 12.1569C7.47256 12.1569 7.2352 12.2155 7.02185 12.3275L3.78467 14.0299C3.7232 14.0624 3.65383 14.077 3.58446 14.0721C3.51508 14.0672 3.44848 14.0429 3.39223 14.002C3.33598 13.9611 3.29235 13.9052 3.26628 13.8407C3.24021 13.7762 3.23277 13.7057 3.24479 13.6372L3.86249 10.034C3.9033 9.79616 3.88562 9.55193 3.81099 9.32241C3.73635 9.09289 3.607 8.88497 3.43409 8.71659L0.814617 6.16652C0.764551 6.11817 0.729072 6.05672 0.712223 5.98919C0.695374 5.92165 0.697832 5.85074 0.719316 5.78453C0.740801 5.71833 0.780448 5.65948 0.833742 5.61471C0.887036 5.56994 0.951833 5.54103 1.02075 5.53129L4.64217 5.00192C4.88074 4.96721 5.1073 4.87505 5.30235 4.73337C5.49741 4.59169 5.65511 4.40474 5.7619 4.18859L7.38084 0.907935Z"
+                          stroke="white" stroke-width="1.40229" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg></button>
+                  </div>
+                  <!-- 2 -->
+                  <span class="block text-[11px] pt-[9px]">20 places</span>
+                  <!-- 3 -->
+                  <span class="block text-[19px] font-semibold leading-[120%] pt-[9px]">15000 XAF</span>
+                </div>
+                <!-- bottom -->
+                <div class="px-[14px] pt-[14px] pb-[19px] rounded-b-[10px] w-full">
+
+                  <ul class="flex flex-col items-start justify-between gap-[10px]">
+                    <li class="text-[#364153] text-[10px] leading-[150%]">Avantages inclus :</li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                  </ul>
+                  <div
+                    class="flex items-center justify-between pt-[14px] border-t-[1px] border-[#E5E7EB] w-full flex-1 gap-[14px] mt-[14px]">
+                    <a href="#"
+                      class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                          stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                      <span>Modifier</span>
+                    </a>
+                    <button
+                      class="bg-[#F9FAFA] rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+              <!-- card-5 -->
+              <div
+                class="bg-white rounded-[10px] flex flex-col items-start border-[1px] border-[#E5E7EB] min-h-[186px]">
+                <!-- top -->
+                <div class="pt-[9px] px-[14px] pb-[12px] rounded-t-[10px] billets-five text-white w-full">
+                  <!-- 1 -->
+                  <div class="flex flex-row justify-between items-center gap-[10px] w-full">
+                    <span class="text-[13px] font-semibold leading-[150%]">Accès Backstage</span>
+                    <button class="cursor-pointer"><svg width="16" height="15" viewBox="0 0 16 15" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                          d="M7.38084 0.907935C7.41157 0.845856 7.45903 0.793601 7.51788 0.757066C7.57673 0.720532 7.64462 0.701172 7.71388 0.701172C7.78315 0.701172 7.85104 0.720532 7.90989 0.757066C7.96874 0.793601 8.0162 0.845856 8.04693 0.907935L9.66657 4.18859C9.77327 4.40452 9.93077 4.59134 10.1256 4.733C10.3203 4.87466 10.5466 4.96694 10.7849 5.00192L14.407 5.53199C14.4756 5.54193 14.5401 5.57088 14.5932 5.61556C14.6462 5.66024 14.6857 5.71888 14.7071 5.78482C14.7286 5.85077 14.7311 5.92141 14.7145 5.98874C14.6979 6.05607 14.6628 6.11741 14.6132 6.16582L11.9937 8.71659C11.8209 8.88493 11.6917 9.09274 11.617 9.32212C11.5424 9.55149 11.5246 9.79557 11.5653 10.0333L12.1837 13.6372C12.1958 13.7058 12.1884 13.7764 12.1623 13.841C12.1362 13.9056 12.0925 13.9616 12.0361 14.0025C11.9798 14.0435 11.913 14.0677 11.8435 14.0726C11.774 14.0774 11.7046 14.0626 11.6431 14.0299L8.40521 12.3275C8.19187 12.2155 7.9545 12.1569 7.71353 12.1569C7.47256 12.1569 7.2352 12.2155 7.02185 12.3275L3.78467 14.0299C3.7232 14.0624 3.65383 14.077 3.58446 14.0721C3.51508 14.0672 3.44848 14.0429 3.39223 14.002C3.33598 13.9611 3.29235 13.9052 3.26628 13.8407C3.24021 13.7762 3.23277 13.7057 3.24479 13.6372L3.86249 10.034C3.9033 9.79616 3.88562 9.55193 3.81099 9.32241C3.73635 9.09289 3.607 8.88497 3.43409 8.71659L0.814617 6.16652C0.764551 6.11817 0.729072 6.05672 0.712223 5.98919C0.695374 5.92165 0.697832 5.85074 0.719316 5.78453C0.740801 5.71833 0.780448 5.65948 0.833742 5.61471C0.887036 5.56994 0.951833 5.54103 1.02075 5.53129L4.64217 5.00192C4.88074 4.96721 5.1073 4.87505 5.30235 4.73337C5.49741 4.59169 5.65511 4.40474 5.7619 4.18859L7.38084 0.907935Z"
+                          stroke="white" stroke-width="1.40229" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg></button>
+                  </div>
+                  <!-- 2 -->
+                  <span class="block text-[11px] pt-[9px]">20 places</span>
+                  <!-- 3 -->
+                  <span class="block text-[19px] font-semibold leading-[120%] pt-[9px]">25000 XAF</span>
+                </div>
+                <!-- bottom -->
+                <div class="px-[14px] pt-[14px] pb-[19px] rounded-b-[10px] w-full">
+
+                  <ul class="flex flex-col items-start justify-between gap-[10px]">
+                    <li class="text-[#364153] text-[10px] leading-[150%]">Avantages inclus :</li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                    <li class="flex flex-row items-center gap-[10px] gap-[5px]"><svg width="9" height="7"
+                        viewBox="0 0 9 7" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M7.94617 0.467407L2.80444 5.60914L0.467285 3.27199" stroke="#00A63E"
+                          stroke-width="0.93486" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                      <span class="text-[#4A5565] text-[8px] leading-[150%]">Accès prioritaire, Boisson
+                        offerte...</span>
+                    </li>
+                  </ul>
+                  <div
+                    class="flex items-center justify-between pt-[14px] border-t-[1px] border-[#E5E7EB] w-full flex-1 gap-[14px] mt-[14px]">
+                    <a href="#"
+                      class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                          stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+
+                      <span>Modifier</span>
+                    </a>
+                    <button
+                      class="bg-[#F9FAFA] rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer"><svg
+                        width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path fill-rule="evenodd" clip-rule="evenodd"
+                          d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                          stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                        <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="p-6 border-t-[1px] border-[#E5E5E5] flex flex-row justify-between items-center">
+          <a href="#"
+            class="min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer max-w-[200px]">
+
+            <span>Fermer</span>
+          </a>
+          <button
+            class="w-full max-w-[200px] min-h-[40px] rounded-[12px] ovbtn text-white font-semibold text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">Ajouter
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.7334 9.98332H16.2251" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2354 4.98999L16.2662 9.99999L11.2354 15.01" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </button>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="./js/index.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- French Locale -->
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+  <script>
+    // Location type radio selection handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const locationTypeGroup = document.getElementById('location-type-group');
+      if (!locationTypeGroup) return;
+
+      const options = locationTypeGroup.querySelectorAll('.location-type-option');
+
+      options.forEach(option => {
+        option.addEventListener('click', function () {
+          // Update all options
+          options.forEach(opt => {
+            const isSelected = opt === option;
+            const indicator = opt.querySelector('.radio-indicator');
+
+            // Update data attribute
+            opt.dataset.selected = isSelected;
+
+            // Update container border
+            if (isSelected) {
+              opt.classList.remove('border-transparent');
+              opt.classList.add('border-[#0189D5]');
+            } else {
+              opt.classList.remove('border-[#0189D5]');
+              opt.classList.add('border-transparent');
+            }
+
+            // Update radio indicator
+            if (isSelected) {
+              indicator.classList.remove('border', 'border-[#D0D2D2]');
+              indicator.classList.add('border-[5px]', 'border-[#016EAA]');
+            } else {
+              indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
+              indicator.classList.add('border', 'border-[#D0D2D2]');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

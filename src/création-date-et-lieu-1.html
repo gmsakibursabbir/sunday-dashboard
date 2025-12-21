@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Date et lieu</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
+
+      <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
+      <h2 class="hidden md:block text-xs font-archivo font-medium text-[#969696] mb-3 leading-[150%]">Créer un évènement
+      </h2>
+
+      <div
+        class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-2 md:gap-1 relative w-full">
+        <!-- Connecting Line Horizontal (Mobile) -->
+        <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
+
+        <!-- Step 1: Active -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
+            2</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            3</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            4</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            5</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            6</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            7</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div
+      class="flex-1 flex flex-col bg-white rounded-[12px] h-full overflow-hidden relative border-[1px] border-[#E8E8E8]">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-center shrink-0">
+        <div>
+          <h1 class="text-xl lg:text-2xl font-archivo font-bold text-[#0B0B0B] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#616161]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Form Content -->
+      <div class="flex-1 overflow-y-auto p-4">
+        <div class="max-w-[726px] mx-auto w-full border border-[#E8E8E8] rounded-[12px] p-4">
+          <div class="mb-4">
+            <h2 class="text-xl font-archivo font-semibold text-[#14201F]">Date et lieu</h2>
+          </div>
+
+          <!-- Date de l'évènement Section -->
+          <div class="bg-[#D9EDF9] rounded-[12px] p-4 mb-4 border-[1px] border-[#F3F4F4]">
+            <h3 class="text-lg font-archivo font-semibold text-[#14201F] mb-5">Date de l’évènement</h3>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-4">
+              <!-- Date de début -->
+              <div>
+                <label class="block text-sm font-medium font-archivo text-primary mb-[6px]">Date de début</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-[10px] flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.24692 2.49707V4.99811" stroke="#161924" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <rect x="2.49609" y="3.74756" width="15.0062" height="13.7557" rx="3" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M7.08173 9.1665H7.59401C8.03488 9.1665 8.42629 9.44862 8.5657 9.86686V9.86686C8.67947 10.2082 8.60582 10.5842 8.37168 10.8573L6.24805 13.3349H8.74909"
+                        stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6.24805 10.0002C6.24805 9.53976 6.6213 9.1665 7.08173 9.1665" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M12.0837 9.1665H12.596C13.0368 9.1665 13.4282 9.44862 13.5677 9.86686V9.86686C13.6814 10.2082 13.6078 10.5842 13.3736 10.8573L11.25 13.3349H13.751"
+                        stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M11.25 10.0002C11.25 9.53976 11.6233 9.1665 12.0837 9.1665" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+
+                  </div>
+                  <input type="text" placeholder="dd/mm/yyyy"
+                    class="datepicker-input bg-white pl-10 w-full px-3 py-[14px] rounded-[12px] border border-[#DCDEDE]  text-[#1B1B1B] !placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Heure de début -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#14201F] mb-[6px]">Heure de début</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="9.99922" cy="10.0002" r="7.50312" stroke="#14201F" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12.8795 10.9597L10 10.0001V4.99805" stroke="#161924" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <input type="text" placeholder="__:__"
+                    class="timepicker-input bg-white pl-10 w-full px-3 py-[14px] rounded-[12px] border border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Date de fin -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#14201F] mb-[6px]">Date de fin</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M6.24692 2.49707V4.99811" stroke="#161924" stroke-width="1.8" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <rect x="2.49609" y="3.74756" width="15.0062" height="13.7557" rx="3" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M7.08173 9.1665H7.59401C8.03488 9.1665 8.42629 9.44862 8.5657 9.86686V9.86686C8.67947 10.2082 8.60582 10.5842 8.37168 10.8573L6.24805 13.3349H8.74909"
+                        stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M6.24805 10.0002C6.24805 9.53976 6.6213 9.1665 7.08173 9.1665" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M12.0837 9.1665H12.596C13.0368 9.1665 13.4282 9.44862 13.5677 9.86686V9.86686C13.6814 10.2082 13.6078 10.5842 13.3736 10.8573L11.25 13.3349H13.751"
+                        stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M11.25 10.0002C11.25 9.53976 11.6233 9.1665 12.0837 9.1665" stroke="#14201F"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <input type="text" placeholder="dd/mm/yyyy"
+                    class="datepicker-input bg-white pl-10 w-full px-3 py-[14px] rounded-[12px] border border-[#DCDEDE]  text-[#1B1B1B] !placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+
+              <!-- Heure de fin -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#14201F] mb-[6px]">Heure de fin</label>
+                <div class="relative">
+                  <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="9.99922" cy="10.0002" r="7.50312" stroke="#14201F" stroke-width="1.5"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M12.8795 10.9597L10 10.0001V4.99805" stroke="#161924" stroke-width="1.8"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+
+                  </div>
+                  <input type="text" placeholder="__:__"
+                    class="timepicker-input bg-white pl-10 w-full px-3 py-[14px] rounded-[12px] border border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-sm">
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Lieu de l'évènement Section -->
+          <div class="bg-[#E9FBFE] rounded-[12px] p-4 border-[1px] border-[#F3F4F4] mb-4">
+            <h3 class="text-lg font-archivo font-semibold text-[#14201F] mb-4 leading-[120%]">Lieu de l’évènement</h3>
+
+            <!-- Type Toggle -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4 mb-4" id="location-type-group">
+              <!-- Physical -->
+              <label
+                class="location-type-option cursor-pointer bg-white rounded-[14px] px-4 py-3 flex items-center gap-3 transition-all border border-transparent"
+                data-selected="false">
+                <input type="radio" name="location-type" value="physical" class="hidden">
+                <div
+                  class="radio-indicator w-5 h-5 rounded-full border border-[#D0D2D2] bg-white shrink-0 transition-all">
+                </div>
+                <span class="font-archivo text-sm font-medium text-[#14201F]">Lieu physique</span>
+              </label>
+
+              <!-- Online -->
+              <label
+                class="location-type-option cursor-pointer bg-white rounded-[14px] px-4 py-3 flex items-center gap-3 transition-all border border-[#0189D5]"
+                data-selected="true">
+                <input type="radio" name="location-type" value="online" class="hidden" checked>
+                <div
+                  class="radio-indicator w-5 h-5 rounded-full border-[5px] border-[#016EAA] bg-white shrink-0 transition-all">
+                </div>
+                <span class="font-archivo text-sm font-medium text-[#14201F]">En ligne</span>
+              </label>
+
+              <!-- Hybrid -->
+              <label
+                class="location-type-option cursor-pointer bg-white rounded-[14px] px-4 py-3 flex items-center gap-3 transition-all border border-transparent"
+                data-selected="false">
+                <input type="radio" name="location-type" value="hybrid" class="hidden">
+                <div
+                  class="radio-indicator w-5 h-5 rounded-full border border-[#D0D2D2] bg-white shrink-0 transition-all">
+                </div>
+                <span class="font-archivo text-sm font-medium text-[#14201F]">Hybride</span>
+              </label>
+            </div>
+
+            <div class="flex flex-col gap-4">
+              <!-- Nom du lieu -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-primary mb-[6px]">Nom du lieu</label>
+                <input type="text" placeholder="Ex: Palais des Congrès"
+                  class="bg-white w-full px-4 py-3 rounded-[12px] border-[1px] border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-base">
+              </div>
+
+              <!-- Pays & Ville -->
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Pays</label>
+                  <input type="text" placeholder="Ex : Pays"
+                    class="bg-white w-full px-4 py-3 rounded-[12px] border-[1px] border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-base">
+                </div>
+                <div>
+                  <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Ville</label>
+                  <input type="text" placeholder="Ex : Douala"
+                    class="bg-white w-full px-4 py-3 rounded-[12px] border-[1px] border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-base">
+                </div>
+              </div>
+
+              <!-- Lien de l’évènement -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Lien de
+                  l’évènement</label>
+                <input type="url" placeholder="https://"
+                  class="bg-white w-full px-4 py-3 rounded-[12px] border-[1px] border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-base">
+              </div>
+              <!-- Adresse complète -->
+              <div>
+                <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Adresse complète</label>
+                <input type="text" placeholder="Ex: Avenue de la Réunification, Bonanjo"
+                  class="bg-white w-full px-4 py-3 rounded-[12px] border-[1px] border-[#DCDEDE]  text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-0 font-archivo text-base">
+              </div>
+            </div>
+          </div>
+          <!-- Points de connexion (Optionnel) -->
+          <div class="bg-white rounded-[12px] p-4 border-[1px] border-[#E8E8E8]">
+            <h3 class="text-xl font-archivo font-semibold text-[#14201F] mb-2 leading-[120%]">Points de connexion
+              (Optionnel)</h3>
+            <p class="text-sm font-archivo font-normal text-[#616161] leading-[150%] mb-4">Sélectionnez des points de
+              connexion existants ou créez-en de nouveaux</p>
+            <div class="flex flex-col gap-4 bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4]">
+              <h4 class="text-base font-archivo font-medium text-[#4F5857] leading-[120%] text-center">Avez-vous un
+                point de
+                connexion ?
+                Vous pouvez l’ajouter ici</h4>
+              <div class="flex lg:flex-row flex-col items-center gap-4 max-w-[616px] mx-auto w-full">
+                <a href="#"
+                  class="min-h-[48px] w-full rounded-[14px] button-v2 text-[#016EAA] font-medium text-base transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+                  <span>Ajouter un point de connexion</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <circle cx="11.9739" cy="11.9734" r="5.52667" stroke="#0189D5" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M11.9753 10.417V13.5337" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M13.5346 11.9753H10.418" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                    <path
+                      d="M4.11875 11.9344C1.96042 9.77608 1.96042 6.27691 4.11875 4.11941C6.27708 1.96191 9.77625 1.96108 11.9338 4.11941"
+                      stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </a>
+                <a href="#"
+                  class="min-h-[48px] w-full rounded-[14px] ovbbtn2 text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                  <span>Créer un point de connexion</span>
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M6.66667 8.33333H4.16667C3.24583 8.33333 2.5 7.5875 2.5 6.66667V4.16667C2.5 3.24583 3.24583 2.5 4.16667 2.5H6.66667C7.5875 2.5 8.33333 3.24583 8.33333 4.16667V6.66667C8.33333 7.5875 7.5875 8.33333 6.66667 8.33333Z"
+                      stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M15.8327 8.33333H13.3327C12.4118 8.33333 11.666 7.5875 11.666 6.66667V4.16667C11.666 3.24583 12.4118 2.5 13.3327 2.5H15.8327C16.7535 2.5 17.4993 3.24583 17.4993 4.16667V6.66667C17.4993 7.5875 16.7535 8.33333 15.8327 8.33333Z"
+                      stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path fill-rule="evenodd" clip-rule="evenodd"
+                      d="M6.66667 17.4998H4.16667C3.24583 17.4998 2.5 16.754 2.5 15.8332V13.3332C2.5 12.4123 3.24583 11.6665 4.16667 11.6665H6.66667C7.5875 11.6665 8.33333 12.4123 8.33333 13.3332V15.8332C8.33333 16.754 7.5875 17.4998 6.66667 17.4998Z"
+                      stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M14.5827 12.5V16.6667" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M16.6667 14.5832H12.5" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+
+
+                </a>
+
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+        <!-- Add Button -->
+        <button
+          class="w-full mt-[10px] border ovwbtn rounded-[16px] py-3 text-[#4F5857] font-archivo font-medium text-base flex items-center justify-center gap-1 hover:bg-gray-100 transition-colors max-w-[372px] mx-auto">
+          <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M9.16732 17.1803L8.70168 17.4121C8.46684 17.529 8.19064 17.5285 7.95622 17.4107L6.67213 16.7657L5.36173 17.4137C5.12724 17.5296 4.85191 17.5287 4.61817 17.4113L3.79317 16.9967C3.51166 16.8552 3.33399 16.5671 3.33398 16.2521V3.74793C3.33399 3.43289 3.51165 3.14478 3.79315 3.00333L4.61815 2.58873C4.85189 2.47127 5.12723 2.47038 5.36172 2.58634L6.67212 3.23433L7.9562 2.58927C8.19063 2.47151 8.46682 2.47101 8.70167 2.58792L10.0007 3.23459L11.2996 2.58792C11.5345 2.47101 11.8107 2.47151 12.0451 2.58927L13.3292 3.23433L14.6396 2.58634C14.8741 2.47038 15.1494 2.47127 15.3831 2.58873L16.2081 3.00333C16.4896 3.14478 16.6673 3.43289 16.6673 3.74793L16.6674 8.75"
+              stroke="#4F5857" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M6.66602 7.49992H13.3327" stroke="#4F5857" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M8.33268 12.4999H6.66602" stroke="#4F5857" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M6.66992 9.99992H10.0033" stroke="#4F5857" stroke-width="1.8" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M13.125 14.1667H15.2083" stroke="#4F5857" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <path d="M14.1667 15.2083V13.125" stroke="#4F5857" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+            <circle cx="14.1673" cy="14.1666" r="3.33333" stroke="#4F5857" stroke-width="1.5" stroke-linecap="round"
+              stroke-linejoin="round" />
+          </svg>
+
+          Ajouter une nouvelle date et lieu
+        </button>
+      </div>
+
+
+      <!-- Footer -->
+      <div class="p-5  flex justify-between items-center ftshadow shrink-0 overflow-x-auto scrollbar-hide gap-4">
+        <a href="#"
+          class="min-h-[40px] rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[130px] shrink-0">
+
+
+          <span>Retour</span>
+        </a>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6687 9.16651V6.29895C16.6687 5.88117 16.5027 5.48049 16.2073 5.18507L13.9808 2.9586C13.6853 2.66309 13.2845 2.49707 12.8666 2.49707H4.16345C3.2426 2.49707 2.49609 3.24357 2.49609 4.16443V15.0023C2.49609 15.9231 3.2426 16.6696 4.16345 16.6696H9.16554"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12.494 2.49707V5.936C12.4938 6.33882 12.1673 6.66533 11.7645 6.66547H7.38767C6.98486 6.66533 6.65835 6.33882 6.6582 5.936V2.49707"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.83015 16.6694V11.9392C5.82366 11.3615 6.26665 10.878 6.84268 10.834H9.99855" stroke="#14201F"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="14.5836" cy="14.5855" r="3.75156" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.7504 14.0029L14.2911 15.4623L13.416 14.5863" stroke="#14201F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+            <span>Enregistrer au brouillon</span>
+          </a>
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Continuer</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.73242 9.98356H16.2241" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2363 4.99023L16.2672 10.0002L11.2363 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="./js/index.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- French Locale -->
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+  <script>
+    // Location type radio selection handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const locationTypeGroup = document.getElementById('location-type-group');
+      if (!locationTypeGroup) return;
+
+      const options = locationTypeGroup.querySelectorAll('.location-type-option');
+
+      options.forEach(option => {
+        option.addEventListener('click', function () {
+          // Update all options
+          options.forEach(opt => {
+            const isSelected = opt === option;
+            const indicator = opt.querySelector('.radio-indicator');
+
+            // Update data attribute
+            opt.dataset.selected = isSelected;
+
+            // Update container border
+            if (isSelected) {
+              opt.classList.remove('border-transparent');
+              opt.classList.add('border-[#0189D5]');
+            } else {
+              opt.classList.remove('border-[#0189D5]');
+              opt.classList.add('border-transparent');
+            }
+
+            // Update radio indicator
+            if (isSelected) {
+              indicator.classList.remove('border', 'border-[#D0D2D2]');
+              indicator.classList.add('border-[5px]', 'border-[#016EAA]');
+            } else {
+              indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
+              indicator.classList.add('border', 'border-[#D0D2D2]');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

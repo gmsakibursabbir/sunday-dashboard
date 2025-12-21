@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ticket évent</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
+
+      <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
+      <h2 class="hidden md:block text-xs font-archivo font-medium text-[#969696] mb-3 leading-[150%]">Créer un évènement
+      </h2>
+
+      <div
+        class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-2 md:gap-1 relative w-full">
+        <!-- Connecting Line Horizontal (Mobile) -->
+        <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
+
+        <!-- Step 1: Active -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
+            5</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            6</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            7</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div
+      class="flex-1 flex flex-col bg-white rounded-[12px] h-full overflow-hidden relative border-[1px] border-[#E8E8E8]">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-center shrink-0">
+        <div>
+          <h1 class="text-xl lg:text-2xl font-archivo font-bold text-[#0B0B0B] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#616161]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Template de ticket -->
+      <div class="flex-1 overflow-y-auto p-4">
+        <div class="max-w-[920px] mx-auto w-full border border-[#E8E8E8] rounded-[12px] p-4">
+          <div class="mb-4">
+            <h2 class="text-xl font-archivo font-semibold text-[#14201F] leading-[150%]">Template de ticket</h2>
+            <p class="font-archivo text-sm text-[#616161] leading-[150%] mt-2">Personnalisez l'apparence de vos tickets
+              avec un template unique</p>
+          </div>
+          <!-- Points de connexion (Optionnel) -->
+          <div
+            class="flex flex-col items-center bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+
+            <div class="flex lg:flex-row flex-col items-center gap-4 max-w-[616px] mx-auto w-full">
+              <a href="#"
+                class="min-h-[48px] w-full rounded-[14px] button-v2 text-[#016EAA] font-medium text-base transition-colors flex items-center justify-center gap-1 cursor-pointer "><svg
+                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.3463 5.345L12.9896 2.98833C12.6771 2.67583 12.253 2.5 11.8113 2.5H5.83464C4.9138 2.5 4.16797 3.24583 4.16797 4.16667V15.8333C4.16797 16.7542 4.9138 17.5 5.83464 17.5H14.168C15.0888 17.5 15.8346 16.7542 15.8346 15.8333V6.52333C15.8346 6.08167 15.6588 5.6575 15.3463 5.345V5.345Z"
+                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M15.8346 6.66667H12.5013C12.0413 6.66667 11.668 6.29333 11.668 5.83333V2.5" stroke="#0189D5"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 9.26676H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 11.6667H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M13.3333 14.0666H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6.77214 9.16675C6.71464 9.16675 6.66797 9.21341 6.66797 9.27091C6.66797 9.32841 6.71464 9.37508 6.77214 9.37508C6.82964 9.37508 6.8763 9.32841 6.8763 9.27091C6.8763 9.21341 6.82964 9.16675 6.77214 9.16675"
+                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6.77214 11.5625C6.71464 11.5625 6.66797 11.6092 6.66797 11.6667C6.66797 11.7242 6.71464 11.7708 6.77214 11.7708C6.82964 11.7708 6.8763 11.7242 6.8763 11.6667C6.8763 11.6092 6.82964 11.5625 6.77214 11.5625"
+                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path
+                    d="M6.77214 13.9583C6.71464 13.9583 6.66797 14.0049 6.66797 14.0624C6.66797 14.1199 6.71464 14.1666 6.77214 14.1666C6.82964 14.1666 6.8763 14.1199 6.8763 14.0624C6.8763 14.0049 6.82964 13.9583 6.77214 13.9583"
+                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <span>Utiliser le template par défaut</span>
+
+              </a>
+              <a href="#"
+                class="min-h-[48px] w-full rounded-[14px] ovbbtn2 text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M15.3463 5.345L12.9896 2.98833C12.6771 2.67583 12.253 2.5 11.8113 2.5H5.83464C4.9138 2.5 4.16797 3.24583 4.16797 4.16667V15.8333C4.16797 16.7542 4.9138 17.5 5.83464 17.5H14.168C15.0888 17.5 15.8346 16.7542 15.8346 15.8333V6.52333C15.8346 6.08167 15.6588 5.6575 15.3463 5.345V5.345Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M15.8346 6.66667H12.5013C12.0413 6.66667 11.668 6.29333 11.668 5.83333V2.5" stroke="white"
+                    stroke-linecap="round" stroke-linejoin="round" />
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M6.66797 15V13.3333L10.2455 9.75585C10.5713 9.43002 11.0988 9.43002 11.4238 9.75585L11.9121 10.2442C12.238 10.57 12.238 11.0975 11.9121 11.4225L8.33464 15H6.66797Z"
+                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M11.668 14.9999H13.3346" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+
+                <span>Choisir un autre template</span>
+
+              </a>
+
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+
+
+      <!-- Footer -->
+      <div class="p-5  flex justify-between items-center ftshadow shrink-0 overflow-x-auto scrollbar-hide gap-4">
+        <a href="#"
+          class="min-h-[40px] rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[130px] shrink-0">
+
+
+          <span>Retour</span>
+        </a>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6687 9.16651V6.29895C16.6687 5.88117 16.5027 5.48049 16.2073 5.18507L13.9808 2.9586C13.6853 2.66309 13.2845 2.49707 12.8666 2.49707H4.16345C3.2426 2.49707 2.49609 3.24357 2.49609 4.16443V15.0023C2.49609 15.9231 3.2426 16.6696 4.16345 16.6696H9.16554"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12.494 2.49707V5.936C12.4938 6.33882 12.1673 6.66533 11.7645 6.66547H7.38767C6.98486 6.66533 6.65835 6.33882 6.6582 5.936V2.49707"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.83015 16.6694V11.9392C5.82366 11.3615 6.26665 10.878 6.84268 10.834H9.99855" stroke="#14201F"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="14.5836" cy="14.5855" r="3.75156" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.7504 14.0029L14.2911 15.4623L13.416 14.5863" stroke="#14201F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+            <span>Enregistrer au brouillon</span>
+          </a>
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Continuer</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.73242 9.98356H16.2241" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2363 4.99023L16.2672 10.0002L11.2363 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="./js/index.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- French Locale -->
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+  <script>
+    // Location type radio selection handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const locationTypeGroup = document.getElementById('location-type-group');
+      if (!locationTypeGroup) return;
+
+      const options = locationTypeGroup.querySelectorAll('.location-type-option');
+
+      options.forEach(option => {
+        option.addEventListener('click', function () {
+          // Update all options
+          options.forEach(opt => {
+            const isSelected = opt === option;
+            const indicator = opt.querySelector('.radio-indicator');
+
+            // Update data attribute
+            opt.dataset.selected = isSelected;
+
+            // Update container border
+            if (isSelected) {
+              opt.classList.remove('border-transparent');
+              opt.classList.add('border-[#0189D5]');
+            } else {
+              opt.classList.remove('border-[#0189D5]');
+              opt.classList.add('border-transparent');
+            }
+
+            // Update radio indicator
+            if (isSelected) {
+              indicator.classList.remove('border', 'border-[#D0D2D2]');
+              indicator.classList.add('border-[5px]', 'border-[#016EAA]');
+            } else {
+              indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
+              indicator.classList.add('border', 'border-[#D0D2D2]');
+            }
+          });
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

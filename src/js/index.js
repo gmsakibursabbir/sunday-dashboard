@@ -739,4 +739,48 @@ class TablePagination {
 // Initialize Pagination on Load
 document.addEventListener("DOMContentLoaded", () => {
   new TablePagination("reservations-table", 10);
+  initFlatpickr();
 });
+
+// Initialize Flatpickr for custom date and time inputs
+function initFlatpickr() {
+  // Date Picker
+  flatpickr(".datepicker-input", {
+    dateFormat: "d/m/Y",
+    allowInput: true,
+    locale: "fr",
+    disableMobile: "true", // Force custom picker even on mobile for consistency
+  });
+
+  // Time Picker
+  flatpickr(".timepicker-input", {
+    enableTime: true,
+    noCalendar: true,
+    dateFormat: "H:i",
+    time_24hr: true,
+    allowInput: true,
+    locale: "fr",
+    disableMobile: "true",
+  });
+
+  // Handle custom icon clicks to open the picker
+  const inputs = document.querySelectorAll(
+    ".datepicker-input, .timepicker-input"
+  );
+  inputs.forEach((input) => {
+    const container = input.closest(".relative");
+    if (container) {
+      const iconWrapper = container.querySelector(".pointer-events-none");
+      if (iconWrapper) {
+        iconWrapper.classList.remove("pointer-events-none");
+        iconWrapper.style.cursor = "pointer";
+        iconWrapper.addEventListener("click", () => {
+          // Open the flatpickr instance associated with the input
+          if (input._flatpickr) {
+            input._flatpickr.open();
+          }
+        });
+      }
+    }
+  });
+}

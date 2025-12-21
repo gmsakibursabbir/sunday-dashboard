@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Information de base</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap"
+    rel="stylesheet">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
+
+      <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
+      <h2 class="hidden md:block text-xs font-archivo font-medium text-[#969696] mb-3 leading-[150%]">Créer un évènement
+      </h2>
+
+      <div
+        class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-2 md:gap-1 relative w-full">
+        <!-- Connecting Line Horizontal (Mobile) -->
+        <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
+
+        <!-- Step 1: Active -->
+        <div
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
+            1</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors  shadowdrop group-hover:text-white">
+            2</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            3</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            4</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            5</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop  group-hover:text-white">
+            6</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop  group-hover:text-white">
+            7</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div
+      class="flex-1 flex flex-col bg-white rounded-[12px] h-full overflow-hidden relative border-[1px] border-[#E8E8E8]">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-center shrink-0">
+        <div>
+          <h1 class="text-xl lg:text-2xl font-archivo font-bold text-[#0B0B0B] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#616161]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Scrollable Form Content -->
+      <div class="flex-1 overflow-y-auto p-4 md:p-8">
+        <div class="max-w-[726px] mx-auto w-full border border-[#E8E8E8] rounded-[12px] p-4">
+          <div class="mb-4">
+            <h2 class="text-xl font-archivo font-semibold text-[#0B0B0B] leading-[120%] mb-2">Informations de base</h2>
+            <p class="text-sm font-archivo text-[#616161] leading-[150%]">Commencez par les informations essentielles de
+              votre évènement</p>
+          </div>
+
+          <!-- Image Upload Section -->
+          <div class="mb-4">
+            <label class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-2">Image de couverture</label>
+            <div class="border border-[#E7E9E9] rounded-[12px] p-4 flex flex-col md:flex-row gap-8 items-start">
+              <!-- Image Placeholder -->
+              <div
+                class="w-full md:w-[163px] md:h-[114px] aspect-[4/3] bg-[#F9FAFA] rounded-[8px] flex items-center justify-center shrink-0 relative overflow-hidden">
+                <!-- Checkerboard pattern simulated with simple background or SVG -->
+                <div
+                  class="absolute inset-0 opacity-100 bg-[url('../images/blank-board.png')] bg-cover bg-center bg-no-repeat">
+
+                </div>
+              </div>
+
+              <!-- Upload Info -->
+              <div class="flex-1">
+                <h3 class="text-base font-Inter font-semibold text-[#14201F] mb-1 leading-[150%]">Télécharger l'image de
+                  couverture
+                </h3>
+                <p class="text-xs font-Inter text-[#5A5C66] mb-[14px] leading-[150%]">
+                  les formats autorisés sont *png, *jpg, jusqu'à 10 Mo avec une taille minimale de 400px par 400px
+                </p>
+                <button
+                  class="px-4 py-2 border border-[#E8E8E9] rounded-[8px] text-sm font-Inter font-medium text-[#14201F] hover:bg-gray-50 transition-colors">
+                  Télécharger l'image
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Event Name -->
+          <div class="mb-4">
+            <label for="event-name" class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Nom de
+              l'évènement</label>
+            <input type="text" id="event-name" placeholder="Ex : Fikri"
+              class="w-full px-4 py-3 rounded-[12px] border border-[#DCDEDE] text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-1 focus:ring-[#0167A0] focus:border-[#0167A0] font-archivo text-sm">
+          </div>
+
+          <!-- Two Columns: Category & Participants -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <!-- Category -->
+            <div class="">
+              <label for="category"
+                class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Catégorie*</label>
+              <div class="relative">
+                <select id="category"
+                  class="w-full px-4 py-3 rounded-[12px] border border-[#DCDEDE] text-[#1B1B1B] bg-white appearance-none focus:outline-none focus:ring-1 focus:ring-[#0167A0] focus:border-[#0167A0] font-archivo text-sm cursor-pointer invalid:text-[#898F8F]">
+                  <option value="" disabled selected class="text-[#898F8F]">Sélectionner</option>
+                  <option value="concert">Concert</option>
+                  <option value="conference">Conférence</option>
+                  <option value="atelier">Atelier</option>
+                </select>
+                <!-- Custom Arrow -->
+                <div class="absolute inset-y-0 right-0 flex items-center px-4 pointer-events-none">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M4 6L8 10L12 6" stroke="#1B1B1B" stroke-width="1.33" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+            </div>
+
+            <!-- Participants -->
+            <div class="">
+              <label for="participants" class="block text-sm font-archivo font-medium text-[#1B1B1B] mb-[6px]">Nombre de
+                places / Participants</label>
+              <input type="number" id="participants" placeholder="Ex: 10"
+                class="w-full px-4 py-3 rounded-[12px] border border-[#DCDEDE] text-[#1B1B1B] placeholder:text-[#898F8F] focus:outline-none focus:ring-1 focus:ring-[#0167A0] focus:border-[#0167A0] font-archivo text-sm">
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Footer -->
+      <div class="p-5  flex justify-between items-center ftshadow shrink-0 overflow-x-auto scrollbar-hide gap-4">
+        <a href="#"
+          class="min-h-[40px] rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[130px] shrink-0">
+
+
+          <span>Retour</span>
+        </a>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6687 9.16651V6.29895C16.6687 5.88117 16.5027 5.48049 16.2073 5.18507L13.9808 2.9586C13.6853 2.66309 13.2845 2.49707 12.8666 2.49707H4.16345C3.2426 2.49707 2.49609 3.24357 2.49609 4.16443V15.0023C2.49609 15.9231 3.2426 16.6696 4.16345 16.6696H9.16554"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12.494 2.49707V5.936C12.4938 6.33882 12.1673 6.66533 11.7645 6.66547H7.38767C6.98486 6.66533 6.65835 6.33882 6.6582 5.936V2.49707"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.83015 16.6694V11.9392C5.82366 11.3615 6.26665 10.878 6.84268 10.834H9.99855" stroke="#14201F"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="14.5836" cy="14.5855" r="3.75156" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.7504 14.0029L14.2911 15.4623L13.416 14.5863" stroke="#14201F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+            <span>Enregistrer au brouillon</span>
+          </a>
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Continuer</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.73242 9.98356H16.2241" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2363 4.99023L16.2672 10.0002L11.2363 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="./js/index.js"></script>
+</body>
+
+</html>
