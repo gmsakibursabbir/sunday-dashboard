@@ -444,3 +444,33 @@ border-radius: 8px;
   background-size: cover;
   width: 100%;
 }
+
+.shadow-cards{
+
+background: #FFFFFF;
+border: 1px solid #E5E7EB;
+box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+border-radius: 14px;
+}
+.revisonbg{
+
+background: linear-gradient(116.94deg, #FAFAFA 28.13%, #D9EDF9 110.43%);
+border: 1px solid #BEDBFF;
+
+}
+
+.participants{
+
+background: linear-gradient(180deg, #FFFFFF 0%, #F6F7F7 100%);
+border-top: 1.5px solid #FFFFFF;
+box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #DCDEDD;
+border-radius: 8px;
+}
+.cgd{
+background: #FFFFFF;
+border: 1px solid #D9EDF9;
+box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+border-radius: 12px;
+height: 100%;
+}
+

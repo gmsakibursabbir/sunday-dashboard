@@ -1,0 +1,905 @@
+<!DOCTYPE html>
+<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Création évènement</title>
+  <!-- facions -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./favicon/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./favicon/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./favicon/favicon-16x16.png" />
+  <link rel="manifest" href="./favicon/site.webmanifest" />
+
+  <!-- google font  -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap"
+    rel="stylesheet">
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+  <!-- custom font  -->
+  <link rel="stylesheet" href="./fonts/stylesheet.css" />
+
+  <link rel="stylesheet" href="./css/style.min.css" />
+  <!-- Quill CSS -->
+  <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+  <style>
+    /* Hide Quill's default toolbar completely */
+    .ql-toolbar.ql-snow {
+      display: none !important;
+    }
+
+    /* Remove Quill container borders */
+    .ql-container.ql-snow {
+      border: none !important;
+      font-family: 'Archivo', sans-serif;
+      font-size: 16px;
+    }
+
+    /* Style the Quill editor area */
+    .ql-editor {
+      padding: 16px !important;
+      min-height: 249px !important;
+      color: #0A0A0A !important;
+    }
+
+    /* Custom placeholder styling */
+    .ql-editor.ql-blank::before {
+      color: #0A0A0A !important;
+      opacity: 0.5 !important;
+      font-style: normal !important;
+      left: 16px !important;
+      right: 16px !important;
+    }
+
+    /* Active button state */
+    .editor-btn.active {
+      background-color: #E5E7EB;
+    }
+
+    .editor-btn.active svg {
+      color: #0589D3;
+    }
+  </style>
+</head>
+
+<body class="bg-[#F9FAFA] h-full flex flex-col">
+
+  <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
+    <!-- Left Sidebar (Stepper) -->
+    <aside
+      class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
+
+      <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
+      <h2 class="hidden md:block text-xs font-archivo font-medium text-[#969696] mb-3 leading-[150%]">Créer un évènement
+      </h2>
+
+      <div
+        class="flex flex-row md:flex-col items-center md:items-stretch justify-between md:justify-start gap-2 md:gap-1 relative w-full">
+        <!-- Connecting Line Horizontal (Mobile) -->
+        <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
+
+        <!-- Step 1: Active -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
+            <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10.2 1.27318L3.82556 7.64L0 3.81955L1.27489 2.54637L3.82556 5.09363L8.92511 0L10.2 1.27318Z"
+                fill="white" />
+            </svg>
+          </div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
+        </div>
+
+        <!-- Step 6 -->
+        <div
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
+            6</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
+        </div>
+
+        <!-- Step 7 -->
+        <div
+          class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
+          <div
+            class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
+            7</div>
+          <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
+        </div>
+      </div>
+    </aside>
+
+    <!-- Right Content Area -->
+    <div
+      class="flex-1 flex flex-col bg-white rounded-[12px] h-full overflow-hidden relative border-[1px] border-[#E8E8E8]">
+      <!-- Header -->
+      <div class="px-8 py-6 border-b border-[#E7E9E9] flex justify-between items-center shrink-0">
+        <div>
+          <h1 class="text-xl lg:text-2xl font-archivo font-bold text-[#0B0B0B] mb-1">Créer un évènement</h1>
+          <p class="text-sm font-archivo text-[#616161]">Formulaire de création</p>
+        </div>
+        <button
+          class="w-8 h-8 rounded-[8px] border-[1px] border-[#E8E8E8] flex justify-center items-center hover:bg-gray-100 transition-colors cursor-pointer">
+          <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M4 4L12 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M12 4L4 12" stroke="#616161" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Point de vente Bonanjo -->
+      <div class="flex-1 overflow-y-auto p-4">
+        <div class="max-w-[726px] mx-auto w-full border border-[#E8E8E8] rounded-[12px] p-4">
+          <div class="mb-4">
+            <h2 class="text-xl font-archivo font-semibold text-[#14201F] leading-[150%]">Description de l’évènement</h2>
+            <p class="font-archivo text-sm text-[#616161] leading-[150%] mt-2">Donnez tous les détails importants sur
+              votre événement</p>
+          </div>
+          <!-- Description -->
+          <div class=" bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4">
+            <h3 class="font-archivo text-[14px] font-medium text-[#14201F] mb-[6px]">Description complète</h3>
+            <div class="bg-[#F9FAFB] border-[1px] border-[#D1D5DC] rounded-[14px]">
+              <!-- tools -->
+              <div
+                class="px-5 py-4 flex items-center gap-1 border-b-[1px] border-[#D1D5DC] bg-[#F9FAFB] rounded-t-[14px]">
+                <!-- bold -->
+                <button type="button" data-command="bold"
+                  class="editor-btn p-2 cursor-pointer group hover:bg-gray-100 rounded transition-colors">
+                  <svg width="10" height="12" viewBox="0 0 10 12" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-[#364153] group-hover:text-[#0589D3]">
+                    <path
+                      d="M0.667969 6.00008H6.66797C7.37521 6.00008 8.05349 6.28103 8.55359 6.78113C9.05368 7.28123 9.33464 7.9595 9.33464 8.66675C9.33464 9.37399 9.05368 10.0523 8.55359 10.5524C8.05349 11.0525 7.37521 11.3334 6.66797 11.3334H1.33464C1.15782 11.3334 0.988255 11.2632 0.863231 11.1382C0.738207 11.0131 0.667969 10.8436 0.667969 10.6667V1.33341C0.667969 1.1566 0.738207 0.987035 0.863231 0.86201C0.988255 0.736986 1.15782 0.666748 1.33464 0.666748H6.0013C6.70855 0.666748 7.38682 0.947699 7.88692 1.4478C8.38702 1.94789 8.66797 2.62617 8.66797 3.33341C8.66797 4.04066 8.38702 4.71894 7.88692 5.21903C7.38682 5.71913 6.70855 6.00008 6.0013 6.00008"
+                      stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <!-- italic -->
+                <button type="button" data-command="italic"
+                  class="editor-btn p-2 cursor-pointer group hover:bg-gray-100 rounded transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-[#364153] group-hover:text-[#0589D3]">
+                    <path d="M12.668 2.6665H6.66797" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M9.33203 13.3335H3.33203" stroke="currentColor" stroke-width="1.33333"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M10 2.66675L6 13.3334" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <!-- line -->
+                <div class="w-[1px] bg-[#D1D5DC] h-5"></div>
+                <!-- text align start -->
+                <button type="button" data-command="justifyLeft"
+                  class="editor-btn p-2 cursor-pointer group hover:bg-gray-100 rounded transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-[#364153] group-hover:text-[#0589D3]">
+                    <path d="M14 3.33325H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M10 8H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M11.3333 12.6667H2" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <!-- list -->
+                <button type="button" data-command="insertUnorderedList"
+                  class="editor-btn p-2 cursor-pointer group hover:bg-gray-100 rounded transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-[#364153] group-hover:text-[#0589D3]">
+                    <path d="M2 3.33325H2.00667" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M2 8H2.00667" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M2 12.6667H2.00667" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M5.33203 3.3335H13.9987" stroke="currentColor" stroke-width="1.33333"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5.33203 8H13.9987" stroke="currentColor" stroke-width="1.33333" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M5.33203 12.6665H13.9987" stroke="currentColor" stroke-width="1.33333"
+                      stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </button>
+                <!-- line -->
+                <div class="w-[1px] bg-[#D1D5DC] h-5"></div>
+                <!-- link -->
+                <button type="button" data-command="createLink"
+                  class="editor-btn p-2 cursor-pointer group hover:bg-gray-100 rounded transition-colors">
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                    class="text-[#364153] group-hover:text-[#0589D3]">
+                    <g clip-path="url(#clip0_1107_50703)">
+                      <path
+                        d="M6.66797 8.66648C6.95427 9.04923 7.31954 9.36594 7.739 9.59511C8.15846 9.82428 8.62231 9.96056 9.09907 9.9947C9.57583 10.0288 10.0544 9.96006 10.5022 9.793C10.95 9.62594 11.3567 9.36453 11.6946 9.02648L13.6946 7.02648C14.3018 6.39781 14.6378 5.5558 14.6302 4.68181C14.6226 3.80782 14.2721 2.97178 13.654 2.35375C13.036 1.73573 12.2 1.38516 11.326 1.37757C10.452 1.36997 9.60998 1.70595 8.9813 2.31315L7.83464 3.45315"
+                        stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M9.33347 7.33332C9.04716 6.95057 8.68189 6.63387 8.26243 6.40469C7.84297 6.17552 7.37913 6.03924 6.90237 6.0051C6.4256 5.97095 5.94707 6.03974 5.49924 6.2068C5.0514 6.37386 4.64472 6.63527 4.3068 6.97332L2.3068 8.97332C1.69961 9.60199 1.36363 10.444 1.37122 11.318C1.37881 12.192 1.72938 13.028 2.3474 13.646C2.96543 14.2641 3.80147 14.6146 4.67546 14.6222C5.54945 14.6298 6.39146 14.2938 7.02013 13.6867L8.16013 12.5467"
+                        stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_1107_50703">
+                        <rect width="16" height="16" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
+              </div>
+              <!-- content (Quill will attach here) -->
+              <div id="quill-editor" class="bg-white rounded-b-[14px]"></div>
+            </div>
+            <p class="text-[#9CA3AF] text-xs mt-2">Minimum 100 caractères recommandés</p>
+          </div>
+          <!-- links -->
+          <div class=" bg-[#FCFAF5] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+            <h3 class="font-archivo text-[16px] font-semibold text-[#0B0B0B] mb-[16px]">Ajouter vos réseaux sociaux à la
+              description de votre évènement <span class="text-sm italic font-normal">(optionnel)</span></h3>
+            <!-- links -->
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <!-- Facebook -->
+              <div class="flex flex-col gap-[6px]">
+                <label class="font-archivo text-sm font-medium text-[#14201F] leading-[150%]">Facebook</label>
+                <input type="text" placeholder="https://facebook.com/event"
+                  class="w-full h-[48px] px-4 bg-white border border-[#DCDEDE] rounded-[12px] text-[#0A0A0A] placeholder:text-[#898F8F] focus:outline-none focus:border-[#0189D5] font-archivo text-base transition-colors">
+              </div>
+
+              <!-- Instagram -->
+              <div class="flex flex-col gap-[6px]">
+                <label class="font-archivo text-sm font-medium text-[#14201F] leading-[150%]">Instagram</label>
+                <input type="text" placeholder="https://instagram.com/event"
+                  class="w-full h-[48px] px-4 bg-white border border-[#DCDEDE] rounded-[12px] text-[#0A0A0A] placeholder:text-[#898F8F] focus:outline-none focus:border-[#0189D5] font-archivo text-base transition-colors">
+              </div>
+
+              <!-- Twitter -->
+              <div class="flex flex-col gap-[6px]">
+                <label class="font-archivo text-sm font-medium text-[#14201F] leading-[150%]">Twitter</label>
+                <input type="text" placeholder="https://twitter.com/event"
+                  class="w-full h-[48px] px-4 bg-white border border-[#DCDEDE] rounded-[12px] text-[#0A0A0A] placeholder:text-[#898F8F] focus:outline-none focus:border-[#0189D5] font-archivo text-base transition-colors">
+              </div>
+
+              <!-- Linkedin -->
+              <div class="flex flex-col gap-[6px]">
+                <label class="font-archivo text-sm font-medium text-[#14201F] leading-[150%]">Linkedin</label>
+                <input type="text" placeholder="https://linkedin.com/event"
+                  class="w-full h-[48px] px-4 bg-white border border-[#DCDEDE] rounded-[12px] text-[#0A0A0A] placeholder:text-[#898F8F] focus:outline-none focus:border-[#0189D5] font-archivo text-base transition-colors">
+              </div>
+            </div>
+          </div>
+          <!-- sponsors -->
+          <div class=" bg-[#E9FBFE] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+            <h3 class="font-archivo text-[16px] font-semibold text-[#0B0B0B] mb-[16px]">Ajouter vos sponsors <span
+                class="text-sm italic font-normal">(optionnel)</span></h3>
+            <!-- images -->
+            <div class="flex flex-row items-center gap-4">
+              <!-- 1 -->
+              <div
+                class="flex flex-row items-center gap-[10px] px-3 py-2 bg-white border-[1px] border-[#E8E8E9] rounded-[12px]">
+                <img src="./images/dummy-image.png" alt="" class="w-[70px] h-[70px]">
+                <div class="flex flex-col justify-between h-full gap-1">
+                  <button
+                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.00144 5.33252V10.6681" stroke="#161924" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M6 7.33335L8.00083 5.33252L10.0017 7.33335" stroke="#161924" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M7.95312 1.99756C11.2682 1.99756 13.9556 4.68497 13.9556 8.00006C13.9556 11.3151 11.2682 14.0026 7.95312 14.0026"
+                        stroke="#161924" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M5.90374 13.6351C5.24579 13.3969 4.63455 13.0455 4.09766 12.5967" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4.09766 3.40367C4.63423 2.95443 5.24555 2.60294 5.90374 2.36523" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M2.04688 6.95851C2.16739 6.26868 2.40827 5.60542 2.7585 4.99902" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M2.04688 9.04102C2.16731 9.73107 2.40819 10.3946 2.7585 11.0012" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Télécharger le logo
+                  </button>
+                  <p class="text-[#5A5C66] font-archivo text-[10px] font-normal leading-[150%] max-w-[144px]">Format
+                    *png, *jpg. 400px par 400px . Taille max 2 Mo, </p>
+                </div>
+              </div>
+              <!-- 2 -->
+              <div
+                class="flex flex-row items-center gap-[10px] px-3 py-2 bg-white border-[1px] border-[#E8E8E9] rounded-[12px]">
+                <img src="./images/dummy-image.png" alt="" class="w-[70px] h-[70px]">
+                <div class="flex flex-col justify-between h-full gap-1">
+                  <button
+                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M8.00144 5.33252V10.6681" stroke="#161924" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M6 7.33335L8.00083 5.33252L10.0017 7.33335" stroke="#161924" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M7.95312 1.99756C11.2682 1.99756 13.9556 4.68497 13.9556 8.00006C13.9556 11.3151 11.2682 14.0026 7.95312 14.0026"
+                        stroke="#161924" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M5.90374 13.6351C5.24579 13.3969 4.63455 13.0455 4.09766 12.5967" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M4.09766 3.40367C4.63423 2.95443 5.24555 2.60294 5.90374 2.36523" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M2.04688 6.95851C2.16739 6.26868 2.40827 5.60542 2.7585 4.99902" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M2.04688 9.04102C2.16731 9.73107 2.40819 10.3946 2.7585 11.0012" stroke="#14201F"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    Télécharger le logo
+                  </button>
+                  <p class="text-[#5A5C66] font-archivo text-[10px] font-normal leading-[150%] max-w-[144px]">Format
+                    *png, *jpg. 400px par 400px . Taille max 2 Mo, </p>
+                </div>
+              </div>
+              <!-- 3 -->
+              <button
+                class="flex flex-row items-center gap-[10px] px-3 py-2 bg-white border-[1px] border-[#E8E8E9] rounded-[12px] w-[86px] h-[86px]">
+                <svg width="56" height="56" viewBox="0 0 56 56" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g filter="url(#filter0_dd_1245_39665)">
+                    <mask id="path-1-inside-1_1245_39665" fill="white">
+                      <path
+                        d="M4 24.4C4 16.5593 4 12.6389 5.52591 9.64413C6.86814 7.00986 9.00986 4.86814 11.6441 3.52591C14.6389 2 18.5593 2 26.4 2H29.6C37.4407 2 41.3611 2 44.3559 3.52591C46.9901 4.86814 49.1319 7.00986 50.4741 9.64413C52 12.6389 52 16.5593 52 24.4V27.6C52 35.4407 52 39.3611 50.4741 42.3559C49.1319 44.9901 46.9901 47.1319 44.3559 48.4741C41.3611 50 37.4407 50 29.6 50H26.4C18.5593 50 14.6389 50 11.6441 48.4741C9.00986 47.1319 6.86814 44.9901 5.52591 42.3559C4 39.3611 4 35.4407 4 27.6V24.4Z" />
+                    </mask>
+                    <path
+                      d="M4 24.4C4 16.5593 4 12.6389 5.52591 9.64413C6.86814 7.00986 9.00986 4.86814 11.6441 3.52591C14.6389 2 18.5593 2 26.4 2H29.6C37.4407 2 41.3611 2 44.3559 3.52591C46.9901 4.86814 49.1319 7.00986 50.4741 9.64413C52 12.6389 52 16.5593 52 24.4V27.6C52 35.4407 52 39.3611 50.4741 42.3559C49.1319 44.9901 46.9901 47.1319 44.3559 48.4741C41.3611 50 37.4407 50 29.6 50H26.4C18.5593 50 14.6389 50 11.6441 48.4741C9.00986 47.1319 6.86814 44.9901 5.52591 42.3559C4 39.3611 4 35.4407 4 27.6V24.4Z"
+                      fill="url(#paint0_linear_1245_39665)" />
+                    <path
+                      d="M4 16C4 7.43959 10.9396 0.5 19.5 0.5H36.5C45.0604 0.5 52 7.43959 52 16C52 9.09644 45.732 3.5 38 3.5H18C10.268 3.5 4 9.09644 4 16ZM52 50H4H52ZM4 50V2V50ZM52 2V50V2Z"
+                      fill="white" fill-opacity="0.25" mask="url(#path-1-inside-1_1245_39665)" />
+                    <path d="M22.168 26H33.8346" stroke="#14201F" stroke-width="1.25" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                    <path d="M28 20.1665V31.8332" stroke="#14201F" stroke-width="1.25" stroke-linecap="round"
+                      stroke-linejoin="round" />
+                  </g>
+                  <defs>
+                    <filter id="filter0_dd_1245_39665" x="0" y="0" width="56" height="56" filterUnits="userSpaceOnUse"
+                      color-interpolation-filters="sRGB">
+                      <feFlood flood-opacity="0" result="BackgroundImageFix" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feMorphology radius="1" operator="dilate" in="SourceAlpha"
+                        result="effect1_dropShadow_1245_39665" />
+                      <feOffset />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix type="matrix"
+                        values="0 0 0 0 0.862745 0 0 0 0 0.870588 0 0 0 0 0.866667 0 0 0 1 0" />
+                      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1245_39665" />
+                      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
+                        result="hardAlpha" />
+                      <feOffset dy="2" />
+                      <feGaussianBlur stdDeviation="2" />
+                      <feComposite in2="hardAlpha" operator="out" />
+                      <feColorMatrix type="matrix"
+                        values="0 0 0 0 0.777227 0 0 0 0 0.821815 0 0 0 0 0.813558 0 0 0 0.15 0" />
+                      <feBlend mode="normal" in2="effect1_dropShadow_1245_39665"
+                        result="effect2_dropShadow_1245_39665" />
+                      <feBlend mode="normal" in="SourceGraphic" in2="effect2_dropShadow_1245_39665" result="shape" />
+                    </filter>
+                    <linearGradient id="paint0_linear_1245_39665" x1="28" y1="2" x2="28" y2="50"
+                      gradientUnits="userSpaceOnUse">
+                      <stop stop-color="#F6F7F7" />
+                      <stop offset="1" stop-color="#EAEBEB" />
+                    </linearGradient>
+                  </defs>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <!-- sponsors -->
+          <div class=" bg-white p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+            <h3 class="font-archivo text-[14px] font-medium text-[#0B0B0B] mb-[16px]">Souhaitez vous rendre votre
+              évènement public ?</h3>
+            <!-- images -->
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-4">
+              <!-- Public Option (Default Selected) -->
+              <div
+                class="event-privacy-option group cursor-pointer relative p-4 bg-white border border-[#B0DAF2] rounded-[14px] hover:border-[#0189D5] transition-all"
+                data-value="public">
+                <div class="flex flex-row justify-between items-start mb-4">
+                  <!-- Icon -->
+                  <div class="flex flex-row justify-center items-center gap-3">
+                    <div class="">
+                      <img src="./images/icon-users.png" alt="" class="w-[48px] h-[48px]">
+                    </div>
+                    <div class="mt-1">
+                      <h3 class="text-[#0B0B0B] font-archivo text-lg font-semibold">Public</h3>
+                      <div class="flex flex-row items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M14.0039 8C14.0039 4.68605 11.3178 2 8.00391 2C4.68996 2 2.00391 4.68605 2.00391 8C2.00391 11.3133 4.68996 14 8.00391 14C11.3178 14 14.0039 11.3133 14.0039 8Z"
+                            stroke="#017BC0" stroke-width="1.25769" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.69141 8.0002L7.2313 9.5394L10.3098 6.46094" stroke="#017BC0"
+                            stroke-width="1.25769" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span class="font-archivo text-sm text-[#616161] ml-3">Accessible à tous</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="radio-indicator w-5 h-5 rounded-full border border-[#016EAA] bg-white transition-all">
+                  </div>
+                </div>
+
+                <!-- Description with exact colors/font -->
+                <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                  En choisissant l'option Public, votre événement sera mis en avant sur notre fil d'actualité et les
+                  billets seront disponibles à l'achat en ligne. Cela permettra de maximiser la visibilité de votre
+                  événement et d'augmenter les ventes.
+                </p>
+              </div>
+
+              <!-- Private Option -->
+              <div
+                class="event-privacy-option group cursor-pointer relative p-4 bg-white border border-[#B0DAF2] rounded-[14px] hover:border-[#0189D5] transition-all"
+                data-value="private">
+                <div class="flex flex-row justify-between items-start mb-4">
+                  <!-- Icon -->
+                  <div class="flex flex-row justify-center items-center gap-3">
+                    <div class="">
+                      <img src="./images/icon-phone.png" alt="" class="w-[48px] h-[48px]">
+                    </div>
+                    <div class="mt-1">
+                      <h3 class="text-[#0B0B0B] font-archivo text-lg font-semibold">Privé</h3>
+                      <div class="flex flex-row items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path
+                            d="M14.0039 8C14.0039 4.68605 11.3178 2 8.00391 2C4.68996 2 2.00391 4.68605 2.00391 8C2.00391 11.3133 4.68996 14 8.00391 14C11.3178 14 14.0039 11.3133 14.0039 8Z"
+                            stroke="#017BC0" stroke-width="1.25769" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M5.69141 8.0002L7.2313 9.5394L10.3098 6.46094" stroke="#017BC0"
+                            stroke-width="1.25769" stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span class="font-archivo text-sm text-[#616161] ml-3">Sur invitation uniquement</span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="radio-indicator w-5 h-5 rounded-full border border-[#016EAA] bg-white transition-all">
+                  </div>
+                </div>
+
+                <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                  En choisissant l'option Privé, votre événement ne sera pas affiché publiquement sur notre plateforme
+                  ni
+                  sur notre fil d'actualité. La réservation des billets se fera de manière confidentielle via des canaux
+                  dédiés. Idéal pour des événements exclusifs et privés.
+                </p>
+              </div>
+            </div>
+            <!-- checks -->
+            <!-- Checkbox Options Container -->
+            <div class="flex flex-col mt-6">
+
+              <!-- Remboursement Option -->
+              <div class="event-checkbox-option group cursor-pointer mb-6" data-checked="true">
+                <h3 class="font-archivo text-[14px] font-medium text-[#14201F] mb-[6px]">Remboursement</h3>
+                <div
+                  class="p-4 bg-white border border-[#B3E5FC] rounded-[14px] flex flex-row gap-3 transition-colors hover:border-[#0189D5]">
+                  <!-- Checkbox Icon -->
+                  <div class="checkbox-icon flex-shrink-0">
+                    <!-- Icon will be rendered by JS based on state, but default is Checked -->
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                      <circle cx="8" cy="8" r="8" fill="#0189D5" />
+                      <path d="M4.5 8L6.5 10L11.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                  <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                    Remboursement autorisé 48H après achat du billet; Dans ce cas, le participant peut annuler avant 48H
+                    son billet; passé ce délai les fonds sont comptabilisés que ce soit pour un partenariat ou non et
+                    disponibles dans la caisse organisateur.
+                  </p>
+                </div>
+              </div>
+
+              <!-- File d'attente Option -->
+              <div class="event-checkbox-option group cursor-pointer mb-6" data-checked="false">
+                <h3 class="font-archivo text-[14px] font-medium text-[#14201F] mb-[6px]">File d’attente</h3>
+                <div
+                  class="p-4 bg-white border border-[#B3E5FC] rounded-[14px] flex flex-row gap-3 transition-colors hover:border-[#0189D5]">
+                  <!-- Checkbox Icon -->
+                  <div class="checkbox-icon flex-shrink-0">
+                    <!-- Default Unchecked -->
+                    <div class="w-4 h-4 rounded-full border border-[#D1D5DB] bg-white"></div>
+                  </div>
+                  <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                    Permet aux participants de s'inscrire même lorsque l'évènement est complet. Ils sont ajoutés à une
+                    liste d'attente et reçoivent une notification lorsque des places seront disponibles. Cette option
+                    vous aide à mesurer l'intérêt pour votre évènement au-delà des places disponibles.
+                  </p>
+                </div>
+              </div>
+              <!-- Conditions générales d’utilisation-->
+              <div class="event-checkbox-option group cursor-pointer mb-[6px]" data-checked="false">
+                <h3 class="font-archivo text-[14px] font-medium text-[#14201F] mb-[6px]">Conditions générales
+                  d’utilisation</h3>
+                <div
+                  class="p-4 bg-white border border-[#B3E5FC] rounded-[14px] flex flex-row gap-3 transition-colors hover:border-[#0189D5]">
+                  <!-- Checkbox Icon -->
+                  <div class="checkbox-icon flex-shrink-0">
+                    <!-- Default Unchecked -->
+                    <div class="w-4 h-4 rounded-full border border-[#D1D5DB] bg-white"></div>
+                  </div>
+                  <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                    J'accepte les Conditions Générales d'Utilisation (CGU) et les Conditions Générales de Vente (CGV) de
+                    Sunday Events.
+                  </p>
+                </div>
+              </div>
+              <div class="event-checkbox-option group cursor-pointer" data-checked="false">
+
+                <div
+                  class="p-4 bg-white border border-[#B3E5FC] rounded-[14px] flex flex-row gap-3 transition-colors hover:border-[#0189D5]">
+                  <!-- Checkbox Icon -->
+                  <div class="checkbox-icon flex-shrink-0">
+                    <!-- Default Unchecked -->
+                    <div class="w-4 h-4 rounded-full border border-[#D1D5DB] bg-white"></div>
+                  </div>
+                  <p class="font-archivo text-xs text-[#616161] leading-[150%]">
+                    J’autorise Sundays Event à laisser la billeterie ouverte après le début de l’évènement
+                  </p>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+      <!-- Footer -->
+      <div class="p-5  flex justify-between items-center ftshadow shrink-0 overflow-x-auto scrollbar-hide gap-4">
+        <a href="#"
+          class="min-h-[40px] rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer min-w-[130px] shrink-0">
+
+
+          <span>Retour</span>
+        </a>
+
+        <div class="flex items-center gap-4 shrink-0">
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer ">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.6687 9.16651V6.29895C16.6687 5.88117 16.5027 5.48049 16.2073 5.18507L13.9808 2.9586C13.6853 2.66309 13.2845 2.49707 12.8666 2.49707H4.16345C3.2426 2.49707 2.49609 3.24357 2.49609 4.16443V15.0023C2.49609 15.9231 3.2426 16.6696 4.16345 16.6696H9.16554"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path
+                d="M12.494 2.49707V5.936C12.4938 6.33882 12.1673 6.66533 11.7645 6.66547H7.38767C6.98486 6.66533 6.65835 6.33882 6.6582 5.936V2.49707"
+                stroke="#14201F" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M5.83015 16.6694V11.9392C5.82366 11.3615 6.26665 10.878 6.84268 10.834H9.99855" stroke="#14201F"
+                stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="14.5836" cy="14.5855" r="3.75156" stroke="#14201F" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M15.7504 14.0029L14.2911 15.4623L13.416 14.5863" stroke="#14201F" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+
+            <span>Enregistrer au brouillon</span>
+          </a>
+          <a href="#"
+            class="min-w-[208px] min-h-[40px] w-full rounded-[12px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
+            <span>Continuer</span>
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M3.73242 9.98356H16.2241" stroke="white" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M11.2363 4.99023L16.2672 10.0002L11.2363 15.0102" stroke="white" stroke-width="1.5"
+                stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </main>
+
+
+
+
+  <script src="./js/index.js"></script>
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <!-- French Locale -->
+  <script src="https://npmcdn.com/flatpickr/dist/l10n/fr.js"></script>
+  <!-- Quill JS -->
+  <script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+  <script>
+    // Quill Rich Text Editor with Custom Toolbar
+    document.addEventListener('DOMContentLoaded', function () {
+      // Initialize Quill with no built-in toolbar
+      const quill = new Quill('#quill-editor', {
+        theme: 'snow',
+        placeholder: 'Décrivez votre événement en détail : programme, intervenants, informations pratiques...',
+        modules: {
+          toolbar: false // We use our custom toolbar
+        }
+      });
+
+      // Blur editor initially (don't auto-focus)
+      quill.blur();
+
+      // Get container elements for click detection
+      const editorContainer = document.querySelector('#quill-editor');
+      const toolbarContainer = document.querySelector('.editor-btn')?.closest('.bg-\\[\\#F9FAFB\\]');
+
+      // Click outside to blur
+      document.addEventListener('click', function (e) {
+        const isInsideEditor = editorContainer && editorContainer.contains(e.target);
+        const isInsideToolbar = toolbarContainer && toolbarContainer.contains(e.target);
+
+        if (!isInsideEditor && !isInsideToolbar) {
+          quill.blur();
+        }
+      });
+
+      // Get all custom toolbar buttons
+      const buttons = document.querySelectorAll('.editor-btn');
+
+      // Map data-command to Quill format actions
+      buttons.forEach(btn => {
+        btn.addEventListener('click', function (e) {
+          e.preventDefault();
+          const command = this.getAttribute('data-command');
+
+          // Focus the editor first
+          quill.focus();
+
+          switch (command) {
+            case 'bold':
+              quill.format('bold', !quill.getFormat().bold);
+              break;
+            case 'italic':
+              quill.format('italic', !quill.getFormat().italic);
+              break;
+            case 'justifyLeft':
+              quill.format('align', false); // Remove alignment = left
+              break;
+            case 'insertUnorderedList':
+              const currentList = quill.getFormat().list;
+              quill.format('list', currentList === 'bullet' ? false : 'bullet');
+              break;
+            case 'createLink':
+              const format = quill.getFormat();
+              const existingLink = format.link;
+
+              if (existingLink) {
+                // Link already exists - offer to edit or remove
+                const action = prompt('Lien actuel: ' + existingLink + '\n\nEntrez une nouvelle URL ou laissez vide pour supprimer:', existingLink);
+                if (action === null) {
+                  // User cancelled
+                  break;
+                } else if (action.trim() === '') {
+                  // Remove link
+                  quill.format('link', false);
+                } else {
+                  // Update link
+                  quill.format('link', action);
+                }
+              } else {
+                // No existing link - create new one
+                const range = quill.getSelection();
+                if (range && range.length > 0) {
+                  const url = prompt('Entrez l\'URL:', 'http://');
+                  if (url) {
+                    quill.format('link', url);
+                  }
+                } else {
+                  alert('Sélectionnez du texte pour créer un lien.');
+                }
+              }
+              break;
+          }
+
+          // Update button active states
+          updateButtonStates();
+        });
+      });
+
+      // Update active states based on current format
+      function updateButtonStates() {
+        const format = quill.getFormat();
+        buttons.forEach(btn => {
+          const command = btn.getAttribute('data-command');
+          let isActive = false;
+
+          switch (command) {
+            case 'bold':
+              isActive = format.bold;
+              break;
+            case 'italic':
+              isActive = format.italic;
+              break;
+            case 'insertUnorderedList':
+              isActive = format.list === 'bullet';
+              break;
+          }
+
+          if (isActive) {
+            btn.classList.add('active');
+          } else {
+            btn.classList.remove('active');
+          }
+        });
+      }
+
+      // Listen for selection changes to update button states
+      quill.on('selection-change', function () {
+        updateButtonStates();
+      });
+
+      quill.on('text-change', function () {
+        updateButtonStates();
+      });
+    });
+
+    // Location type radio selection handler
+    document.addEventListener('DOMContentLoaded', function () {
+      const locationTypeGroup = document.getElementById('location-type-group');
+      if (!locationTypeGroup) return;
+
+      const options = locationTypeGroup.querySelectorAll('.location-type-option');
+
+      options.forEach(option => {
+        option.addEventListener('click', function () {
+          // Update all options
+          options.forEach(opt => {
+            const isSelected = opt === option;
+            const indicator = opt.querySelector('.radio-indicator');
+
+            // Update data attribute
+            opt.dataset.selected = isSelected;
+
+            // Update container border
+            if (isSelected) {
+              opt.classList.remove('border-transparent');
+              opt.classList.add('border-[#0189D5]');
+            } else {
+              opt.classList.remove('border-[#0189D5]');
+              opt.classList.add('border-transparent');
+            }
+
+            // Update radio indicator
+            if (isSelected) {
+              indicator.classList.remove('border', 'border-[#D0D2D2]');
+              indicator.classList.add('border-[5px]', 'border-[#016EAA]');
+            } else {
+              indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
+              indicator.classList.add('border', 'border-[#D0D2D2]');
+            }
+          });
+        });
+      });
+    });
+    // Privacy option selection (One must be selected)
+    document.addEventListener('DOMContentLoaded', function () {
+      const privacyOptions = document.querySelectorAll('.event-privacy-option');
+
+      function updatePrivacySelection(selectedOption) {
+        privacyOptions.forEach(opt => {
+          const isSelected = opt === selectedOption;
+          const indicator = opt.querySelector('.radio-indicator');
+
+          if (isSelected) {
+            // Active Styles
+            opt.classList.remove('border-[#B0DAF2]');
+            opt.classList.add('border-[#0189D5]', 'bg-[#F2F9FD]');
+
+            // Radio: Thick border
+            indicator.classList.remove('border');
+            indicator.classList.add('border-[6px]');
+          } else {
+            // Inactive Styles
+            opt.classList.remove('border-[#0189D5]', 'bg-[#F2F9FD]');
+            opt.classList.add('border-[#B0DAF2]');
+
+            // Radio: Thin border
+            indicator.classList.remove('border-[6px]');
+            indicator.classList.add('border');
+          }
+        });
+      }
+
+      privacyOptions.forEach(option => {
+        option.addEventListener('click', function () {
+          updatePrivacySelection(this);
+        });
+      });
+
+      // Initialize default
+      if (privacyOptions.length > 0) {
+        // Select 'public' by default if no attribute set
+        const defaultPublic = document.querySelector('.event-privacy-option[data-value="public"]');
+        updatePrivacySelection(defaultPublic || privacyOptions[0]);
+      }
+    });
+
+    // Checkbox Options Logic (Independent toggles)
+    document.addEventListener('DOMContentLoaded', function () {
+      const checkboxOptions = document.querySelectorAll('.event-checkbox-option');
+
+      const checkedIcon = `
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+          <circle cx="8" cy="8" r="8" fill="#0189D5"/>
+          <path d="M4.5 8L6.5 10L11.5 5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+      `;
+
+      const uncheckedIcon = `
+        <div class="w-4 h-4 rounded-full border border-[#D1D5DB] bg-white"></div>
+      `;
+
+      function updateCheckboxState(option) {
+        const isChecked = option.dataset.checked === 'true';
+        const iconContainer = option.querySelector('.checkbox-icon');
+
+        // Update Icon
+        iconContainer.innerHTML = isChecked ? checkedIcon : uncheckedIcon;
+      }
+
+      checkboxOptions.forEach(option => {
+        // Initialize state
+        updateCheckboxState(option);
+
+        // Add click listener
+        option.addEventListener('click', function () {
+          const currentState = this.dataset.checked === 'true';
+          this.dataset.checked = !currentState; // Toggle
+          updateCheckboxState(this);
+        });
+      });
+    });
+  </script>
+</body>
+
+</html>

@@ -162,73 +162,306 @@
             </a>
           </div>
           <!-- Fin Template de ticket -->
-          <div class="flex flex-col lg:flex-row items-center justify-between gap-4">
+          <div class="flex flex-col lg:flex-row items-start justify-between gap-4">
             <!-- 1 -->
-            <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4]">
-              <h4 class="text-xl font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Mon historique de templates</h4>
+            <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:w-[45%]">
+              <h4 class="text-base font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Mon historique de
+                templates</h4>
               <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <!-- card 1 -->
-                 <div class="p-3 bg-white rounded-[12px] border-[1px] border-[#E7E9E9]">
-                  <div class="">
-                    
+                <label class="cursor-pointer relative group">
+                  <input type="radio" name="template_selection" class="peer sr-only" value="template_2">
+                  <div
+                    class="p-3 bg-white rounded-[12px] border-[3px] border-[#E7E9E9] peer-checked:border-[#0189D5] peer-checked:bg-[#E9FBFE] hover:border-[#0189D5] hover:bg-[#E9FBFE] flex flex-col items-center transition-all relative">
+
+                    <!-- Radio Indicator -->
+                    <div
+                      class="absolute top-[7px] left-[7px] w-4 h-4 rounded-full bg-[#016EAA] transition-all flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-[#FFFFFF]"></div>
+                    </div>
+
+                    <div class="bg-white border-[3px] border-[#4F5857] rounded-[5px] w-[76px] h-[76px]">
+                    </div>
+                    <div class="w-full max-w-[130px] flex flex-col items-center gap-2 mt-2 mb-[10px]">
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-full h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                    </div>
+                    <h3 class="text-base font-archivo font-medium text-[#364153] leading-[150%] text-center">Template 2
+                    </h3>
+                    <div class="flex flex-row items-center justify-between w-full gap-[10px] mt-[28px]">
+                      <a href="#"
+                        class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                            stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Modifier</span>
+                      </a>
+                      <button type="button"
+                        class="bg-white rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer hover:bg-gray-50"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
                   </div>
-                 </div>
+                </label>
+                <!-- card 2 -->
+                <label class="cursor-pointer relative group">
+                  <input type="radio" name="template_selection" class="peer sr-only" value="template_2">
+                  <div
+                    class="p-3 bg-white rounded-[12px] border-[3px] border-[#E7E9E9] peer-checked:border-[#0189D5] peer-checked:bg-[#E9FBFE] hover:border-[#0189D5] hover:bg-[#E9FBFE] flex flex-col items-center transition-all relative">
+
+                    <!-- Radio Indicator -->
+                    <div
+                      class="absolute top-[7px] left-[7px] w-4 h-4 rounded-full bg-[#016EAA] transition-all flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-[#FFFFFF]"></div>
+                    </div>
+
+                    <div class="bg-white border-[3px] border-[#4F5857] rounded-[5px] w-[76px] h-[76px]">
+                    </div>
+                    <div class="w-full max-w-[130px] flex flex-col items-center gap-2 mt-2 mb-[10px]">
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-full h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                    </div>
+                    <h3 class="text-base font-archivo font-medium text-[#364153] leading-[150%] text-center">Template 2
+                    </h3>
+                    <div class="flex flex-row items-center justify-between w-full gap-[10px] mt-[28px]">
+                      <a href="#"
+                        class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                            stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Modifier</span>
+                      </a>
+                      <button type="button"
+                        class="bg-white rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer hover:bg-gray-50"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </label>
+                <!-- card 3 -->
+                <label class="cursor-pointer relative group">
+                  <input type="radio" name="template_selection" class="peer sr-only" value="template_2">
+                  <div
+                    class="p-3 bg-white rounded-[12px] border-[3px] border-[#E7E9E9] peer-checked:border-[#0189D5] peer-checked:bg-[#E9FBFE] hover:border-[#0189D5] hover:bg-[#E9FBFE] flex flex-col items-center transition-all relative">
+
+                    <!-- Radio Indicator -->
+                    <div
+                      class="absolute top-[7px] left-[7px] w-4 h-4 rounded-full bg-[#016EAA] transition-all flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-[#FFFFFF]"></div>
+                    </div>
+
+                    <div class="bg-white border-[3px] border-[#4F5857] rounded-[5px] w-[76px] h-[76px]">
+                    </div>
+                    <div class="w-full max-w-[130px] flex flex-col items-center gap-2 mt-2 mb-[10px]">
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-full h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                    </div>
+                    <h3 class="text-base font-archivo font-medium text-[#364153] leading-[150%] text-center">Template 2
+                    </h3>
+                    <div class="flex flex-row items-center justify-between w-full gap-[10px] mt-[28px]">
+                      <a href="#"
+                        class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                            stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Modifier</span>
+                      </a>
+                      <button type="button"
+                        class="bg-white rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer hover:bg-gray-50"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </label>
+                <!-- card 4 -->
+                <label class="cursor-pointer relative group">
+                  <input type="radio" name="template_selection" class="peer sr-only" value="template_2">
+                  <div
+                    class="p-3 bg-white rounded-[12px] border-[3px] border-[#E7E9E9] peer-checked:border-[#0189D5] peer-checked:bg-[#E9FBFE] hover:border-[#0189D5] hover:bg-[#E9FBFE] flex flex-col items-center transition-all relative">
+
+                    <!-- Radio Indicator -->
+                    <div
+                      class="absolute top-[7px] left-[7px] w-4 h-4 rounded-full bg-[#016EAA] transition-all flex items-center justify-center">
+                      <div class="w-2 h-2 rounded-full bg-[#FFFFFF]"></div>
+                    </div>
+
+                    <div class="bg-white border-[3px] border-[#4F5857] rounded-[5px] w-[76px] h-[76px]">
+                    </div>
+                    <div class="w-full max-w-[130px] flex flex-col items-center gap-2 mt-2 mb-[10px]">
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-full h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                      <div class="w-[90%] h-[7px] rounded-full bg-[#D1D5DC]"></div>
+                    </div>
+                    <h3 class="text-base font-archivo font-medium text-[#364153] leading-[150%] text-center">Template 2
+                    </h3>
+                    <div class="flex flex-row items-center justify-between w-full gap-[10px] mt-[28px]">
+                      <a href="#"
+                        class="flex-1 min-h-[30px] max-h-[30px] w-full rounded-[8px] ovbbtn2 text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M6.62143 15.5432H3.10547V12.0273C3.10547 11.6669 3.24857 11.3212 3.50347 11.0665L11.8429 2.72705C12.0976 2.4718 12.4435 2.32837 12.8041 2.32837C13.1647 2.32837 13.5105 2.4718 13.7653 2.72705L15.9217 4.88342C16.1769 5.13817 16.3203 5.48399 16.3203 5.84461C16.3203 6.20524 16.1769 6.55105 15.9217 6.80581L7.58223 15.1452C7.32727 15.3998 6.98175 15.543 6.62143 15.5432Z"
+                            stroke="white" stroke-width="1.39865" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M10.1016 4.6604L13.9883 8.54715" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.99219 11.6565L9.32424 9.32446" stroke="white" stroke-width="1.39865"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+
+                        <span>Modifier</span>
+                      </a>
+                      <button type="button"
+                        class="bg-white rounded-[10px] w-[30px] h-[30px] flex items-center justify-center cursor-pointer hover:bg-gray-50"><svg
+                          width="19" height="19" viewBox="0 0 19 19" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path fill-rule="evenodd" clip-rule="evenodd"
+                            d="M12.5403 16.3176H6.10654C5.29299 16.3176 4.61698 15.6897 4.55637 14.8778L3.85938 5.43921H14.7642L14.0905 14.8739C14.0322 15.6874 13.3554 16.3176 12.5403 16.3176V16.3176Z"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M9.32406 8.54736V13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M3.10742 5.43929H15.5399" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path
+                            d="M13.2097 5.43916L12.4226 3.33964C12.1949 2.73278 11.6153 2.33105 10.9672 2.33105H7.68195C7.03391 2.33105 6.45425 2.73278 6.22658 3.33964L5.43945 5.43916"
+                            stroke="#D54033" stroke-width="0.971284" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M11.9892 8.54736L11.655 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M6.65895 8.54736L6.99307 13.2095" stroke="#D54033" stroke-width="0.971284"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </label>
               </div>
             </div>
             <!-- 2 -->
-          </div>
-          <!-- Points de connexion (Optionnel) -->
-          <div
-            class="flex flex-col items-center bg-[#F9FAFA] p-4 rounded-[12px] border-[1px] border-[#F3F4F4] mt-4 gap-4">
+            <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:w-[55%]">
+              <h2 class="text-base font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Aperçu</h4>
 
-            <div class="flex lg:flex-row flex-col items-center gap-4 max-w-[616px] mx-auto w-full">
-              <a href="#"
-                class="min-h-[48px] w-full rounded-[14px] button-v2 text-[#016EAA] font-medium text-base transition-colors flex items-center justify-center gap-1 cursor-pointer "><svg
-                  width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M15.3463 5.345L12.9896 2.98833C12.6771 2.67583 12.253 2.5 11.8113 2.5H5.83464C4.9138 2.5 4.16797 3.24583 4.16797 4.16667V15.8333C4.16797 16.7542 4.9138 17.5 5.83464 17.5H14.168C15.0888 17.5 15.8346 16.7542 15.8346 15.8333V6.52333C15.8346 6.08167 15.6588 5.6575 15.3463 5.345V5.345Z"
-                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M15.8346 6.66667H12.5013C12.0413 6.66667 11.668 6.29333 11.668 5.83333V2.5" stroke="#0189D5"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M13.3333 9.26676H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M13.3333 11.6667H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M13.3333 14.0666H9.375" stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M6.77214 9.16675C6.71464 9.16675 6.66797 9.21341 6.66797 9.27091C6.66797 9.32841 6.71464 9.37508 6.77214 9.37508C6.82964 9.37508 6.8763 9.32841 6.8763 9.27091C6.8763 9.21341 6.82964 9.16675 6.77214 9.16675"
-                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M6.77214 11.5625C6.71464 11.5625 6.66797 11.6092 6.66797 11.6667C6.66797 11.7242 6.71464 11.7708 6.77214 11.7708C6.82964 11.7708 6.8763 11.7242 6.8763 11.6667C6.8763 11.6092 6.82964 11.5625 6.77214 11.5625"
-                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                  <path
-                    d="M6.77214 13.9583C6.71464 13.9583 6.66797 14.0049 6.66797 14.0624C6.66797 14.1199 6.71464 14.1666 6.77214 14.1666C6.82964 14.1666 6.8763 14.1199 6.8763 14.0624C6.8763 14.0049 6.82964 13.9583 6.77214 13.9583"
-                    stroke="#0189D5" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-                <span>Utiliser le template par défaut</span>
-
-              </a>
-              <a href="#"
-                class="min-h-[48px] w-full rounded-[14px] ovbbtn2 text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M15.3463 5.345L12.9896 2.98833C12.6771 2.67583 12.253 2.5 11.8113 2.5H5.83464C4.9138 2.5 4.16797 3.24583 4.16797 4.16667V15.8333C4.16797 16.7542 4.9138 17.5 5.83464 17.5H14.168C15.0888 17.5 15.8346 16.7542 15.8346 15.8333V6.52333C15.8346 6.08167 15.6588 5.6575 15.3463 5.345V5.345Z"
-                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M15.8346 6.66667H12.5013C12.0413 6.66667 11.668 6.29333 11.668 5.83333V2.5" stroke="white"
-                    stroke-linecap="round" stroke-linejoin="round" />
-                  <path fill-rule="evenodd" clip-rule="evenodd"
-                    d="M6.66797 15V13.3333L10.2455 9.75585C10.5713 9.43002 11.0988 9.43002 11.4238 9.75585L11.9121 10.2442C12.238 10.57 12.238 11.0975 11.9121 11.4225L8.33464 15H6.66797Z"
-                    stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                  <path d="M11.668 14.9999H13.3346" stroke="white" stroke-linecap="round" stroke-linejoin="round" />
-                </svg>
-
-                <span>Choisir un autre template</span>
-
-              </a>
-
+                <div class="p-[25px] bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full">
+                  <div class="shadow-cards px-4 py-6 flex flex-col gap-6">
+                    <!-- 1 -->
+                    <div class="flex flex-row items-center gap-3">
+                      <img src="./images/dummy-images.png" class="w-[48px] h-[48px] rounded-[4px]" alt="">
+                      <div>
+                        <h3 class="text-lg font-archivo font-semibold text-[#000000] leading-[150%]">Titre de
+                          l'évènement</h3>
+                        <p class="font-archivo text-xs font-normal text-[#4A5565] mt-1">Organisateur</p>
+                      </div>
+                    </div>
+                    <!-- 2 -->
+                    <div>
+                      <div
+                        class="w-full h-[54px] bg-[#F3F4F6] rounded-[4px] flex justify-center items-center text-[#99A1AF] ">
+                        Bannière sponsors</div>
+                      <div class="pt-3 px-3 lg:pt-[20px] lg:px-[30px]">
+                        <img src="./images/qr-gray.png" class="w-full h-full rounded-[12px]" alt="">
+                      </div>
+                    </div>
+                    <!-- 3 -->
+                    <div>
+                      <h4 class="text-xl font-archivo font-semibold text-[#0189D5] leading-[150%] text-center">
+                        Participant ID</h4>
+                      <div class="text-center mt-1">
+                        <p class="text-sm font-archivo font-normal text-[#4A5565] leading-[150%]">Code: code billet</p>
+                        <p class="text-sm font-archivo font-normal text-[#4A5565] leading-[150%]">Place: N/A</p>
+                        <p class="text-sm font-archivo font-normal text-[#4A5565] leading-[150%]">Forfait: forfait</p>
+                      </div>
+                      <div
+                        class="border-t-[1px] border-b-[1px] border-[#E7E9E9] mt-3 py-3 flex flex-row justify-center items-center gap-3 text-[#012D50] font-archivo font-medium text-sm ">
+                        <span class="inline-block">Date début- heure</span><svg width="20" height="20"
+                          viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <rect width="20" height="20" rx="3.33333" fill="#D9EDF9" />
+                          <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                        <span class="inline-block">Date fin - heure</span>
+                      </div>
+                      <div
+                        class="text-[#012D50] font-archivo font-medium text-sm flex flex-row items-center justify-center gap-1 mt-3">
+                        <svg width="19" height="20" viewBox="0 0 19 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path opacity="0.4"
+                            d="M16.3229 7.04183C15.4916 3.19183 12.3012 1.4585 9.49873 1.4585C9.49873 1.4585 9.49873 1.4585 9.49082 1.4585C6.69623 1.4585 3.4979 3.1835 2.66665 7.0335C1.7404 11.3335 4.24207 14.9752 6.50623 17.2668C7.3454 18.1168 8.42207 18.5418 9.49873 18.5418C10.5754 18.5418 11.6521 18.1168 12.4833 17.2668C14.7475 14.9752 17.2491 11.3418 16.3229 7.04183Z"
+                            fill="#0189D6" />
+                          <path
+                            d="M9.50156 11.2168C10.8788 11.2168 11.9953 10.0415 11.9953 8.5918C11.9953 7.14205 10.8788 5.9668 9.50156 5.9668C8.1243 5.9668 7.00781 7.14205 7.00781 8.5918C7.00781 10.0415 8.1243 11.2168 9.50156 11.2168Z"
+                            fill="#0189D6" />
+                        </svg>
+                        Lieu, ville
+                      </div>
+                    </div>
+                  </div>
+                </div>
             </div>
           </div>
-
-
         </div>
       </div>
 
