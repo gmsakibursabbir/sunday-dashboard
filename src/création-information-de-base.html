@@ -138,11 +138,13 @@
               <!-- Image Placeholder -->
               <div
                 class="w-full md:w-[163px] md:h-[114px] aspect-[4/3] bg-[#F9FAFA] rounded-[8px] flex items-center justify-center shrink-0 relative overflow-hidden">
-                <!-- Checkerboard pattern simulated with simple background or SVG -->
-                <div
+                <!-- Default placeholder (shown when no image selected) -->
+                <div id="cover-placeholder"
                   class="absolute inset-0 opacity-100 bg-[url('../images/blank-board.png')] bg-cover bg-center bg-no-repeat">
-
                 </div>
+                <!-- Preview image (hidden by default, shown when image selected) -->
+                <img id="cover-preview" src="" alt="Cover preview"
+                  class="absolute inset-0 w-full h-full object-cover hidden">
               </div>
 
               <!-- Upload Info -->
@@ -153,8 +155,9 @@
                 <p class="text-xs font-Inter text-[#5A5C66] mb-[14px] leading-[150%]">
                   les formats autorisés sont *png, *jpg, jusqu'à 10 Mo avec une taille minimale de 400px par 400px
                 </p>
-                <button
-                  class="px-4 py-2 border border-[#E8E8E9] rounded-[8px] text-sm font-Inter font-medium text-[#14201F] hover:bg-gray-50 transition-colors">
+                <input type="file" id="cover-input" class="hidden" accept="image/png, image/jpeg">
+                <button type="button" onclick="document.getElementById('cover-input').click()"
+                  class="px-4 py-2 border border-[#E8E8E9] rounded-[8px] text-sm font-Inter font-medium text-[#14201F] hover:bg-gray-50 transition-colors cursor-pointer">
                   Télécharger l'image
                 </button>
               </div>
@@ -256,6 +259,45 @@
 
 
   <script src="./js/index.js"></script>
+  <script>
+    // Cover Image Upload and Preview
+    document.addEventListener('DOMContentLoaded', function () {
+      const coverInput = document.getElementById('cover-input');
+      const coverPreview = document.getElementById('cover-preview');
+      const coverPlaceholder = document.getElementById('cover-placeholder');
+
+      if (coverInput && coverPreview && coverPlaceholder) {
+        coverInput.addEventListener('change', function (e) {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          // Validate file type
+          if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+            alert('Veuillez sélectionner une image au format PNG ou JPG.');
+            coverInput.value = '';
+            return;
+          }
+
+          // Validate file size (max 10MB)
+          const maxSize = 10 * 1024 * 1024; // 10MB in bytes
+          if (file.size > maxSize) {
+            alert('La taille du fichier dépasse 10 Mo. Veuillez sélectionner une image plus petite.');
+            coverInput.value = '';
+            return;
+          }
+
+          // Create preview
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            coverPreview.src = event.target.result;
+            coverPreview.classList.remove('hidden');
+            coverPlaceholder.classList.add('hidden');
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+    });
+  </script>
 </body>
 
 </html>

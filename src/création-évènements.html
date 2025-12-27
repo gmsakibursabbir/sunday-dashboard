@@ -322,10 +322,12 @@
               <!-- 1 -->
               <div
                 class="flex flex-row items-center gap-[10px] px-3 py-2 bg-white border-[1px] border-[#E8E8E9] rounded-[12px]">
-                <img src="./images/dummy-image.png" alt="" class="w-[70px] h-[70px]">
+                <img id="sponsor-preview-1" src="./images/dummy-image.png" alt=""
+                  class="w-[70px] h-[70px] rounded-[8px] object-cover">
                 <div class="flex flex-col justify-between h-full gap-1">
-                  <button
-                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium">
+                  <input type="file" id="sponsor-input-1" class="hidden" accept="image/png, image/jpeg">
+                  <button type="button" onclick="document.getElementById('sponsor-input-1').click()"
+                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium cursor-pointer hover:bg-gray-50 transition-colors">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.00144 5.33252V10.6681" stroke="#161924" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -352,10 +354,12 @@
               <!-- 2 -->
               <div
                 class="flex flex-row items-center gap-[10px] px-3 py-2 bg-white border-[1px] border-[#E8E8E9] rounded-[12px]">
-                <img src="./images/dummy-image.png" alt="" class="w-[70px] h-[70px]">
+                <img id="sponsor-preview-2" src="./images/dummy-image.png" alt=""
+                  class="w-[70px] h-[70px] rounded-[8px] object-cover">
                 <div class="flex flex-col justify-between h-full gap-1">
-                  <button
-                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium">
+                  <input type="file" id="sponsor-input-2" class="hidden" accept="image/png, image/jpeg">
+                  <button type="button" onclick="document.getElementById('sponsor-input-2').click()"
+                    class="flex flex-row items-center bg-white border border-[#E8E8E9] rounded-[8px] px-[10px] py-[5px] gap-1 text-[#161924] font-archivo text-[14px] font-medium cursor-pointer hover:bg-gray-50 transition-colors">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <path d="M8.00144 5.33252V10.6681" stroke="#161924" stroke-linecap="round"
                         stroke-linejoin="round" />
@@ -898,6 +902,48 @@
           updateCheckboxState(this);
         });
       });
+    });
+
+    // Sponsor Image Upload and Preview
+    document.addEventListener('DOMContentLoaded', function () {
+      // Handle sponsor image uploads
+      function setupSponsorUpload(inputId, previewId) {
+        const input = document.getElementById(inputId);
+        const preview = document.getElementById(previewId);
+
+        if (!input || !preview) return;
+
+        input.addEventListener('change', function (e) {
+          const file = e.target.files[0];
+          if (!file) return;
+
+          // Validate file type
+          if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+            alert('Veuillez sélectionner une image au format PNG ou JPG.');
+            input.value = '';
+            return;
+          }
+
+          // Validate file size (max 2MB)
+          const maxSize = 2 * 1024 * 1024; // 2MB in bytes
+          if (file.size > maxSize) {
+            alert('La taille du fichier dépasse 2 Mo. Veuillez sélectionner une image plus petite.');
+            input.value = '';
+            return;
+          }
+
+          // Create preview
+          const reader = new FileReader();
+          reader.onload = function (event) {
+            preview.src = event.target.result;
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      // Setup both sponsor upload fields
+      setupSponsorUpload('sponsor-input-1', 'sponsor-preview-1');
+      setupSponsorUpload('sponsor-input-2', 'sponsor-preview-2');
     });
   </script>
 </body>

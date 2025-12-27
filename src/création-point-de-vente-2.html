@@ -247,8 +247,10 @@
         <!-- header -->
         <div class="px-6 py-[38px] flex flex-row justify-between items-center border-b-[1px] border-[#E5E5E5]">
           <div>
-            <h3 class="text-[#0B0B0B] font-archivo font-semibold text-[20px] leading-[120%] mb-2">Ajouter un point de vente existant</h3>
-            <p class="text-[#616161] font-archivo font-medium text-sm leading-[150%]">Sélectionnez parmi les points de vente disponibles</p>
+            <h3 class="text-[#0B0B0B] font-archivo font-semibold text-[20px] leading-[120%] mb-2">Ajouter un point de
+              vente existant</h3>
+            <p class="text-[#616161] font-archivo font-medium text-sm leading-[150%]">Sélectionnez parmi les points de
+              vente disponibles</p>
           </div>
           <!-- close button -->
           <button id="modal-action" class="cursor-pointer p-2">
@@ -277,9 +279,10 @@
         <!-- body -->
         <div class="p-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-
+            <!-- card 1 -->
             <div
-              class="cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
+              class="selectable-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3 transition-colors"
+              data-selected="false">
               <div>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -373,8 +376,10 @@
                 </button>
               </div>
             </div>
+            <!-- card 2 -->
             <div
-              class="cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
+              class="selectable-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3 transition-colors"
+              data-selected="false">
               <div>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -468,8 +473,10 @@
                 </button>
               </div>
             </div>
+            <!-- card 3 -->
             <div
-              class="cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
+              class="selectable-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3 transition-colors"
+              data-selected="false">
               <div>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -563,8 +570,10 @@
                 </button>
               </div>
             </div>
+            <!-- card 4 -->
             <div
-              class="cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3">
+              class="selectable-card cursor-pointer p-[14px] flex flex-row items-start group border-[2px] border-[#E7E9E9] hover:border-[#0189D5] rounded-[14px] bg-[#F9FAFA] gap-3 transition-colors"
+              data-selected="false">
               <div>
                 <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
@@ -726,6 +735,34 @@
               indicator.classList.add('border', 'border-[#D0D2D2]');
             }
           });
+        });
+      });
+    });
+
+    // Point de vente card selection handler (multi-select)
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectableCards = document.querySelectorAll('.selectable-card');
+
+      selectableCards.forEach(card => {
+        card.addEventListener('click', function (e) {
+          // Prevent selection if clicking on the menu button
+          if (e.target.closest('button')) return;
+
+          const isSelected = this.dataset.selected === 'true';
+
+          // Toggle selection state
+          this.dataset.selected = !isSelected;
+
+          // Update visual state
+          if (!isSelected) {
+            // Now selected
+            this.classList.remove('border-[#E7E9E9]');
+            this.classList.add('border-[#0189D5]');
+          } else {
+            // Now unselected
+            this.classList.remove('border-[#0189D5]');
+            this.classList.add('border-[#E7E9E9]');
+          }
         });
       });
     });

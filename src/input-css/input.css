@@ -31,7 +31,7 @@ input[type="password"] {
 .masked-password {
   font-family: "Verdana", sans-serif;
   letter-spacing: 0.125em;
-  color: #adb1b1;
+  color: #1B1B1B;
 }
 
 input::placeholder {
@@ -473,4 +473,28 @@ box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
 border-radius: 12px;
 height: 100%;
 }
-
+.radisbtn{
+width: 108px;
+height: 36px;
+background: linear-gradient(85.55deg, #FFFFFF 6.57%, #FFF1F0 95.8%);
+border: 1.5px solid #FF8075;
+border-radius: 8px;
+font-size: 14px;
+font-family: var(--font-archivo);
+font-weight: 500;
+color: #D54033;
+}
+.blusisbtn{
+display: flex;
+justify-content: center;
+align-items: center;
+width: 89px;
+height: 30px;
+background: #E6F3FB;
+border: 1px solid #0189D5;
+border-radius: 6px;
+font-size: 12px;
+font-family: var(--font-poppins);
+font-weight: 500;
+color: #0189D5;
+}
