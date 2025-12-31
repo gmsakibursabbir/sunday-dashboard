@@ -29,7 +29,7 @@
     <div
       class="flex justify-between items-center px-3 py-4 md:min-w-[240px] md:w-[240px] w-1/2 h-full border-r border-b border-[#E7E9E9]">
       <a href="index.html">
-        <img src="./images/logo.png" alt="logo" class="w-[94px]" />
+        <img src="./images/logos.png" alt="logo" class="w-[94px]" />
       </a>
       <button id="sidebar-toggle" aria-controls="main-sidebar" aria-expanded="true" aria-label="Toggle sidebar"
         class="p-1 bg-transparent border-0 cursor-pointer">
@@ -78,18 +78,16 @@
     </div>
   </header>
   <main class="flex flex-row flex-1 h-full overflow-hidden">
-<aside id="main-sidebar"
+    <aside id="main-sidebar"
       class="sidebar overflow-y-auto [&::-webkit-scrollbar]:hidden [-ms-overflow-style:none] [scrollbar-width:none] flex flex-col justify-between">
       <div class="">
         <!-- single item start  -->
         <div class="p-3 border-b border-[#E7E9E9] space-y-2">
-          <h4 class="font-sfProDisplay uppercase font-medium text-[#ADB1B1] pl-2 text-xs">
-            Main menu
-          </h4>
+
           <ul class="flex flex-col gap-3">
             <li>
-              <a href=""
-                class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
+              <a href="./dashboard.html"
+                class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#6a7271] hover:text-[#0167A0] font-normal hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -139,7 +137,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Évènements</span>
+                  <span onclick="window.location.href = './évènements.html'">Évènements</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -156,15 +154,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 font-medium text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./évènements-ajouter-des-participants.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       évènements</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./évènements-ajouter-des-participants-2.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -172,7 +170,7 @@
             <!-- single link item end  -->
 
             <!-- Tickets start  -->
-            <li class="accordion ">
+            <li class="accordion">
               <button
                 class="accordion-trigger px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg w-full cursor-pointer">
                 <span class="gap-2 flex flex-row items-center">
@@ -194,7 +192,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Tickets</span>
+                  <span onclick="window.location.href = './collecte-récapitulatifs.html'">Tickets</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -211,15 +209,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./collecte-récapitulatifs.html"
+                      class="text-xs leading-2.5 font-semibold text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       templates</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./collecte-récapitulatifs.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -254,7 +252,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Points de vente</span>
+                  <span onclick="window.location.href = './points-de-vente.html'">Points de vente</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -271,15 +269,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./points-de-vente.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       points de vente</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./points-de-vente-2.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -312,7 +310,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Points de connexion</span>
+                  <span onclick="window.location.href = './points-de-connexion.html'">Points de connexion</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -329,15 +327,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./points-de-connexion.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       points de connexion</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./points-de-connexion-2.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -370,7 +368,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Collectes</span>
+                  <span onclick="window.location.href = './collecte-créer-une-collecte.html'">Collectes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -387,19 +385,19 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./collecte-créer-une-collecte-1.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./collecte-créer-une-collecte.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       collectes</a>
                   </li>
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-récapitulatifs-collecte.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Statistiques</a>
                   </li>
                 </ul>
@@ -409,7 +407,7 @@
 
             <!-- Réservations start  -->
             <li>
-              <a href=""
+              <a href="./reservations-liste-des.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -443,7 +441,7 @@
             <!-- single link item end  -->
             <!-- File d’attente start  -->
             <li>
-              <a href=""
+              <a href="./file-dattente-liste-des-reservations.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -498,7 +496,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Cash</span>
+                  <span onclick="window.location.href = './cash.html'">Cash</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -515,15 +513,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Cash
+                    <a href="./cash.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Cash
                       perçu</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Encaisser</a>
+                    <a href="./cash-3.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Encaisser</a>
                   </li>
                 </ul>
               </div>
@@ -550,7 +548,7 @@
                       stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Forfait tarifaire</span>
+                  <span onclick="window.location.href = './mes-forfaits.html'">Forfait tarifaire</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -567,15 +565,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./mes-forfaits.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       forfaits</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Modifier</a>
+                    <a href="./mes-forfaits-2.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Modifier</a>
                   </li>
                 </ul>
               </div>
@@ -583,7 +581,7 @@
             <!-- single link item end  -->
             <!-- single link item start  -->
             <li>
-              <a href=""
+              <a href="./simulateur-de-prix-liste-des-reservations.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -598,7 +596,7 @@
             </li>
             <!-- single link item end  -->
             <!-- Transactions start  -->
-            <li class="accordion">
+            <li class="accordion active">
               <button
                 class="accordion-trigger px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg w-full cursor-pointer">
                 <span class="gap-2 flex flex-row items-center">
@@ -618,7 +616,7 @@
                   </svg>
 
 
-                  <span>Transactions</span>
+                  <span onclick="window.location.href = './transactions-mes-ventes-directes.html'">Transactions</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -631,19 +629,19 @@
               </button>
               <!-- ACCORDION CONTENT -->
               <div
-                class="accordion-content ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
+                class="accordion-content open ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./transactions-mes-ventes-directes.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       évènements</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./transactions-mes-ventes-directes.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -673,7 +671,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Mon profil</span>
+                  <span onclick="window.location.href = './mon-profil.html'">Mon profil</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -690,14 +688,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Consulter/Modifier</a>
+                    <a href="./mon-profil.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Consulter/Modifier</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Changer
+                    <a href="./mon-profil-modifier-le-mot-de-passe.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Changer
                       le mot de passe</a>
                   </li>
                 </ul>
@@ -705,7 +703,7 @@
             </li>
             <!-- single link item end  -->
             <!-- Sous-comptes start  -->
-            <li class="accordion active">
+            <li class="accordion">
               <button
                 class="accordion-trigger px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg w-full cursor-pointer">
                 <span class="gap-2 flex flex-row items-center">
@@ -726,7 +724,7 @@
                       stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Sous-comptes</span>
+                  <span onclick="window.location.href = './sous-comptes-mes-ventes-directes.html'">Sous-comptes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -739,19 +737,19 @@
               </button>
               <!-- ACCORDION CONTENT -->
               <div
-                class="accordion-content open ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
+                class="accordion-content ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./sous-comptes-mes-ventes-directes.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       sous-comptes</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 font-medium text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./sous-comptes-mes-ventes-directes-2.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
               </div>
@@ -789,7 +787,7 @@
       <!-- page title end  -->
       <!-- wrapper start 1 -->
       <div class="bg-white rounded-[16px] p-4 mb-4">
-        <h3 class="text-2xl text-[#14201F] font-archivo font-semibold leading-[120%]">Rôles</h3>
+        <h3 class="text-2xl text-[#14201F] font-archivo font-semibold leading-[120%]">Transactions</h3>
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6 mt-4">
           <!-- Card 1 -->
           <div class="border-[1px] border-[#E8E8E9] rounded-[12px] p-1">
@@ -917,7 +915,7 @@
             <h1 class="text-xl text-[#14201F] font-archivo font-semibold leading-[120%]">Transactions
             </h1>
             <button
-              class="px-4 py-[10px] w-auto rounded-[12px] ovbtn text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer">
+              class="px-4 py-[10px] min-w-[143px] w-auto rounded-[12px] ovbtn text-white font-medium text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer">
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10.0026 3.3501V16.6668" stroke="white" stroke-width="1.5" stroke-linecap="round"
                   stroke-linejoin="round" />

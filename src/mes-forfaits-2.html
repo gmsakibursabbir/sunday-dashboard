@@ -29,7 +29,7 @@
     <div
       class="flex justify-between items-center px-3 py-4 md:min-w-[239px] md:w-[240px] w-1/2 h-[64px] border-b border-[#E7E9E9]">
       <a href="index.html">
-        <img src="./images/logo.png" alt="logo" class="w-[94px]" />
+        <img src="./images/logos.png" alt="logo" class="w-[94px]" />
       </a>
       <button id="sidebar-toggle" aria-controls="main-sidebar" aria-expanded="true" aria-label="Toggle sidebar"
         class="p-1 bg-transparent border-0 cursor-pointer">
@@ -59,13 +59,11 @@
       <div class="">
         <!-- single item start  -->
         <div class="p-3 border-b border-[#E7E9E9] space-y-2">
-          <h4 class="font-sfProDisplay uppercase font-medium text-[#ADB1B1] pl-2 text-xs">
-            Main menu
-          </h4>
+
           <ul class="flex flex-col gap-3">
             <li>
-              <a href=""
-                class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
+              <a href="./dashboard.html"
+                class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#6a7271] hover:text-[#0167A0] font-normal hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd" clip-rule="evenodd"
@@ -115,7 +113,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Évènements</span>
+                  <span onclick="window.location.href = './évènements.html'">Évènements</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -132,13 +130,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Tickets</a>
+                    <a href="./évènements-ajouter-des-participants.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                      évènements</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./évènements-ajouter-des-participants-2.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -169,7 +168,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Tickets</span>
+                  <span onclick="window.location.href = './collecte-récapitulatifs.html'">Tickets</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -186,14 +185,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-récapitulatifs.html"
                       class="text-xs leading-2.5 font-semibold text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       templates</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-récapitulatifs.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -229,7 +228,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Points de vente</span>
+                  <span onclick="window.location.href = './points-de-vente.html'">Points de vente</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -246,14 +245,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./points-de-vente.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       points de vente</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./points-de-vente-2.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -287,7 +286,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Points de connexion</span>
+                  <span onclick="window.location.href = './points-de-connexion.html'">Points de connexion</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -304,14 +303,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./points-de-connexion.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       points de connexion</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./points-de-connexion-2.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -345,7 +344,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Collectes</span>
+                  <span onclick="window.location.href = './collecte-créer-une-collecte.html'">Collectes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -362,19 +361,19 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-créer-une-collecte-1.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-créer-une-collecte.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       collectes</a>
                   </li>
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./collecte-récapitulatifs-collecte.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Statistiques</a>
                   </li>
                 </ul>
@@ -384,7 +383,7 @@
 
             <!-- Réservations start  -->
             <li>
-              <a href=""
+              <a href="./reservations-liste-des.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -418,7 +417,7 @@
             <!-- single link item end  -->
             <!-- File d’attente start  -->
             <li>
-              <a href=""
+              <a href="./file-dattente-liste-des-reservations.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -473,7 +472,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Cash</span>
+                  <span onclick="window.location.href = './cash.html'">Cash</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -490,14 +489,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./cash.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Cash
                       perçu</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./cash-3.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Encaisser</a>
                   </li>
                 </ul>
@@ -505,7 +504,7 @@
             </li>
             <!-- single link item end  -->
             <!-- Forfait tarifaire start  -->
-            <li class="accordion active">
+<li class="accordion active">
               <button
                 class="accordion-trigger px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg w-full cursor-pointer">
                 <span class="gap-2 flex flex-row items-center">
@@ -525,7 +524,7 @@
                       stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Forfait tarifaire</span>
+                  <span onclick="window.location.href = './mes-forfaits.html'">Forfait tarifaire</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -542,15 +541,15 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
+                    <a href="./mes-forfaits.html"
+                      class="text-xs leading-2.5 text-[#666E6D] hover:font-medium hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       forfaits</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
-                      class="text-xs leading-2.5 font-semibold text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
+                    <a href="./mes-forfaits-2.html"
+                      class="text-xs leading-2.5 font-medium text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Modifier</a>
                   </li>
                 </ul>
               </div>
@@ -558,7 +557,7 @@
             <!-- single link item end  -->
             <!-- single link item start  -->
             <li>
-              <a href=""
+              <a href="./simulateur-de-prix-liste-des-reservations.html"
                 class="px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg">
                 <span class="gap-2 flex flex-row items-center">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -593,7 +592,7 @@
                   </svg>
 
 
-                  <span>Transactions</span>
+                  <span onclick="window.location.href = './transactions-mes-ventes-directes.html'">Transactions</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -610,14 +609,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./transactions-mes-ventes-directes.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       évènements</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./transactions-mes-ventes-directes.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -648,7 +647,7 @@
                       stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Mon profil</span>
+                  <span onclick="window.location.href = './mon-profil.html'">Mon profil</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -665,13 +664,13 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./mon-profil.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Consulter/Modifier</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./mon-profil-modifier-le-mot-de-passe.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Changer
                       le mot de passe</a>
                   </li>
@@ -701,7 +700,7 @@
                       stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span>Sous-comptes</span>
+                  <span onclick="window.location.href = './sous-comptes-mes-ventes-directes.html'">Sous-comptes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -718,14 +717,14 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./sous-comptes-mes-ventes-directes.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Mes
                       sous-comptes</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href=""
+                    <a href="./sous-comptes-mes-ventes-directes-2.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer</a>
                   </li>
                 </ul>
@@ -748,168 +747,170 @@
       <div class="bg-white p-4 h-auto max-w-[832px] mx-auto rounded-[12px] mt-2 border-[1px] border-[#E8E8E8]">
         <div class="p-4 border-[1px] border-[#F3F4F4] rounded-[12px] bg-[#F9FAFA]">
           <div class="p-4  rounded-[12px] bg-[#F9FAFA]">
-          <div>
-            <h4 class="text-[#4F5857] font-archivo text-[16px] leading-[150%] mb-3">Créer le forfait</h4>
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
-              <!-- 1 -->
-              <label class="cursor-pointer">
-                <input type="radio" name="package_type" value="free" class="peer sr-only">
-                <div
-                  class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M30 12H6C5.17157 12 4.5 12.6716 4.5 13.5V16.5C4.5 17.3284 5.17157 18 6 18H30C30.8284 18 31.5 17.3284 31.5 16.5V13.5C31.5 12.6716 30.8284 12 30 12Z"
-                      stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M18 12V31.5" stroke="#7E9818" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path
-                      d="M28.5 18V28.5C28.5 29.2956 28.1839 30.0587 27.6213 30.6213C27.0587 31.1839 26.2956 31.5 25.5 31.5H10.5C9.70435 31.5 8.94129 31.1839 8.37868 30.6213C7.81607 30.0587 7.5 29.2956 7.5 28.5V18"
-                      stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M11.25 11.9999C10.2554 11.9999 9.30161 11.6048 8.59835 10.9016C7.89509 10.1983 7.5 9.24449 7.5 8.24992C7.5 7.25536 7.89509 6.30153 8.59835 5.59827C9.30161 4.89501 10.2554 4.49992 11.25 4.49992C12.697 4.47471 14.115 5.17681 15.3191 6.51466C16.5232 7.85252 17.4574 9.76403 18 11.9999C18.5426 9.76403 19.4768 7.85252 20.6809 6.51466C21.885 5.17681 23.303 4.47471 24.75 4.49992C25.7446 4.49992 26.6984 4.89501 27.4017 5.59827C28.1049 6.30153 28.5 7.25536 28.5 8.24992C28.5 9.24449 28.1049 10.1983 27.4017 10.9016C26.6984 11.6048 25.7446 11.9999 24.75 11.9999"
-                      stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Free</h5>
-                </div>
-              </label>
-              <!-- 2 -->
-              <label class="cursor-pointer">
-                <input type="radio" name="package_type" value="standard" class="peer sr-only">
-                <div
-                  class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="17.9998" cy="18.0005" r="13.5056" stroke="#EF9A11" stroke-width="2"
-                      stroke-linecap="round" stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M26.0019 19.2504C24.7587 19.2504 23.7509 18.2427 23.7509 16.9995C23.7509 18.2427 22.7432 19.2504 21.5 19.2504C22.7432 19.2504 23.7509 20.2582 23.7509 21.5014C23.7509 20.2582 24.7587 19.2504 26.0019 19.2504Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M19.9999 12.2478C18.7568 12.2478 17.749 11.24 17.749 9.99683C17.749 11.24 16.7412 12.2478 15.498 12.2478C16.7412 12.2478 17.749 13.2555 17.749 14.4987C17.749 13.2555 18.7568 12.2478 19.9999 12.2478Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M15.9999 22.2514C14.7568 22.2514 13.749 21.2436 13.749 20.0005C13.749 21.2436 12.7412 22.2514 11.498 22.2514C12.7412 22.2514 13.749 23.2592 13.749 24.5024C13.749 23.2592 14.7568 22.2514 15.9999 22.2514Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
+            <div>
+              <h4 class="text-[#4F5857] font-archivo text-[16px] leading-[150%] mb-3">Créer le forfait</h4>
+              <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3">
+                <!-- 1 -->
+                <label class="cursor-pointer">
+                  <input type="radio" name="package_type" value="free" class="peer sr-only">
+                  <div
+                    class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path
+                        d="M30 12H6C5.17157 12 4.5 12.6716 4.5 13.5V16.5C4.5 17.3284 5.17157 18 6 18H30C30.8284 18 31.5 17.3284 31.5 16.5V13.5C31.5 12.6716 30.8284 12 30 12Z"
+                        stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M18 12V31.5" stroke="#7E9818" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path
+                        d="M28.5 18V28.5C28.5 29.2956 28.1839 30.0587 27.6213 30.6213C27.0587 31.1839 26.2956 31.5 25.5 31.5H10.5C9.70435 31.5 8.94129 31.1839 8.37868 30.6213C7.81607 30.0587 7.5 29.2956 7.5 28.5V18"
+                        stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M11.25 11.9999C10.2554 11.9999 9.30161 11.6048 8.59835 10.9016C7.89509 10.1983 7.5 9.24449 7.5 8.24992C7.5 7.25536 7.89509 6.30153 8.59835 5.59827C9.30161 4.89501 10.2554 4.49992 11.25 4.49992C12.697 4.47471 14.115 5.17681 15.3191 6.51466C16.5232 7.85252 17.4574 9.76403 18 11.9999C18.5426 9.76403 19.4768 7.85252 20.6809 6.51466C21.885 5.17681 23.303 4.47471 24.75 4.49992C25.7446 4.49992 26.6984 4.89501 27.4017 5.59827C28.1049 6.30153 28.5 7.25536 28.5 8.24992C28.5 9.24449 28.1049 10.1983 27.4017 10.9016C26.6984 11.6048 25.7446 11.9999 24.75 11.9999"
+                        stroke="#7E9818" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Free</h5>
+                  </div>
+                </label>
+                <!-- 2 -->
+                <label class="cursor-pointer">
+                  <input type="radio" name="package_type" value="standard" class="peer sr-only">
+                  <div
+                    class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="17.9998" cy="18.0005" r="13.5056" stroke="#EF9A11" stroke-width="2"
+                        stroke-linecap="round" stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M26.0019 19.2504C24.7587 19.2504 23.7509 18.2427 23.7509 16.9995C23.7509 18.2427 22.7432 19.2504 21.5 19.2504C22.7432 19.2504 23.7509 20.2582 23.7509 21.5014C23.7509 20.2582 24.7587 19.2504 26.0019 19.2504Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M19.9999 12.2478C18.7568 12.2478 17.749 11.24 17.749 9.99683C17.749 11.24 16.7412 12.2478 15.498 12.2478C16.7412 12.2478 17.749 13.2555 17.749 14.4987C17.749 13.2555 18.7568 12.2478 19.9999 12.2478Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.9999 22.2514C14.7568 22.2514 13.749 21.2436 13.749 20.0005C13.749 21.2436 12.7412 22.2514 11.498 22.2514C12.7412 22.2514 13.749 23.2592 13.749 24.5024C13.749 23.2592 14.7568 22.2514 15.9999 22.2514Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
 
-                  <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Standard</h5>
-                </div>
-              </label>
-              <!-- 3 -->
-              <label class="cursor-pointer">
-                <input type="radio" name="package_type" value="premium" class="peer sr-only">
-                <div
-                  class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M31.5 18V18C31.5 25.4565 25.4565 31.5 18 31.5V31.5C10.5435 31.5 4.5 25.4565 4.5 18V18C4.5 10.5435 10.5435 4.5 18 4.5V4.5C25.4565 4.5 31.5 10.5435 31.5 18Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M19.026 12.0765L18 9L16.974 12.0765C16.6755 12.972 15.972 13.6755 15.0765 13.974L12 15L15.0765 16.026C15.972 16.3245 16.6755 17.028 16.974 17.9235L18 21L19.026 17.9235C19.3245 17.028 20.028 16.3245 20.9235 16.026L24 15L20.9235 13.974C20.0265 13.6755 19.3245 12.9735 19.026 12.0765Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M23.25 21V25.5" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M25.5 23.25H21" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M11.25 20.25V23.25" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M12.75 21.75H9.75" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
+                    <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Standard</h5>
+                  </div>
+                </label>
+                <!-- 3 -->
+                <label class="cursor-pointer">
+                  <input type="radio" name="package_type" value="premium" class="peer sr-only">
+                  <div
+                    class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M31.5 18V18C31.5 25.4565 25.4565 31.5 18 31.5V31.5C10.5435 31.5 4.5 25.4565 4.5 18V18C4.5 10.5435 10.5435 4.5 18 4.5V4.5C25.4565 4.5 31.5 10.5435 31.5 18Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M19.026 12.0765L18 9L16.974 12.0765C16.6755 12.972 15.972 13.6755 15.0765 13.974L12 15L15.0765 16.026C15.972 16.3245 16.6755 17.028 16.974 17.9235L18 21L19.026 17.9235C19.3245 17.028 20.028 16.3245 20.9235 16.026L24 15L20.9235 13.974C20.0265 13.6755 19.3245 12.9735 19.026 12.0765Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M23.25 21V25.5" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M25.5 23.25H21" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M11.25 20.25V23.25" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M12.75 21.75H9.75" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
 
-                  <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Premium</h5>
-                </div>
-              </label>
-              <!-- 4 -->
-              <label class="cursor-pointer">
-                <input type="radio" name="package_type" value="vip" class="peer sr-only">
-                <div
-                  class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M15.6894 24.1997L17.2899 23.3582C17.7354 23.1242 18.2679 23.1242 18.7134 23.3582L20.3139 24.1997C20.8299 24.4712 21.4539 24.4262 21.9249 24.0827L22.5219 23.6492C22.9929 23.3072 23.2284 22.7267 23.1309 22.1537L22.8249 20.3717C22.7394 19.8752 22.9044 19.3697 23.2644 19.0172L24.5589 17.7557C24.9759 17.3492 25.1259 16.7417 24.9459 16.1882L24.7179 15.4862C24.5379 14.9327 24.0594 14.5292 23.4834 14.4452L21.6939 14.1857C21.1959 14.1137 20.7654 13.8002 20.5419 13.3487L19.7409 11.7272C19.4844 11.2052 18.9519 10.8752 18.3699 10.8752H17.6319C17.0499 10.8752 16.5174 11.2052 16.2609 11.7272L15.4614 13.3487C15.2379 13.8002 14.8074 14.1137 14.3094 14.1857L12.5199 14.4452C11.9439 14.5292 11.4654 14.9327 11.2854 15.4862L11.0574 16.1882C10.8774 16.7417 11.0274 17.3492 11.4444 17.7557L12.7389 19.0172C13.0989 19.3682 13.2639 19.8752 13.1784 20.3717L12.8724 22.1537C12.7734 22.7282 13.0104 23.3072 13.4814 23.6492L14.0784 24.0827C14.5494 24.4247 15.1734 24.4697 15.6894 24.1997V24.1997Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path
-                      d="M8.45438 8.45389C13.7269 3.18139 22.2739 3.18139 27.5464 8.45389C32.8189 13.7264 32.8189 22.2734 27.5464 27.5459C22.2739 32.8184 13.7269 32.8184 8.45438 27.5459C3.18187 22.2734 3.18187 13.7264 8.45438 8.45389"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
+                    <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Premium</h5>
+                  </div>
+                </label>
+                <!-- 4 -->
+                <label class="cursor-pointer">
+                  <input type="radio" name="package_type" value="vip" class="peer sr-only">
+                  <div
+                    class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M15.6894 24.1997L17.2899 23.3582C17.7354 23.1242 18.2679 23.1242 18.7134 23.3582L20.3139 24.1997C20.8299 24.4712 21.4539 24.4262 21.9249 24.0827L22.5219 23.6492C22.9929 23.3072 23.2284 22.7267 23.1309 22.1537L22.8249 20.3717C22.7394 19.8752 22.9044 19.3697 23.2644 19.0172L24.5589 17.7557C24.9759 17.3492 25.1259 16.7417 24.9459 16.1882L24.7179 15.4862C24.5379 14.9327 24.0594 14.5292 23.4834 14.4452L21.6939 14.1857C21.1959 14.1137 20.7654 13.8002 20.5419 13.3487L19.7409 11.7272C19.4844 11.2052 18.9519 10.8752 18.3699 10.8752H17.6319C17.0499 10.8752 16.5174 11.2052 16.2609 11.7272L15.4614 13.3487C15.2379 13.8002 14.8074 14.1137 14.3094 14.1857L12.5199 14.4452C11.9439 14.5292 11.4654 14.9327 11.2854 15.4862L11.0574 16.1882C10.8774 16.7417 11.0274 17.3492 11.4444 17.7557L12.7389 19.0172C13.0989 19.3682 13.2639 19.8752 13.1784 20.3717L12.8724 22.1537C12.7734 22.7282 13.0104 23.3072 13.4814 23.6492L14.0784 24.0827C14.5494 24.4247 15.1734 24.4697 15.6894 24.1997V24.1997Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M8.45438 8.45389C13.7269 3.18139 22.2739 3.18139 27.5464 8.45389C32.8189 13.7264 32.8189 22.2734 27.5464 27.5459C22.2739 32.8184 13.7269 32.8184 8.45438 27.5459C3.18187 22.2734 3.18187 13.7264 8.45438 8.45389"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
 
-                  <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">VIP</h5>
-                </div>
-              </label>
-              <!-- 5 -->
-              <label class="cursor-pointer">
-                <input type="radio" name="package_type" value="backstage" class="peer sr-only">
-                <div
-                  class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
-                  <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M8.99664 4.49487C8.99664 7.80996 6.30923 10.4974 2.99414 10.4974C6.30923 10.4974 8.99664 13.1848 8.99664 16.4999C8.99664 13.1848 11.6841 10.4974 14.9991 10.4974C11.6841 10.4974 8.99664 7.80996 8.99664 4.49487Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M25.5031 22.5019C25.5031 18.358 22.1439 14.9987 18 14.9987C22.1439 14.9987 25.5031 11.6395 25.5031 7.49561C25.5031 11.6395 28.8624 14.9987 33.0062 14.9987C28.8624 14.9987 25.5031 18.358 25.5031 22.5019Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M25.5023 22.5024V24.0031" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M25.5023 7.49574V5.99512" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M14.9984 31.5059V33.0065" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M14.9984 21.0016V19.501" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M8.99641 16.4995V18.0001" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path d="M8.99641 2.99414V4.49477" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                    <path fill-rule="evenodd" clip-rule="evenodd"
-                      d="M14.9986 20.2515C14.9986 23.5666 12.3112 26.254 8.99609 26.254C12.3112 26.254 14.9986 28.9414 14.9986 32.2565C14.9986 28.9414 17.686 26.254 21.0011 26.254C17.686 26.254 14.9986 23.5666 14.9986 20.2515Z"
-                      stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                  </svg>
-                  <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Accès Backstage</h5>
-                </div>
-              </label>
-            </div>
-          </div>
-          <form action="" class="grid grid-cols-2 gap-4 mt-[48px]">
-            <div class="col-span-2 lg:col-span-1">
-              <label for="nom"
-                class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Prix</label>
-              <input type="text" placeholder="XAF"
-                class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
-            </div>
-            <div class="col-span-2 lg:col-span-1">
-              <label for="currency"
-                class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Devise</label>
-              <div class="relative">
-                <select name="currency" id="currency" required
-                  class="w-full rounded-[12px] text-primary border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px] invalid:text-[#D0D2D2] focus:outline-none focus:ring-0 appearance-none">
-                  <option value="" selected disabled>Choisir la devise</option>
-                  <option value="XOF" class="text-primary">XOF</option>
-                  <option value="XAF" class="text-primary">XAF</option>
-                  <option value="EUR" class="text-primary">EUR</option>
-                  <option value="USD" class="text-primary">USD</option>
-                </select>
-                <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
-                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 7.5L10 12.5L15 7.5" stroke="#666E6D" stroke-width="1.5" stroke-linecap="round"
-                      stroke-linejoin="round" />
-                  </svg>
-                </div>
+                    <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">VIP</h5>
+                  </div>
+                </label>
+                <!-- 5 -->
+                <label class="cursor-pointer">
+                  <input type="radio" name="package_type" value="backstage" class="peer sr-only">
+                  <div
+                    class="flex flex-col justify-center items-center gap-2 rounded-[10px] bg-white border-[2px] border-[#E7E9E9] hover:bg-[#FEFBEC] hover:border-[#EF9A11] peer-checked:bg-[#FEFBEC] peer-checked:border-[#EF9A11] p-[18px] transition-all h-full">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M8.99664 4.49487C8.99664 7.80996 6.30923 10.4974 2.99414 10.4974C6.30923 10.4974 8.99664 13.1848 8.99664 16.4999C8.99664 13.1848 11.6841 10.4974 14.9991 10.4974C11.6841 10.4974 8.99664 7.80996 8.99664 4.49487Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M25.5031 22.5019C25.5031 18.358 22.1439 14.9987 18 14.9987C22.1439 14.9987 25.5031 11.6395 25.5031 7.49561C25.5031 11.6395 28.8624 14.9987 33.0062 14.9987C28.8624 14.9987 25.5031 18.358 25.5031 22.5019Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path d="M25.5023 22.5024V24.0031" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M25.5023 7.49574V5.99512" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M14.9984 31.5059V33.0065" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M14.9984 21.0016V19.501" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M8.99641 16.4995V18.0001" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M8.99641 2.99414V4.49477" stroke="#EF9A11" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M14.9986 20.2515C14.9986 23.5666 12.3112 26.254 8.99609 26.254C12.3112 26.254 14.9986 28.9414 14.9986 32.2565C14.9986 28.9414 17.686 26.254 21.0011 26.254C17.686 26.254 14.9986 23.5666 14.9986 20.2515Z"
+                        stroke="#EF9A11" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <h5 class="text-[#101828] font-archivo font-medium text-xs text-center">Accès Backstage</h5>
+                  </div>
+                </label>
               </div>
             </div>
-            <div class="col-span-2 lg:col-span-1">
-              <label for="nom"
-                class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Nombre de places (
-                Optionnel)</label>
-              <input type="text" placeholder="Ex : 100"
-                class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
-            </div>
-            <div class="col-span-2 lg:col-span-1">
-              <label for="nom"
-                class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Avantages</label>
-              <input type="text" placeholder="Ex: Accès prioritaire, Boisson offerte..."
-                class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
-            </div>
-          </form>
+            <form action="" class="grid grid-cols-2 gap-4 mt-[48px]">
+              <div class="col-span-2 lg:col-span-1">
+                <label for="nom"
+                  class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Prix</label>
+                <input type="text" placeholder="XAF"
+                  class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
+              </div>
+              <div class="col-span-2 lg:col-span-1">
+                <label for="currency"
+                  class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Devise</label>
+                <div class="relative">
+                  <select name="currency" id="currency" required
+                    class="w-full rounded-[12px] text-primary border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px] invalid:text-[#D0D2D2] focus:outline-none focus:ring-0 appearance-none">
+                    <option value="" selected disabled>Choisir la devise</option>
+                    <option value="XOF" class="text-primary">XOF</option>
+                    <option value="XAF" class="text-primary">XAF</option>
+                    <option value="EUR" class="text-primary">EUR</option>
+                    <option value="USD" class="text-primary">USD</option>
+                  </select>
+                  <div class="absolute inset-y-0 right-0 flex items-center pr-3 pointer-events-none">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 7.5L10 12.5L15 7.5" stroke="#666E6D" stroke-width="1.5" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </div>
+                </div>
+              </div>
+              <div class="col-span-2 lg:col-span-1">
+                <label for="nom"
+                  class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Nombre de places
+                  (
+                  Optionnel)</label>
+                <input type="text" placeholder="Ex : 100"
+                  class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
+              </div>
+              <div class="col-span-2 lg:col-span-1">
+                <label for="nom"
+                  class="text-[#14201F] font-archivo font-medium text-sm leading-[150%] pb-[6px] block">Avantages
+                  (optionnel)</label>
+                <input type="text" placeholder="Ex: Accès prioritaire, Boisson offerte..."
+                  class="w-full rounded-[12px] text-primary placeholder:text-[#898F8F] border-[1px] border-[#DCDEDE] px-3 py-[15px] bg-white min-h-[48px]">
+              </div>
+            </form>
           </div>
         </div>
 
@@ -920,8 +921,8 @@
             <span>Annuler</span>
           </a>
           <button
-            class="w-full max-w-[300px] min-h-[48px] rounded-[12px] ovbtn text-white font-semibold text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">Créer <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-              xmlns="http://www.w3.org/2000/svg">
+            class="w-full max-w-[300px] min-h-[48px] rounded-[12px] ovbtn text-white font-semibold text-sm hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-2 cursor-pointer">Créer
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M3.7334 9.98356H16.2251" stroke="white" stroke-width="1.5" stroke-linecap="round"
                 stroke-linejoin="round" />
               <path d="M11.2354 4.99023L16.2662 10.0002L11.2354 15.0102" stroke="white" stroke-width="1.5"

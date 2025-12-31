@@ -31,7 +31,7 @@ input[type="password"] {
 .masked-password {
   font-family: "Verdana", sans-serif;
   letter-spacing: 0.125em;
-  color: #1B1B1B;
+  color: #1b1b1b;
 }
 
 input::placeholder {
@@ -177,6 +177,9 @@ header {
   border: 1px solid #dadcdb;
   box-shadow: 0px 1px 3px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
 }
+.button-v2:active {
+  background: #dddddd;
+}
 .forget-bg {
   background: #f9fafa;
   border: 1px solid #e7e9e9;
@@ -286,6 +289,9 @@ header {
 .edit-gradient {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
 }
+.edit-gradient:active {
+  background: #e2e2e2;
+}
 .ovbbtn2 {
   background: linear-gradient(
       180deg,
@@ -302,6 +308,9 @@ header {
     linear-gradient(180deg, #f9fafa 0%, #ffffff 100%);
   border: 1px solid #dadddc;
   box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+}
+.ovwbtn:active {
+  background: #dddddd;
 }
 
 /* Custom Flatpickr Overrides */
@@ -387,12 +396,11 @@ input[type="time"]::-webkit-clear-button {
 .shadowdrop {
   box-shadow: 0px 1px 2px rgba(9, 25, 72, 0.08);
 }
-.warningbg{
-
-background: linear-gradient(180deg, #FCFCFC 0%, #FAFAFA 100%);
-border-top: 1px solid #FFFFFF;
-box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
-border-radius: 8px;
+.warningbg {
+  background: linear-gradient(180deg, #fcfcfc 0%, #fafafa 100%);
+  border-top: 1px solid #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.07);
+  border-radius: 8px;
 }
 .billets-one {
   background: linear-gradient(
@@ -445,56 +453,74 @@ border-radius: 8px;
   width: 100%;
 }
 
-.shadow-cards{
-
-background: #FFFFFF;
-border: 1px solid #E5E7EB;
-box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
-border-radius: 14px;
+.shadow-cards {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0px 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border-radius: 14px;
 }
-.revisonbg{
-
-background: linear-gradient(116.94deg, #FAFAFA 28.13%, #D9EDF9 110.43%);
-border: 1px solid #BEDBFF;
-
+.revisonbg {
+  background: linear-gradient(116.94deg, #fafafa 28.13%, #d9edf9 110.43%);
+  border: 1px solid #bedbff;
 }
 
-.participants{
+.participants {
+  background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
+  border-top: 1.5px solid #ffffff;
+  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  border-radius: 8px;
+}
+.cgd {
+  background: #ffffff;
+  border: 1px solid #d9edf9;
+  box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
+  border-radius: 12px;
+  height: 100%;
+}
+.radisbtn {
+  width: 108px;
+  height: 36px;
+  background: linear-gradient(85.55deg, #ffffff 6.57%, #fff1f0 95.8%);
+  border: 1.5px solid #ff8075;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-archivo);
+  font-weight: 500;
+  color: #d54033;
+  cursor: pointer;
+}
+.radisbtn:active {
+  width: 108px;
+  height: 36px;
+  background: #ffc6c2;
+  border: 1.5px solid #ff8075;
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-archivo);
+  font-weight: 500;
+  color: #d54033;
+}
 
-background: linear-gradient(180deg, #FFFFFF 0%, #F6F7F7 100%);
-border-top: 1.5px solid #FFFFFF;
-box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #DCDEDD;
-border-radius: 8px;
+.blusisbtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 89px;
+  height: 30px;
+  background: #e6f3fb;
+  border: 1px solid #0189d5;
+  border-radius: 6px;
+  font-size: 12px;
+  font-family: var(--font-poppins);
+  font-weight: 500;
+  color: #0189d5;
 }
-.cgd{
-background: #FFFFFF;
-border: 1px solid #D9EDF9;
-box-shadow: 0px 1px 2px rgba(10, 13, 20, 0.03);
-border-radius: 12px;
-height: 100%;
+
+.optbtns {
+  background: linear-gradient(180deg, #f6f7f7 0%, #eaebeb 100%);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
 }
-.radisbtn{
-width: 108px;
-height: 36px;
-background: linear-gradient(85.55deg, #FFFFFF 6.57%, #FFF1F0 95.8%);
-border: 1.5px solid #FF8075;
-border-radius: 8px;
-font-size: 14px;
-font-family: var(--font-archivo);
-font-weight: 500;
-color: #D54033;
-}
-.blusisbtn{
-display: flex;
-justify-content: center;
-align-items: center;
-width: 89px;
-height: 30px;
-background: #E6F3FB;
-border: 1px solid #0189D5;
-border-radius: 6px;
-font-size: 12px;
-font-family: var(--font-poppins);
-font-weight: 500;
-color: #0189D5;
+.optbtns:active {
+  background: #cecece;
 }

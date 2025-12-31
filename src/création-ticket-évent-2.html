@@ -28,7 +28,7 @@
 
   <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
     <!-- Left Sidebar (Stepper) -->
-    <aside
+ <aside
       class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
 
       <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
@@ -41,7 +41,8 @@
         <div class="md:hidden absolute top-1/2 left-0 right-0 h-[1px] bg-[#E7E9E9] -translate-y-1/2 z-0"></div>
 
         <!-- Step 1: Active -->
-        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+        <a href="./création-information-de-base.html"
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
             <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -50,10 +51,11 @@
             </svg>
           </div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Information de base</span>
-        </div>
+        </a>
 
         <!-- Step 2 -->
-        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+        <a href="./création-date-et-lieu.html"
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
             <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -62,10 +64,11 @@
             </svg>
           </div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Date et lieu</span>
-        </div>
+        </a>
 
         <!-- Step 3 -->
-        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+        <a href="./création-forfait.html"
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
             <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -74,10 +77,11 @@
             </svg>
           </div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Forfait</span>
-        </div>
+        </a>
 
         <!-- Step 4 -->
-        <div class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
+        <a href="./création-point-de-vente.html"
+          class="flex flex-row items-center gap-[10px] p-0 md:p-2  rounded-full md:rounded-[8px] relative z-20">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#01C159] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none shadowdrop">
             <svg width="11" height="8" viewBox="0 0 11 8" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -86,34 +90,34 @@
             </svg>
           </div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Point de vente (Optionnel)</span>
-        </div>
+        </a>
 
         <!-- Step 5 -->
-        <div
+        <a href="./création-ticket-évent.html"
           class="flex flex-row items-center gap-[10px] p-0 md:p-2 bg-transparent md:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-[#E8E8E8] relative z-20">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-[#0189D5] flex items-center justify-center text-white font-archivo text-xs shrink-0 shadowdrop border-[2px] border-[#F6F6F6] md:border-none">
             5</div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Ticket de l’évènement</span>
-        </div>
+        </a>
 
         <!-- Step 6 -->
-        <div
+        <a href="./création-évènements.html"
           class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
             6</div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Description</span>
-        </div>
+        </a>
 
         <!-- Step 7 -->
-        <div
+        <a href="./création-évènements-9.html"
           class="flex flex-row items-center gap-[10px] group p-0 md:p-2 hover:bg-white rounded-full md:rounded-[8px] border-transparent md:border-[1px] md:border-transparent hover:border-[#E8E8E8] relative z-20 transition-all">
           <div
             class="w-8 h-8 md:w-5 md:h-5 rounded-full bg-white group-hover:bg-[#0189D5] border-[1px] border-[#E7E9E9] flex items-center justify-center text-[#666E6D] font-archivo text-xs shrink-0 group-hover:border-[#0189D5] transition-colors shadowdrop group-hover:text-white">
             7</div>
           <span class="hidden md:block font-archivo text-sm text-[#666E6D]">Révision et publication</span>
-        </div>
+        </a>
       </div>
     </aside>
 
@@ -150,11 +154,11 @@
               <h2 class="text-xl font-archivo font-semibold text-[#14201F] leading-[150%]">Template de ticket</h2>
             </div>
             <!-- Fin Template de ticket -->
-            <div class="p-6">
+            <div class="py-3 px-2 lg:p-6">
               <div
                 class="border-[1px] border-[#E8E8E8]  p-4 rounded-[12px] flex flex-col lg:flex-row items-start justify-between gap-4">
                 <!-- 1 -->
-                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:w-[45%]">
+                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] flex-1 w-full">
                   <div class="flex flex-col gap-4">
                     <!-- Nom du template -->
                     <div>
@@ -247,7 +251,7 @@
                     <!-- Arrière plan -->
                     <div>
                       <label class="block text-sm font-archivo font-medium text-[#14201F] mb-[6px]">Arrière plan</label>
-                      <div class="flex gap-4" id="background-type-group">
+                      <div class="flex flex-wrap gap-4" id="background-type-group">
                         <label
                           class="background-type-option cursor-pointer bg-white px-4 py-3 rounded-[12px] border border-[#0189D5] w-full flex items-center gap-2 transition-colors"
                           data-selected="true">
@@ -343,7 +347,7 @@
                   </div>
                 </div>
                 <!-- 2 -->
-                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:w-[55%]">
+                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:max-w-[472px]">
                   <h2 class="text-base font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Aperçu</h4>
 
                     <div class="p-[10px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#F3F4F4] w-full">
@@ -492,7 +496,104 @@
                     <div class="p-[24px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#E5E7EB] w-full mt-3">
                       <!-- Option 1 tab content -->
                       <div id="preview-vertical-center"
-                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-[6px]">
+                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-4">
+
+                        <!-- Top Image Section -->
+                        <div
+                          class="w-full h-[150px] rounded-[16px] relative bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
+                          <!-- Gradient Overlay -->
+                          <div class="absolute left-0 right-0 h-[56px] bottom-0 rounded-b-[16px]"
+                            style="background: linear-gradient(180deg, rgba(28, 35, 70, 0.0) 0%, rgba(28, 35, 70, 0.6) 100%);">
+                          </div>
+                          <!-- Title -->
+                          <div class="absolute bottom-4 left-3 right-3">
+                            <h3 class="text-[20px] font-semibold text-white leading-[120%]">Titre de l’évènement</h3>
+                          </div>
+                        </div>
+                        <!-- Divider Section with Cutouts -->
+                        <div class="relative w-full h-[30px] flex items-center justify-center">
+                          <!-- Left Cutout -->
+                          <div
+                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                          </div>
+                          <!-- Right Cutout -->
+                          <div
+                            class="absolute right-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                          </div>
+                          <!-- Dotted Line -->
+                          <div class="w-full border-t-[2px] border-dashed border-white mx-7"></div>
+                        </div>
+                        <!-- Middle Section -->
+                        <div class=" py-4 flex flex-col items-center gap-3">
+                          <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
+
+                          <!-- QR Code -->
+                          <div class="w-[194px] h-[194px]">
+                            <img src="./images/qr-scan.svg" alt="QR Code"
+                              class="w-full h-full object-contain mix-blend-multiply">
+                          </div>
+
+                          <!-- Helper Text -->
+                          <p class="text-[12px] text-[#434345] text-center leading-relaxed ">
+                            Présentez votre QR code à l'entrée et profitez de votre évènement
+                          </p>
+                        </div>
+
+                        <!-- Divider Section with Cutouts -->
+                        <div class="relative w-full h-[30px] flex items-center justify-center">
+                          <!-- Left Cutout -->
+                          <div
+                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                          </div>
+                          <!-- Dotted Line -->
+                          <div class="w-full border-t-2 border-dashed border-white "></div>
+                        </div>
+
+                        <!-- Bottom Details Section -->
+                        <div class="flex flex-col gap-2">
+                          <!-- Participant ID -->
+                          <h4 class="text-[16px] font-bold text-[#0089D1]">Participant ID</h4>
+                          <!-- line -->
+                          <div class="border-t-[1px] border-[#ffffff]"></div>
+                          <!-- Grid Info -->
+                          <div class="flex flex-col text-[14px] font-medium text-[#2C3635] ">
+                            <!-- Row 1 -->
+                            <div class="flex flex-row justify-between items-center">
+                              <div class="text-left font-medium">Place : N/A</div>
+                              <div class="text-right font-medium">Forfait : forfait</div>
+                            </div>
+                            <!-- Row 2 (Time) -->
+                            <div class="flex flex-row justify-between items-center mt-1">
+                              <div class=" text-[#2C3635]">Date début - heure</div>
+                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <rect width="20" height="20" rx="3.33333" fill="white" />
+                                <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
+                                  stroke-linecap="round" stroke-linejoin="round" />
+                              </svg>
+                              <div class=" text-[#2C3635]">Date fin - heure</div>
+                            </div>
+                            <!-- Location -->
+                            <div class="flex items-center justify-start gap-1 text-[#2C3635] mt-1">
+                              <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                                xmlns="http://www.w3.org/2000/svg">
+                                <path opacity="0.4"
+                                  d="M16.3229 7.04159C15.4916 3.19159 12.3012 1.45825 9.49873 1.45825C9.49873 1.45825 9.49873 1.45825 9.49082 1.45825C6.69623 1.45825 3.4979 3.18325 2.66665 7.03325C1.7404 11.3333 4.24207 14.9749 6.50623 17.2666C7.3454 18.1166 8.42207 18.5416 9.49873 18.5416C10.5754 18.5416 11.6521 18.1166 12.4833 17.2666C14.7475 14.9749 17.2491 11.3416 16.3229 7.04159Z"
+                                  fill="#0189D6" />
+                                <path
+                                  d="M9.50156 11.2166C10.8788 11.2166 11.9953 10.0413 11.9953 8.59155C11.9953 7.14181 10.8788 5.96655 9.50156 5.96655C8.1243 5.96655 7.00781 7.14181 7.00781 8.59155C7.00781 10.0413 8.1243 11.2166 9.50156 11.2166Z"
+                                  fill="#0189D6" />
+                              </svg>
+
+                              <span class="text-[14px] font-medium">Lieu, ville</span>
+                            </div>
+                          </div>
+                        </div>
+
+                      </div>
+                      <!-- Option 2 tab content -->
+                      <div id="preview-vertical-bottom"
+                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-[6px] hidden">
 
                         <!-- Top Image Section -->
                         <div
@@ -591,106 +692,10 @@
                         </div>
 
                       </div>
-                      <!-- Option 2 tab content -->
-                      <div id="preview-vertical-bottom"
-                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-4 hidden">
 
-                        <!-- Top Image Section -->
-                        <div
-                          class="w-full h-[150px] rounded-[16px] relative bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                          <!-- Gradient Overlay -->
-                          <div class="absolute left-0 right-0 h-[56px] bottom-0 rounded-b-[16px]"
-                            style="background: linear-gradient(180deg, rgba(28, 35, 70, 0.0) 0%, rgba(28, 35, 70, 0.6) 100%);">
-                          </div>
-                          <!-- Title -->
-                          <div class="absolute bottom-4 left-3 right-3">
-                            <h3 class="text-[20px] font-semibold text-white leading-[120%]">Titre de l’évènement</h3>
-                          </div>
-                        </div>
-                        <!-- Divider Section with Cutouts -->
-                        <div class="relative w-full h-[30px] flex items-center justify-center">
-                          <!-- Left Cutout -->
-                          <div
-                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Right Cutout -->
-                          <div
-                            class="absolute right-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Dotted Line -->
-                          <div class="w-full border-t-[2px] border-dashed border-white mx-7"></div>
-                        </div>
-                        <!-- Middle Section -->
-                        <div class=" py-4 flex flex-col items-center gap-3">
-                          <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
-
-                          <!-- QR Code -->
-                          <div class="w-[194px] h-[194px]">
-                            <img src="./images/qr-scan.svg" alt="QR Code"
-                              class="w-full h-full object-contain mix-blend-multiply">
-                          </div>
-
-                          <!-- Helper Text -->
-                          <p class="text-[12px] text-[#434345] text-center leading-relaxed ">
-                            Présentez votre QR code à l'entrée et profitez de votre évènement
-                          </p>
-                        </div>
-
-                        <!-- Divider Section with Cutouts -->
-                        <div class="relative w-full h-[30px] flex items-center justify-center">
-                          <!-- Left Cutout -->
-                          <div
-                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Dotted Line -->
-                          <div class="w-full border-t-2 border-dashed border-white "></div>
-                        </div>
-
-                        <!-- Bottom Details Section -->
-                        <div class="flex flex-col gap-2">
-                          <!-- Participant ID -->
-                          <h4 class="text-[16px] font-bold text-[#0089D1]">Participant ID</h4>
-                          <!-- line -->
-                          <div class="border-t-[1px] border-[#ffffff]"></div>
-                          <!-- Grid Info -->
-                          <div class="flex flex-col text-[14px] font-medium text-[#2C3635] ">
-                            <!-- Row 1 -->
-                            <div class="flex flex-row justify-between items-center">
-                              <div class="text-left font-medium">Place : N/A</div>
-                              <div class="text-right font-medium">Forfait : forfait</div>
-                            </div>
-                            <!-- Row 2 (Time) -->
-                            <div class="flex flex-row justify-between items-center mt-1">
-                              <div class=" text-[#2C3635]">Date début - heure</div>
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="20" height="20" rx="3.33333" fill="white" />
-                                <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
-                                  stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                              <div class=" text-[#2C3635]">Date fin - heure</div>
-                            </div>
-                            <!-- Location -->
-                            <div class="flex items-center justify-start gap-1 text-[#2C3635] mt-1">
-                              <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4"
-                                  d="M16.3229 7.04159C15.4916 3.19159 12.3012 1.45825 9.49873 1.45825C9.49873 1.45825 9.49873 1.45825 9.49082 1.45825C6.69623 1.45825 3.4979 3.18325 2.66665 7.03325C1.7404 11.3333 4.24207 14.9749 6.50623 17.2666C7.3454 18.1166 8.42207 18.5416 9.49873 18.5416C10.5754 18.5416 11.6521 18.1166 12.4833 17.2666C14.7475 14.9749 17.2491 11.3416 16.3229 7.04159Z"
-                                  fill="#0189D6" />
-                                <path
-                                  d="M9.50156 11.2166C10.8788 11.2166 11.9953 10.0413 11.9953 8.59155C11.9953 7.14181 10.8788 5.96655 9.50156 5.96655C8.1243 5.96655 7.00781 7.14181 7.00781 8.59155C7.00781 10.0413 8.1243 11.2166 9.50156 11.2166Z"
-                                  fill="#0189D6" />
-                              </svg>
-
-                              <span class="text-[14px] font-medium">Lieu, ville</span>
-                            </div>
-                          </div>
-                        </div>
-
-                      </div>
                       <!-- Option 3 tab content -->
                       <div id="preview-horizontal" class="hidden">
-                        <div class="w-full  mx-auto h-[163px] flex">
+                        <div class="w-full mx-auto h-[163px] flex">
 
                           <!-- Left Section (Blue Container) -->
                           <div
@@ -781,7 +786,7 @@
             </div>
           </div>
           <div class="mt-4">
-            <a href="#"
+            <a href="./création-évènements.html"
               class="min-h-[40px] mx-auto w-full max-w-[200px] rounded-[12px] ovbbtn2 text-white font-medium text-base hover:bg-[#02a0c1] transition-colors flex items-center justify-center gap-1 cursor-pointer">
               <span>Valider</span>
               <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -810,47 +815,48 @@
   <script>
     // Background type radio selection handler
     document.addEventListener('DOMContentLoaded', function () {
+      // Background type radio selection handler
       const backgroundTypeGroup = document.getElementById('background-type-group');
-      if (!backgroundTypeGroup) return;
+      if (backgroundTypeGroup) {
+        const options = backgroundTypeGroup.querySelectorAll('.background-type-option');
 
-      const options = backgroundTypeGroup.querySelectorAll('.background-type-option');
+        options.forEach(option => {
+          option.addEventListener('click', function () {
+            // Update all options
+            options.forEach(opt => {
+              const isSelected = opt === option;
+              const indicator = opt.querySelector('.radio-indicator');
+              const radioInput = opt.querySelector('input[type="radio"]');
 
-      options.forEach(option => {
-        option.addEventListener('click', function () {
-          // Update all options
-          options.forEach(opt => {
-            const isSelected = opt === option;
-            const indicator = opt.querySelector('.radio-indicator');
-            const radioInput = opt.querySelector('input[type="radio"]');
+              // Update data attribute
+              opt.dataset.selected = isSelected;
 
-            // Update data attribute
-            opt.dataset.selected = isSelected;
+              // Check the radio input
+              if (isSelected && radioInput) {
+                radioInput.checked = true;
+              }
 
-            // Check the radio input
-            if (isSelected && radioInput) {
-              radioInput.checked = true;
-            }
+              // Update container border
+              if (isSelected) {
+                opt.classList.remove('border-[#DCDEDE]');
+                opt.classList.add('border-[#0189D5]');
+              } else {
+                opt.classList.remove('border-[#0189D5]');
+                opt.classList.add('border-[#DCDEDE]');
+              }
 
-            // Update container border
-            if (isSelected) {
-              opt.classList.remove('border-[#DCDEDE]');
-              opt.classList.add('border-[#0189D5]');
-            } else {
-              opt.classList.remove('border-[#0189D5]');
-              opt.classList.add('border-[#DCDEDE]');
-            }
-
-            // Update radio indicator
-            if (isSelected) {
-              indicator.classList.remove('border', 'border-[#D0D2D2]');
-              indicator.classList.add('border-[5px]', 'border-[#016EAA]');
-            } else {
-              indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
-              indicator.classList.add('border', 'border-[#D0D2D2]');
-            }
+              // Update radio indicator
+              if (isSelected) {
+                indicator.classList.remove('border', 'border-[#D0D2D2]');
+                indicator.classList.add('border-[5px]', 'border-[#016EAA]');
+              } else {
+                indicator.classList.remove('border-[5px]', 'border-[#016EAA]');
+                indicator.classList.add('border', 'border-[#D0D2D2]');
+              }
+            });
           });
         });
-      });
+      }
 
       // Skeleton type radio selection handler (Ticket Preview)
       const skeletonOptions = document.querySelectorAll('input[name="skeleton"]');
@@ -879,6 +885,11 @@
             updatePreview(this.value);
           }
         });
+
+        // Initialize: Ensure the correct preview is shown on load based on checked state
+        if (option.checked) {
+          updatePreview(option.value);
+        }
       });
     });
   </script>
