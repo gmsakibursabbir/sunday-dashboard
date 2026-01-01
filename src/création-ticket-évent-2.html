@@ -28,7 +28,7 @@
 
   <main class="flex flex-col md:flex-row flex-1 h-full overflow-hidden p-3">
     <!-- Left Sidebar (Stepper) -->
- <aside
+    <aside
       class="flex flex-row md:flex-col w-full md:w-[264px] bg-[#F6F6F6] md:bg-[#F6F6F6] rounded-[12px] px-4 py-5 mb-4 md:mb-0 md:mr-6 h-auto md:h-full overflow-x-auto md:overflow-y-auto shrink-0 border-[1px] border-[#E8E8E8] items-center md:items-stretch scrollbar-hide">
 
       <!-- Mobile Heading (Optional, hiding for now to save space as per "just numbers" request) -->
@@ -157,8 +157,8 @@
             <div class="py-3 px-2 lg:p-6">
               <div
                 class="border-[1px] border-[#E8E8E8]  p-4 rounded-[12px] flex flex-col lg:flex-row items-start justify-between gap-4">
-                <!-- 1 -->
-                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] flex-1 w-full">
+                <!-- left -->
+                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] flex-1 w-full min-w-0">
                   <div class="flex flex-col gap-4">
                     <!-- Nom du template -->
                     <div>
@@ -251,9 +251,9 @@
                     <!-- Arrière plan -->
                     <div>
                       <label class="block text-sm font-archivo font-medium text-[#14201F] mb-[6px]">Arrière plan</label>
-                      <div class="flex flex-wrap gap-4" id="background-type-group">
+                      <div class="flex flex-wrap lg:flex-nowrap gap-4" id="background-type-group">
                         <label
-                          class="background-type-option cursor-pointer bg-white px-4 py-3 rounded-[12px] border border-[#0189D5] w-full flex items-center gap-2 transition-colors"
+                          class="background-type-option cursor-pointer bg-white px-3 2xl:px-4 py-3 rounded-[12px] border border-[#0189D5] w-full flex items-center gap-2 transition-colors"
                           data-selected="true">
                           <input type="radio" name="background" value="none" class="hidden" checked>
                           <div
@@ -262,7 +262,7 @@
                           <span class="text-xs font-archivo text-[#616161]">Aucun</span>
                         </label>
                         <label
-                          class="background-type-option cursor-pointer bg-white px-4 py-3 rounded-[12px] border border-[#DCDEDE] w-full flex items-center gap-2 transition-colors"
+                          class="background-type-option cursor-pointer bg-white px-3 2xl:px-4 py-3 rounded-[12px] border border-[#DCDEDE] w-full flex items-center gap-2 transition-colors"
                           data-selected="false">
                           <input type="radio" name="background" value="color" class="hidden">
                           <div
@@ -271,7 +271,7 @@
                           <span class="text-xs font-archivo text-[#616161]">Couleur</span>
                         </label>
                         <label
-                          class="background-type-option cursor-pointer bg-white px-4 py-3 rounded-[12px] border border-[#DCDEDE] w-full flex items-center gap-2 transition-colors"
+                          class="background-type-option cursor-pointer bg-white px-3 2xl:px-4 py-3 rounded-[12px] border border-[#DCDEDE] w-full flex items-center gap-2 transition-colors"
                           data-selected="false">
                           <input type="radio" name="background" value="image" class="hidden">
                           <div
@@ -346,306 +346,234 @@
                     </div>
                   </div>
                 </div>
-                <!-- 2 -->
-                <div class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:max-w-[472px]">
-                  <h2 class="text-base font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Aperçu</h4>
+                <!-- right -->
+                <div
+                  class="p-4 bg-[#F9FAFA] rounded-[12px] border-[1px] border-[#F3F4F4] w-full lg:w-[472px] lg:shrink-0">
+                  <h2 class="text-base font-archivo font-semibold text-[#14201F] leading-[150%] mb-4">Aperçu</h2>
 
-                    <div class="p-[10px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#F3F4F4] w-full">
-                      <h4 class="text-[11px] font-archivo font-medium text-[#364153] leading-[150%] mb-[10px]">Choix du
-                        squelette</h4>
-                      <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="skeleton-type-group">
-                        <!-- Option 1 tab: Vertical Centered -->
-                        <label class="skeleton-option relative cursor-pointer group">
-                          <input type="radio" name="skeleton" value="vertical-center" class="peer hidden" checked>
+                  <div class="p-[10px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#F3F4F4] w-full">
+                    <h4 class="text-[11px] font-archivo font-medium text-[#364153] leading-[150%] mb-[10px]">Choix du
+                      squelette</h4>
+                    <div class="grid grid-cols-1 md:grid-cols-3 gap-3" id="skeleton-type-group">
+                      <!-- Option 1 tab: Vertical Centered -->
+                      <label class="skeleton-option relative cursor-pointer group">
+                        <input type="radio" name="skeleton" value="vertical-center" class="peer hidden" checked>
+                        <div
+                          class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
+                        </div>
+                        <div
+                          class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
                           <div
-                            class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
-                          </div>
-                          <div
-                            class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
+                            class="w-full h-full bg-[#D9EDF9] rounded-[4px] p-1 max-w-[68px] min-w-[68px] flex flex-col items-center gap-2 relative overflow-hidden">
+                            <!-- Top Checkered -->
                             <div
-                              class="w-full h-full bg-[#D9EDF9] rounded-[4px] p-1 max-w-[68px] min-w-[68px] flex flex-col items-center gap-2 relative overflow-hidden">
-                              <!-- Top Checkered -->
-                              <div
-                                class="w-full h-[30px] bg-white/50 rounded-[4px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                              </div>
-                              <!-- Cutouts -->
-                              <div class="absolute top-[31%] -left-[0px] w-[6px] h-[6px] bg-white rounded-full"></div>
-                              <div class="absolute top-[31%] -right-[0px] w-[6px] h-[6px] bg-white rounded-full"></div>
-                              <div class="absolute bottom-[25%] -left-[0px] w-[6px] h-[6px] bg-white rounded-full">
-                              </div>
-                              <div class="absolute bottom-[25%] -right-[0px] w-[6px] h-[6px] bg-white rounded-full">
-                              </div>
+                              class="w-full h-[30px] bg-white/50 rounded-[4px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
+                            </div>
+                            <!-- Cutouts -->
+                            <div class="absolute top-[31%] -left-[0px] w-[6px] h-[6px] bg-white rounded-full"></div>
+                            <div class="absolute top-[31%] -right-[0px] w-[6px] h-[6px] bg-white rounded-full"></div>
+                            <div class="absolute bottom-[25%] -left-[0px] w-[6px] h-[6px] bg-white rounded-full">
+                            </div>
+                            <div class="absolute bottom-[25%] -right-[0px] w-[6px] h-[6px] bg-white rounded-full">
+                            </div>
 
-                              <!-- Content -->
-                              <div
-                                class="flex-1 w-full flex flex-col items-center justify-center gap-2 border-t-[1px] border-white border-dashed">
-                                <div class="w-10 h-10 border-[#14201F] rounded-[4px] flex items-center justify-center">
-                                  <img src="./images/qr-scan.svg" alt="">
-                                </div>
+                            <!-- Content -->
+                            <div
+                              class="flex-1 w-full flex flex-col items-center justify-center gap-2 border-t-[1px] border-white border-dashed">
+                              <div class="w-10 h-10 border-[#14201F] rounded-[4px] flex items-center justify-center">
+                                <img src="./images/qr-scan.svg" alt="">
                               </div>
+                            </div>
 
-                              <!-- Bottom Lines -->
-                              <div class="w-full flex flex-col gap-1 mt-auto">
-                                <div class="flex gap-1">
-                                  <div class="h-1 bg-[#F5F5F5]  w-1/3"></div>
-                                  <div class="h-1 bg-[#F5F5F5]  w-2/3"></div>
-                                </div>
-                                <div class="h-1 bg-[#F5F5F5]  w-full"></div>
-                                <div class="flex gap-1">
-                                  <div class="h-1 bg-[#F5F5F5]  w-1/2"></div>
-                                  <div class="h-1 bg-[#F5F5F5]  w-1/2"></div>
-                                </div>
+                            <!-- Bottom Lines -->
+                            <div class="w-full flex flex-col gap-1 mt-auto">
+                              <div class="flex gap-1">
+                                <div class="h-1 bg-[#F5F5F5]  w-1/3"></div>
+                                <div class="h-1 bg-[#F5F5F5]  w-2/3"></div>
+                              </div>
+                              <div class="h-1 bg-[#F5F5F5]  w-full"></div>
+                              <div class="flex gap-1">
+                                <div class="h-1 bg-[#F5F5F5]  w-1/2"></div>
+                                <div class="h-1 bg-[#F5F5F5]  w-1/2"></div>
                               </div>
                             </div>
                           </div>
-                        </label>
+                        </div>
+                      </label>
 
-                        <!-- Option 2 tab: Vertical Bottom -->
-                        <label class="skeleton-option relative cursor-pointer group">
-                          <input type="radio" name="skeleton" value="vertical-bottom" class="peer hidden">
+                      <!-- Option 2 tab: Vertical Bottom -->
+                      <label class="skeleton-option relative cursor-pointer group">
+                        <input type="radio" name="skeleton" value="vertical-bottom" class="peer hidden">
+                        <div
+                          class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
+                        </div>
+                        <div
+                          class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
                           <div
-                            class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
-                          </div>
-                          <div
-                            class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
+                            class="w-full h-full bg-[#D9EDF9] max-w-[61px] min-w-[61px] rounded-[4px] p-[2px] flex flex-col items-center gap-1.5 relative overflow-hidden">
+                            <!-- Top Checkered -->
                             <div
-                              class="w-full h-full bg-[#D9EDF9] max-w-[61px] min-w-[61px] rounded-[4px] p-[2px] flex flex-col items-center gap-1.5 relative overflow-hidden">
-                              <!-- Top Checkered -->
-                              <div
-                                class="w-full h-[30px] bg-white/50 rounded-[4px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                              </div>
-
-                              <!-- Text Lines -->
-                              <div class="w-full flex flex-col gap-[2px] px-[2px]">
-                                <div class="h-1 bg-white w-full"></div>
-                                <div class="flex items-center justify-between gap-[2px]">
-                                  <div class="h-1 bg-white w-3/5"></div>
-                                  <div class="h-1 bg-white w-1/5"></div>
-                                </div>
-                                <div class="flex items-center justify-between gap-[2px]">
-                                  <div class="h-1 bg-white w-1/5"></div>
-                                  <div class="h-1 bg-white w-2/5"></div>
-                                </div>
-                              </div>
-
-                              <!-- Mid Banner -->
-                              <div
-                                class="w-full h-[11px] bg-[#F3F4F6] rounded-[2px] flex items-center justify-center mt-0">
-                                <span class="text-[3px] text-[#99A1AF]">Bannière sponsors</span>
-                              </div>
-
-                              <!-- Cutouts -->
-                              <div class="absolute top-[60%] -left-1.5 w-3 h-3 bg-white rounded-full"></div>
-                              <div class="absolute top-[60%] -right-1.5 w-3 h-3 bg-white rounded-full"></div>
-
-                              <!-- Content Bottom -->
-                              <div class="flex-1 w-full flex flex-col items-center justify-center mt-2">
-                                <div class="w-[35px] h-[35px] rounded-[4px] flex items-center justify-center">
-                                  <img src="./images/qr-scan.svg" alt="">
-                                </div>
-                                <span class="text-[3px]  text-[#0D0D12] text-center w-full">Scanner le QR
-                                  Code</span>
-                              </div>
-                            </div>
-                          </div>
-                        </label>
-
-                        <!-- Option 3 tab: Horizontal -->
-                        <label class="skeleton-option relative cursor-pointer group">
-                          <input type="radio" name="skeleton" value="horizontal" class="peer hidden">
-                          <div
-                            class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
-                          </div>
-                          <div
-                            class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
-
-                            <div
-                              class="w-full aspect-[160/80] bg-[#D9EDF9] rounded-[4px] flex relative overflow-hidden">
-                              <!-- Left Checkered -->
-                              <div class="w-[60%] p-1">
-                                <div
-                                  class="w-full h-full bg-white/50 rounded-[4px] p-[20px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')] border-r border-dotted border-[#B0DAF2]">
-                                </div>
-                              </div>
-
-                              <!-- Banner Vertical -->
-                              <div class="w-[10%] flex items-center justify-center bg-[#F3F4F6] ">
-                                <span
-                                  class="text-[4px] -rotate-90 whitespace-nowrap font-medium text-[#99A1AF]">Bannière
-                                  sponsors</span>
-                              </div>
-
-                              <!-- Right Dark -->
-                              <div class="w-[44%] h-full bg-[#14201F] p-1 flex flex-col items-center justify-center">
-                                <div class="w-[38px] h-[38px] rounded-[2px]">
-                                  <img src="./images/qr-white.svg" alt="" class="w-full h-full">
-                                </div>
-                                <div class="w-full max-w-[25px] mx-auto h-1 bg-[#F3F4F6]"></div>
-                                <div class="w-full max-w-[25px] mx-auto h-1 bg-[#F3F4F6] mt-[1px]"></div>
-                              </div>
-
-                              <!-- Cutouts -->
-                              <div class="absolute -top-1.5 right-[39%] w-3 h-3 bg-white rounded-full z-20"></div>
-                              <div class="absolute -bottom-1.5 right-[39%] w-3 h-3 bg-white rounded-full z-20"></div>
+                              class="w-full h-[30px] bg-white/50 rounded-[4px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
                             </div>
 
+                            <!-- Text Lines -->
+                            <div class="w-full flex flex-col gap-[2px] px-[2px]">
+                              <div class="h-1 bg-white w-full"></div>
+                              <div class="flex items-center justify-between gap-[2px]">
+                                <div class="h-1 bg-white w-3/5"></div>
+                                <div class="h-1 bg-white w-1/5"></div>
+                              </div>
+                              <div class="flex items-center justify-between gap-[2px]">
+                                <div class="h-1 bg-white w-1/5"></div>
+                                <div class="h-1 bg-white w-2/5"></div>
+                              </div>
+                            </div>
+
+                            <!-- Mid Banner -->
+                            <div
+                              class="w-full h-[11px] bg-[#F3F4F6] rounded-[2px] flex items-center justify-center mt-0">
+                              <span class="text-[3px] text-[#99A1AF]">Bannière sponsors</span>
+                            </div>
+
+                            <!-- Cutouts -->
+                            <div class="absolute top-[60%] -left-1.5 w-3 h-3 bg-white rounded-full"></div>
+                            <div class="absolute top-[60%] -right-1.5 w-3 h-3 bg-white rounded-full"></div>
+
+                            <!-- Content Bottom -->
+                            <div class="flex-1 w-full flex flex-col items-center justify-center mt-2">
+                              <div class="w-[35px] h-[35px] rounded-[4px] flex items-center justify-center">
+                                <img src="./images/qr-scan.svg" alt="">
+                              </div>
+                              <span class="text-[3px]  text-[#0D0D12] text-center w-full">Scanner le QR
+                                Code</span>
+                            </div>
                           </div>
-                        </label>
-                      </div>
+                        </div>
+                      </label>
+
+                      <!-- Option 3 tab: Horizontal -->
+                      <label class="skeleton-option relative cursor-pointer group">
+                        <input type="radio" name="skeleton" value="horizontal" class="peer hidden">
+                        <div
+                          class="absolute top-2 left-2 w-[13px] h-[13px] rounded-full border border-[#0089D1] bg-white peer-checked:border-[4px] peer-checked:border-[#0089D1] z-10 transition-all">
+                        </div>
+                        <div
+                          class="w-full aspect-[185/220] bg-white rounded-[12px] border-[2px] border-[#DCDEDE] peer-checked:border-[#0189D5] transition-all flex items-center justify-center hover:shadow-md p-3">
+
+                          <div class="w-full aspect-[160/80] bg-[#D9EDF9] rounded-[4px] flex relative overflow-hidden">
+                            <!-- Left Checkered -->
+                            <div class="w-[60%] p-1">
+                              <div
+                                class="w-full h-full bg-white/50 rounded-[4px] p-[20px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')] border-r border-dotted border-[#B0DAF2]">
+                              </div>
+                            </div>
+
+                            <!-- Banner Vertical -->
+                            <div class="w-[10%] flex items-center justify-center bg-[#F3F4F6] ">
+                              <span class="text-[4px] -rotate-90 whitespace-nowrap font-medium text-[#99A1AF]">Bannière
+                                sponsors</span>
+                            </div>
+
+                            <!-- Right Dark -->
+                            <div class="w-[44%] h-full bg-[#14201F] p-1 flex flex-col items-center justify-center">
+                              <div class="w-[38px] h-[38px] rounded-[2px]">
+                                <img src="./images/qr-white.svg" alt="" class="w-full h-full">
+                              </div>
+                              <div class="w-full max-w-[25px] mx-auto h-1 bg-[#F3F4F6]"></div>
+                              <div class="w-full max-w-[25px] mx-auto h-1 bg-[#F3F4F6] mt-[1px]"></div>
+                            </div>
+
+                            <!-- Cutouts -->
+                            <div class="absolute -top-1.5 right-[39%] w-3 h-3 bg-white rounded-full z-20"></div>
+                            <div class="absolute -bottom-1.5 right-[39%] w-3 h-3 bg-white rounded-full z-20"></div>
+                          </div>
+
+                        </div>
+                      </label>
                     </div>
-                    <div class="p-[24px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#E5E7EB] w-full mt-3">
-                      <!-- Option 1 tab content -->
-                      <div id="preview-vertical-center"
-                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-4">
+                  </div>
+                  <div class="p-[24px] bg-[#F9FAFA] rounded-[16px] border-[1px] border-[#E5E7EB] w-full mt-3">
+                    <!-- Option 1 tab content -->
+                    <div id="preview-vertical-center"
+                      class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-4">
 
-                        <!-- Top Image Section -->
-                        <div
-                          class="w-full h-[150px] rounded-[16px] relative bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                          <!-- Gradient Overlay -->
-                          <div class="absolute left-0 right-0 h-[56px] bottom-0 rounded-b-[16px]"
-                            style="background: linear-gradient(180deg, rgba(28, 35, 70, 0.0) 0%, rgba(28, 35, 70, 0.6) 100%);">
-                          </div>
-                          <!-- Title -->
-                          <div class="absolute bottom-4 left-3 right-3">
-                            <h3 class="text-[20px] font-semibold text-white leading-[120%]">Titre de l’évènement</h3>
-                          </div>
+                      <!-- Top Image Section -->
+                      <div
+                        class="w-full h-[150px] rounded-[16px] relative bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
+                        <!-- Gradient Overlay -->
+                        <div class="absolute left-0 right-0 h-[56px] bottom-0 rounded-b-[16px]"
+                          style="background: linear-gradient(180deg, rgba(28, 35, 70, 0.0) 0%, rgba(28, 35, 70, 0.6) 100%);">
                         </div>
-                        <!-- Divider Section with Cutouts -->
-                        <div class="relative w-full h-[30px] flex items-center justify-center">
-                          <!-- Left Cutout -->
-                          <div
-                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Right Cutout -->
-                          <div
-                            class="absolute right-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Dotted Line -->
-                          <div class="w-full border-t-[2px] border-dashed border-white mx-7"></div>
+                        <!-- Title -->
+                        <div class="absolute bottom-4 left-3 right-3">
+                          <h3 class="text-[20px] font-semibold text-white leading-[120%]">Titre de l’évènement</h3>
                         </div>
-                        <!-- Middle Section -->
-                        <div class=" py-4 flex flex-col items-center gap-3">
-                          <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
-
-                          <!-- QR Code -->
-                          <div class="w-[194px] h-[194px]">
-                            <img src="./images/qr-scan.svg" alt="QR Code"
-                              class="w-full h-full object-contain mix-blend-multiply">
-                          </div>
-
-                          <!-- Helper Text -->
-                          <p class="text-[12px] text-[#434345] text-center leading-relaxed ">
-                            Présentez votre QR code à l'entrée et profitez de votre évènement
-                          </p>
-                        </div>
-
-                        <!-- Divider Section with Cutouts -->
-                        <div class="relative w-full h-[30px] flex items-center justify-center">
-                          <!-- Left Cutout -->
-                          <div
-                            class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Dotted Line -->
-                          <div class="w-full border-t-2 border-dashed border-white "></div>
-                        </div>
-
-                        <!-- Bottom Details Section -->
-                        <div class="flex flex-col gap-2">
-                          <!-- Participant ID -->
-                          <h4 class="text-[16px] font-bold text-[#0089D1]">Participant ID</h4>
-                          <!-- line -->
-                          <div class="border-t-[1px] border-[#ffffff]"></div>
-                          <!-- Grid Info -->
-                          <div class="flex flex-col text-[14px] font-medium text-[#2C3635] ">
-                            <!-- Row 1 -->
-                            <div class="flex flex-row justify-between items-center">
-                              <div class="text-left font-medium">Place : N/A</div>
-                              <div class="text-right font-medium">Forfait : forfait</div>
-                            </div>
-                            <!-- Row 2 (Time) -->
-                            <div class="flex flex-row justify-between items-center mt-1">
-                              <div class=" text-[#2C3635]">Date début - heure</div>
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="20" height="20" rx="3.33333" fill="white" />
-                                <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
-                                  stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                              <div class=" text-[#2C3635]">Date fin - heure</div>
-                            </div>
-                            <!-- Location -->
-                            <div class="flex items-center justify-start gap-1 text-[#2C3635] mt-1">
-                              <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <path opacity="0.4"
-                                  d="M16.3229 7.04159C15.4916 3.19159 12.3012 1.45825 9.49873 1.45825C9.49873 1.45825 9.49873 1.45825 9.49082 1.45825C6.69623 1.45825 3.4979 3.18325 2.66665 7.03325C1.7404 11.3333 4.24207 14.9749 6.50623 17.2666C7.3454 18.1166 8.42207 18.5416 9.49873 18.5416C10.5754 18.5416 11.6521 18.1166 12.4833 17.2666C14.7475 14.9749 17.2491 11.3416 16.3229 7.04159Z"
-                                  fill="#0189D6" />
-                                <path
-                                  d="M9.50156 11.2166C10.8788 11.2166 11.9953 10.0413 11.9953 8.59155C11.9953 7.14181 10.8788 5.96655 9.50156 5.96655C8.1243 5.96655 7.00781 7.14181 7.00781 8.59155C7.00781 10.0413 8.1243 11.2166 9.50156 11.2166Z"
-                                  fill="#0189D6" />
-                              </svg>
-
-                              <span class="text-[14px] font-medium">Lieu, ville</span>
-                            </div>
-                          </div>
-                        </div>
-
                       </div>
-                      <!-- Option 2 tab content -->
-                      <div id="preview-vertical-bottom"
-                        class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-[6px] hidden">
-
-                        <!-- Top Image Section -->
+                      <!-- Divider Section with Cutouts -->
+                      <div class="relative w-full h-[30px] flex items-center justify-center">
+                        <!-- Left Cutout -->
                         <div
-                          class="w-full h-[137px] bg-white/50 relative p-3 rounded-[16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                          <div class="bg-white rounded-full px-3 py-2 leading-[130%] inline-block">
-                            <span class="text-xs font-medium text-[#14201F]">Live Concert</span>
-                          </div>
+                          class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                        </div>
+                        <!-- Right Cutout -->
+                        <div
+                          class="absolute right-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                        </div>
+                        <!-- Dotted Line -->
+                        <div class="w-full border-t-[2px] border-dashed border-white mx-7"></div>
+                      </div>
+                      <!-- Middle Section -->
+                      <div class=" py-4 flex flex-col items-center gap-3">
+                        <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
+
+                        <!-- QR Code -->
+                        <div class="w-[194px] h-[194px]">
+                          <img src="./images/qr-scan.svg" alt="QR Code"
+                            class="w-full h-full object-contain mix-blend-multiply">
                         </div>
 
-                        <!-- Content Section -->
-                        <div class="px-[6px] pt-2 pb-2 flex flex-col">
+                        <!-- Helper Text -->
+                        <p class="text-[12px] text-[#434345] text-center leading-relaxed ">
+                          Présentez votre QR code à l'entrée et profitez de votre évènement
+                        </p>
+                      </div>
 
-                          <!-- Header -->
-                          <div class="flex justify-between items-start">
-                            <div>
-                              <h3 class="text-lg font-medium text-[#000000]">Titre de l'évènement
-                              </h3>
-                              <p class="text-[12px] font-medium leading-[150%] text-[#4A5565]">Organisateur</p>
-                            </div>
-                            <div class="bg-white px-[22px] py-2 rounded-full ">
-                              <span class="text-[14px] font-medium text-[#0189D5]">Forfait</span>
-                            </div>
+                      <!-- Divider Section with Cutouts -->
+                      <div class="relative w-full h-[30px] flex items-center justify-center">
+                        <!-- Left Cutout -->
+                        <div
+                          class="absolute left-[-30px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                        </div>
+                        <!-- Dotted Line -->
+                        <div class="w-full border-t-2 border-dashed border-white "></div>
+                      </div>
+
+                      <!-- Bottom Details Section -->
+                      <div class="flex flex-col gap-2">
+                        <!-- Participant ID -->
+                        <h4 class="text-[16px] font-bold text-[#0089D1]">Participant ID</h4>
+                        <!-- line -->
+                        <div class="border-t-[1px] border-[#ffffff]"></div>
+                        <!-- Grid Info -->
+                        <div class="flex flex-col text-[14px] font-medium text-[#2C3635] ">
+                          <!-- Row 1 -->
+                          <div class="flex flex-row justify-between items-center">
+                            <div class="text-left font-medium">Place : N/A</div>
+                            <div class="text-right font-medium">Forfait : forfait</div>
                           </div>
-
-                          <!-- Participant ID -->
-                          <div class="text-center">
-                            <h4 class="text-[16px] font-semibold leading-[120%] text-[#0189D5]">Participant ID</h4>
-                          </div>
-
-                          <!-- Details Grid -->
-                          <div class="flex flex-col text-[14px] font-medium text-[#2C3635] mt-1">
-                            <!-- Row 1 -->
-                            <div class="flex flex-row justify-between items-center">
-                              <div class="text-left font-medium">Place : N/A</div>
-                              <div class="text-right font-medium">Forfait : forfait</div>
-                            </div>
-
-                            <!-- Row 2 (Time) -->
-                            <div class="flex flex-row justify-between items-center mt-1">
-                              <div class=" text-[#2C3635]">Date début - heure</div>
-                              <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
-                                xmlns="http://www.w3.org/2000/svg">
-                                <rect width="20" height="20" rx="3.33333" fill="white" />
-                                <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
-                                  stroke-linecap="round" stroke-linejoin="round" />
-                              </svg>
-                              <div class=" text-[#2C3635]">Date fin - heure</div>
-                            </div>
-
+                          <!-- Row 2 (Time) -->
+                          <div class="flex flex-row justify-between items-center mt-1">
+                            <div class=" text-[#2C3635]">Date début - heure</div>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <rect width="20" height="20" rx="3.33333" fill="white" />
+                              <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class=" text-[#2C3635]">Date fin - heure</div>
                           </div>
                           <!-- Location -->
-                          <div class="flex items-center justify-center gap-1 text-[#2C3635] mt-1">
+                          <div class="flex items-center justify-start gap-1 text-[#2C3635] mt-1">
                             <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
                               xmlns="http://www.w3.org/2000/svg">
                               <path opacity="0.4"
@@ -658,129 +586,198 @@
 
                             <span class="text-[14px] font-medium">Lieu, ville</span>
                           </div>
-
-                          <!-- Sponsors Banner -->
-                          <div
-                            class="w-full h-[56px] bg-[#F3F4F6] rounded-[8px] flex items-center justify-center mt-[14px]">
-                            <span class="text-[16px] text-[#99A1AF] font-medium">Bannière sponsors</span>
-                          </div>
                         </div>
-
-                        <!-- Divider Section with Cutouts -->
-                        <div class="relative w-full h-[30px] flex items-center justify-center">
-                          <!-- Left Cutout -->
-                          <div
-                            class="absolute left-[-20px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Right Cutout -->
-                          <div
-                            class="absolute right-[-20px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
-                          </div>
-                          <!-- Dotted Line -->
-                          <div class="w-full border-t-2 border-dashed border-white mx-[35px]"></div>
-                        </div>
-
-                        <!-- Bottom Section -->
-                        <div class="flex flex-col items-center ">
-                          <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
-
-                          <!-- QR Code -->
-                          <div class="rounded-[16px] p-1">
-                            <img src="./images/qr-scan.svg" alt="QR Code"
-                              class="w-full h-full min-w-[194px] min-h-[194px] object-contain">
-                          </div>
-                        </div>
-
                       </div>
 
-                      <!-- Option 3 tab content -->
-                      <div id="preview-horizontal" class="hidden">
-                        <div class="w-full mx-auto h-[163px] flex">
+                    </div>
+                    <!-- Option 2 tab content -->
+                    <div id="preview-vertical-bottom"
+                      class="w-full max-w-[335px] mx-auto bg-[#D9EDF9] rounded-[16px] overflow-hidden relative p-[6px] hidden">
 
-                          <!-- Left Section (Blue Container) -->
-                          <div
-                            class="flex-1 bg-[#D9EDF9] rounded-l-[16px] pl-[11px] py-[16px] pr-4 flex gap-[6px] relative">
+                      <!-- Top Image Section -->
+                      <div
+                        class="w-full h-[137px] bg-white/50 relative p-3 rounded-[16px] bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
+                        <div class="bg-white rounded-full px-3 py-2 leading-[130%] inline-block">
+                          <span class="text-xs font-medium text-[#14201F]">Live Concert</span>
+                        </div>
+                      </div>
 
-                            <!-- Image Card -->
-                            <div
-                              class="flex-1 h-full rounded-[14px] relative overflow-hidden bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
-                              <!-- Gradient -->
-                              <div class="absolute inset-0"
-                                style="background: linear-gradient(180deg, rgba(28, 35, 70, 0) 0%, #1C2346 100%);">
-                              </div>
+                      <!-- Content Section -->
+                      <div class="px-[6px] pt-2 pb-2 flex flex-col">
 
-                              <!-- Content -->
-                              <div
-                                class="absolute inset-0 py-[15px] px-[11px] flex flex-col justify-end text-white z-10">
-                                <h3 class="text-[16px] font-bold leading-[120%] mb-1">Titre de l’évènement</h3>
+                        <!-- Header -->
+                        <div class="flex justify-between items-start">
+                          <div>
+                            <h3 class="text-lg font-medium text-[#000000]">Titre de l'évènement
+                            </h3>
+                            <p class="text-[12px] font-medium leading-[150%] text-[#4A5565]">Organisateur</p>
+                          </div>
+                          <div class="bg-white px-[22px] py-2 rounded-full ">
+                            <span class="text-[14px] font-medium text-[#0189D5]">Forfait</span>
+                          </div>
+                        </div>
 
-                                <div class="flex items-center gap-3 text-[11px] font-medium opacity-90 mb-1">
-                                  <span>Place : N/A</span>
-                                  <span>Forfait : forfait</span>
-                                </div>
+                        <!-- Participant ID -->
+                        <div class="text-center">
+                          <h4 class="text-[16px] font-semibold leading-[120%] text-[#0189D5]">Participant ID</h4>
+                        </div>
 
-                                <div class="text-[11px] font-medium opacity-90 mb-1">
-                                  Date début - heure
-                                </div>
-
-                                <div class="flex items-center gap-1">
-                                  <div class="w-[14px] h-[14px] rounded-fullflex items-center justify-center">
-                                    <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
-                                      xmlns="http://www.w3.org/2000/svg">
-                                      <path opacity="0.4"
-                                        d="M11.4385 4.89157C10.856 2.21722 8.62038 1.01318 6.65658 1.01318C6.65658 1.01318 6.65658 1.01318 6.65103 1.01318C4.69279 1.01318 2.45162 2.21143 1.86914 4.88578C1.22009 7.87271 2.97308 10.4023 4.55965 11.9942C5.14768 12.5847 5.90213 12.8799 6.65658 12.8799C7.41103 12.8799 8.16549 12.5847 8.74797 11.9942C10.3345 10.4023 12.0875 7.8785 11.4385 4.89157Z"
-                                        fill="white" />
-                                      <path
-                                        d="M6.6576 7.79137C7.62269 7.79137 8.40504 6.975 8.40504 5.96795C8.40504 4.9609 7.62269 4.14453 6.6576 4.14453C5.69251 4.14453 4.91016 4.9609 4.91016 5.96795C4.91016 6.975 5.69251 7.79137 6.6576 7.79137Z"
-                                        fill="white" />
-                                    </svg>
-
-                                  </div>
-                                  <span class="text-[11px] ">Lieu, ville</span>
-                                </div>
-                              </div>
-                            </div>
-
-                            <!-- Sponsor Strip -->
-                            <div class="w-[44px] h-full bg-[#F3F4F6] rounded-[4px] flex items-center justify-center">
-                              <span
-                                class="transform -rotate-90 whitespace-nowrap text-[#99A1AF] text-[11px] font-medium tracking-wide">Bannière
-                                sponsors</span>
-                            </div>
+                        <!-- Details Grid -->
+                        <div class="flex flex-col text-[14px] font-medium text-[#2C3635] mt-1">
+                          <!-- Row 1 -->
+                          <div class="flex flex-row justify-between items-center">
+                            <div class="text-left font-medium">Place : N/A</div>
+                            <div class="text-right font-medium">Forfait : forfait</div>
                           </div>
 
-                          <!-- Right Section (Dark Stub) -->
-                          <div
-                            class="w-[137px] bg-[#1d1d2e] rounded-r-[16px] relative flex flex-col items-center justify-center p-4">
-
-                            <!-- Scalloped Edge Mask (Simulated via radial gradient on pseudo-element) -->
-                            <div class="absolute left-[-6px] top-0 bottom-0 w-[12px] h-full"
-                              style="background: radial-gradient(circle at 0 50%, transparent 2px, #1C2346 3px); background-size: 6px 6px; background-repeat: repeat-y; background-position: 0 0;">
-                            </div>
-
-                            <!-- Top/Bottom Circle Cutouts -->
-                            <div
-                              class="absolute -top-[12px] -left-[12px] w-[24px] h-[24px] bg-[#F9FAFA] rounded-full z-20">
-                            </div>
-                            <div
-                              class="absolute -bottom-[12px] -left-[12px] w-[24px] h-[24px] bg-[#F9FAFA] rounded-full z-20">
-                            </div>
-
-                            <!-- QR Content -->
-                            <div class="w-[106px] h-[106px] rounded-[8px] z-10">
-                              <img src="./images/qr-white.svg" alt="QR Code" class="w-full h-full object-contain">
-                            </div>
-
-                            <div class="text-center z-10 text-white">
-                              <p class="text-[10px] text-[#D9EDF9]">Participant ID</p>
-                              <p class="text-[10px] text-[#D9EDF9]"><span class="font-semibold text-white">Code :</span>
-                                Code du billet</p>
-                            </div>
+                          <!-- Row 2 (Time) -->
+                          <div class="flex flex-row justify-between items-center mt-1">
+                            <div class=" text-[#2C3635]">Date début - heure</div>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none"
+                              xmlns="http://www.w3.org/2000/svg">
+                              <rect width="20" height="20" rx="3.33333" fill="white" />
+                              <path d="M7.5 5L12.5 10L7.5 15" stroke="#14201F" stroke-width="1.25"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <div class=" text-[#2C3635]">Date fin - heure</div>
                           </div>
 
                         </div>
+                        <!-- Location -->
+                        <div class="flex items-center justify-center gap-1 text-[#2C3635] mt-1">
+                          <svg width="19" height="20" viewBox="0 0 19 20" fill="none"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path opacity="0.4"
+                              d="M16.3229 7.04159C15.4916 3.19159 12.3012 1.45825 9.49873 1.45825C9.49873 1.45825 9.49873 1.45825 9.49082 1.45825C6.69623 1.45825 3.4979 3.18325 2.66665 7.03325C1.7404 11.3333 4.24207 14.9749 6.50623 17.2666C7.3454 18.1166 8.42207 18.5416 9.49873 18.5416C10.5754 18.5416 11.6521 18.1166 12.4833 17.2666C14.7475 14.9749 17.2491 11.3416 16.3229 7.04159Z"
+                              fill="#0189D6" />
+                            <path
+                              d="M9.50156 11.2166C10.8788 11.2166 11.9953 10.0413 11.9953 8.59155C11.9953 7.14181 10.8788 5.96655 9.50156 5.96655C8.1243 5.96655 7.00781 7.14181 7.00781 8.59155C7.00781 10.0413 8.1243 11.2166 9.50156 11.2166Z"
+                              fill="#0189D6" />
+                          </svg>
+
+                          <span class="text-[14px] font-medium">Lieu, ville</span>
+                        </div>
+
+                        <!-- Sponsors Banner -->
+                        <div
+                          class="w-full h-[56px] bg-[#F3F4F6] rounded-[8px] flex items-center justify-center mt-[14px]">
+                          <span class="text-[16px] text-[#99A1AF] font-medium">Bannière sponsors</span>
+                        </div>
+                      </div>
+
+                      <!-- Divider Section with Cutouts -->
+                      <div class="relative w-full h-[30px] flex items-center justify-center">
+                        <!-- Left Cutout -->
+                        <div
+                          class="absolute left-[-20px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                        </div>
+                        <!-- Right Cutout -->
+                        <div
+                          class="absolute right-[-20px] top-1/2 -translate-y-1/2 w-[30px] h-[30px] bg-[#F9FAFA] rounded-full z-10">
+                        </div>
+                        <!-- Dotted Line -->
+                        <div class="w-full border-t-2 border-dashed border-white mx-[35px]"></div>
+                      </div>
+
+                      <!-- Bottom Section -->
+                      <div class="flex flex-col items-center ">
+                        <p class="text-[16px] font-medium text-[#1E1E20]">Code : code billet</p>
+
+                        <!-- QR Code -->
+                        <div class="rounded-[16px] p-1">
+                          <img src="./images/qr-scan.svg" alt="QR Code"
+                            class="w-full h-full min-w-[194px] min-h-[194px] object-contain">
+                        </div>
+                      </div>
+
+                    </div>
+                    <!-- Option 3 tab content -->
+                    <div id="preview-horizontal" class="hidden overflow-x-auto overflow-y-hidden">
+                      <div class="w-full min-h-[163px] min-w-[380px] flex">
+
+                        <!-- Left Section (Blue Container) -->
+                        <div
+                          class="flex-1 bg-[#D9EDF9] rounded-l-[16px] pl-[11px] py-[16px] pr-4 flex gap-[6px] relative">
+
+                          <!-- Image Card -->
+                          <div
+                            class="flex-1 h-full rounded-[14px] relative overflow-hidden bg-white/50 bg-[url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI4IiBoZWlnaHQ9IjgiPgo8cmVjdCB3aWR0aD0iOCIgaGVpZ2h0PSI4IiBmaWxsPSIjRjZGOUY5Ii8+CjxyZWN0IHdpZHRoPSI0IiBoZWlnaHQ9IjQiIGZpbGw9IiNFM0U1RTUiLz4KPHJlY3QgeD0iNCIgeT0iNCIgd2lkdGg9IjQiIGhlaWdodD0iNCIgZmlsbD0iI0UzRTVFNSIvPjwvc3ZnPg==')]">
+                            <!-- Gradient -->
+                            <div class="absolute inset-0"
+                              style="background: linear-gradient(180deg, rgba(28, 35, 70, 0) 0%, #1C2346 100%);">
+                            </div>
+
+                            <!-- Content -->
+                            <div class="absolute inset-0 py-[15px] px-[11px] flex flex-col justify-end text-white z-10">
+                              <h3 class="text-[16px] font-bold leading-[120%] mb-1">Titre de l’évènement</h3>
+
+                              <div class="flex items-center gap-3 text-[11px] font-medium opacity-90 mb-1">
+                                <span>Place : N/A</span>
+                                <span>Forfait : forfait</span>
+                              </div>
+
+                              <div class="text-[11px] font-medium opacity-90 mb-1">
+                                Date début - heure
+                              </div>
+
+                              <div class="flex items-center gap-1">
+                                <div class="w-[14px] h-[14px] rounded-fullflex items-center justify-center">
+                                  <svg width="14" height="14" viewBox="0 0 14 14" fill="none"
+                                    xmlns="http://www.w3.org/2000/svg">
+                                    <path opacity="0.4"
+                                      d="M11.4385 4.89157C10.856 2.21722 8.62038 1.01318 6.65658 1.01318C6.65658 1.01318 6.65658 1.01318 6.65103 1.01318C4.69279 1.01318 2.45162 2.21143 1.86914 4.88578C1.22009 7.87271 2.97308 10.4023 4.55965 11.9942C5.14768 12.5847 5.90213 12.8799 6.65658 12.8799C7.41103 12.8799 8.16549 12.5847 8.74797 11.9942C10.3345 10.4023 12.0875 7.8785 11.4385 4.89157Z"
+                                      fill="white" />
+                                    <path
+                                      d="M6.6576 7.79137C7.62269 7.79137 8.40504 6.975 8.40504 5.96795C8.40504 4.9609 7.62269 4.14453 6.6576 4.14453C5.69251 4.14453 4.91016 4.9609 4.91016 5.96795C4.91016 6.975 5.69251 7.79137 6.6576 7.79137Z"
+                                      fill="white" />
+                                  </svg>
+
+                                </div>
+                                <span class="text-[11px] ">Lieu, ville</span>
+                              </div>
+                            </div>
+                          </div>
+
+                          <!-- Sponsor Strip -->
+                          <div class="w-[44px] h-full bg-[#F3F4F6] rounded-[4px] flex items-center justify-center">
+                            <span
+                              class="transform -rotate-90 whitespace-nowrap text-[#99A1AF] text-[11px] font-medium tracking-wide">Bannière
+                              sponsors</span>
+                          </div>
+                        </div>
+
+                        <!-- Right Section (Dark Stub) -->
+                        <div
+                          class="w-[137px] bg-[#1d1d2e] rounded-r-[16px] relative flex flex-col items-center justify-center p-3">
+
+                          <!-- Scalloped Edge Mask (Simulated via radial gradient on pseudo-element) -->
+                          <div class="absolute left-[-6px] top-0 bottom-0 w-[12px] h-full"
+                            style="background: radial-gradient(circle at 0 50%, transparent 2px, #1C2346 3px); background-size: 6px 6px; background-repeat: repeat-y; background-position: 0 0;">
+                          </div>
+
+                          <!-- Top/Bottom Circle Cutouts -->
+                          <div
+                            class="absolute -top-[12px] -left-[12px] w-[24px] h-[24px] bg-[#F9FAFA] rounded-full z-20">
+                          </div>
+                          <div
+                            class="absolute -bottom-[12px] -left-[12px] w-[24px] h-[24px] bg-[#F9FAFA] rounded-full z-20">
+                          </div>
+
+                          <!-- QR Content -->
+                          <div class="w-[106px] h-[106px] rounded-[8px] z-10">
+                            <img src="./images/qr-white.svg" alt="QR Code" class="w-full h-full object-contain">
+                          </div>
+
+                          <div class="text-center z-10 text-white">
+                            <p class="text-[10px] text-[#D9EDF9]">Participant ID</p>
+                            <p class="text-[10px] text-[#D9EDF9]"><span class="font-semibold text-white">Code :</span>
+                              Code du billet</p>
+                          </div>
+                        </div>
+
                       </div>
                     </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -859,7 +856,7 @@
       }
 
       // Skeleton type radio selection handler (Ticket Preview)
-      const skeletonOptions = document.querySelectorAll('input[name="skeleton"]');
+      const skeletonGroup = document.getElementById('skeleton-type-group');
       const previews = {
         'vertical-center': document.getElementById('preview-vertical-center'),
         'vertical-bottom': document.getElementById('preview-vertical-bottom'),
@@ -879,18 +876,19 @@
         }
       }
 
-      skeletonOptions.forEach(option => {
-        option.addEventListener('change', function () {
-          if (this.checked) {
-            updatePreview(this.value);
+      if (skeletonGroup) {
+        skeletonGroup.addEventListener('change', function (e) {
+          if (e.target.name === 'skeleton') {
+            updatePreview(e.target.value);
           }
         });
 
-        // Initialize: Ensure the correct preview is shown on load based on checked state
-        if (option.checked) {
-          updatePreview(option.value);
+        // Initialize
+        const checkedInput = skeletonGroup.querySelector('input[name="skeleton"]:checked');
+        if (checkedInput) {
+          updatePreview(checkedInput.value);
         }
-      });
+      }
     });
   </script>
 </body>
