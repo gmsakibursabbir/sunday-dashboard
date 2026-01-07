@@ -302,6 +302,16 @@ header {
   border-top: 1.5px solid rgba(255, 255, 255, 0.25);
   box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #016eaa;
 }
+.ovbbtn2:hover, .ovbbtn2:active {
+ background: linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, #0076bb 0%, #005c91 100%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #0077b8;
+}
 
 .ovwbtn {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%),
