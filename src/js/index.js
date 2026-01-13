@@ -784,3 +784,28 @@ function initFlatpickr() {
     }
   });
 }
+
+// Generic Modal Open/Close Logic
+window.openModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.remove("hidden");
+    document.body.style.overflow = "hidden"; // Prevent background scrolling
+  }
+};
+
+window.closeModal = function (modalId) {
+  const modal = document.getElementById(modalId);
+  if (modal) {
+    modal.classList.add("hidden");
+    document.body.style.overflow = ""; // Restore background scrolling
+  }
+};
+
+// Close modals when clicking outside
+document.addEventListener("click", (e) => {
+  if (e.target.classList.contains("modal-overlay")) {
+    e.target.classList.add("hidden");
+    document.body.style.overflow = "";
+  }
+});
