@@ -605,7 +605,7 @@
                     <path d="M5.33594 10.6665H5.3426" stroke="currentColor" stroke-width="1.33333"
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <span onclick="window.location.href = './transactions-mes-ventes-directes.html'">Enquêtes</span>
+                  <span onclick="window.location.href = './enquête-sunday-event-ia.html'">Enquêtes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -622,7 +622,7 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href="./transactions-mes-ventes-directes.html"
+                    <a href="./enquête-sunday-event-ia.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer
                       une enquête</a>
                   </li>
@@ -635,7 +635,7 @@
                   </li>
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href="./transactions-mes-ventes-directes.html"
+                    <a href="./enquête-statistiques.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Statistiques</a>
                   </li>
                 </ul>
@@ -951,7 +951,7 @@
                 Fév 2026</p>
 
               <div class="pt-4 flex flex-col gap-2 mt-auto">
-                <button
+                <button onclick="openModal('qrModal')"
                   class="w-full bg-white border border-[#0189D5] cursor-pointer rounded-[8px] py-[9px] px-4 h-[38px] flex flex-row items-center justify-center gap-2 hover:bg-[#F0F8FF] transition-colors">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M2.6665 2.6665H6.6665V6.6665H2.6665V2.6665Z" stroke="#0189D5" stroke-width="1.2"
@@ -968,7 +968,7 @@
                   <span class="font-archivo font-semibold text-[13px] leading-[19px] text-[#0189D5]">Générer QR
                     code</span>
                 </button>
-                <button
+                <button onclick="openModal('linkModal')"
                   class="w-full bg-[#0189D5] rounded-[8px] py-[10px] cursor-pointer px-4 h-[38px] flex flex-row items-center justify-center gap-2 hover:bg-[#0178BD] transition-colors">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -1003,7 +1003,7 @@
 
               <div class="pt-4 flex flex-col gap-2 mt-auto">
                 <!-- Only one button here per design -->
-                <button
+                <button onclick="openModal('linkModal')"
                   class="w-full bg-[#0189D5] rounded-[8px] py-[10px] cursor-pointer px-4 h-[38px] flex flex-row items-center justify-center gap-2 hover:bg-[#0178BD] transition-colors">
                   <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -1025,7 +1025,198 @@
       <!-- wrapper here end  -->
     </div>
   </main>
+  <!-- Qr-modal -->
+  <div id="qrModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[16px] shadow-lg max-w-[420px] w-full mx-auto new-drop-shadow p-[28px]">
+        <!-- header -->
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-archivo font-semibold text-[18px] text-[#14201F] leading-[27px] tracking-[-0.36px]">
+            QR Code généré
+          </h2>
+          <button onclick="closeModal('qrModal')" class="cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 4.5L4.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4.5 4.5L13.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <!-- content -->
+        <div class="py-5">
+          <!-- qr -->
+          <div class="max-w-[244px] max-h-[244px] mx-auto border-[2px] border-[#E8E8E9] rounded-[16px] p-[22px]">
+            <img src="./images/qr-black.png" alt="" class="w-full h-full object-cover" />
+          </div>
+          <p class="text-[#14201F] text-[14px] leading-[21px] tracking-[-0.14px] font-archivo text-center pt-5">Festival
+            Afro
+            Music 2026</p>
 
+        </div>
+        <!-- footer -->
+        <div class="flex flex-row justify-end gap-3 items-center">
+          <a href="#" onclick="deleteEnquete()"
+            class="font-archivo flex flex-row justify-center items-center gap-[6px] bg-[#FFFFFF] rounded-[10px] cursor-pointer h-[44px] px-5 hover:bg-[#FFFFFF] border border-[#DCDEDD] transition-colors text-sm font-medium text-[#14201F] leading-[21px]">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"
+                stroke="#14201F" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.66406 6.6665L7.9974 9.99984L11.3307 6.6665" stroke="#14201F" stroke-width="1.33333"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 10V2" stroke="#14201F" stroke-width="1.33333" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+
+            <span>Télécharger PNG</span>
+          </a>
+          <a href="#" onclick="deleteEnquete()"
+            class="font-archivo flex flex-row justify-center items-center gap-[6px] bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)] shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] rounded-[10px] cursor-pointer h-[44px] px-5 hover:bg-[#006496] transition-colors text-sm font-medium text-white leading-[21px]">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10"
+                stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M4.66406 6.6665L7.9974 9.99984L11.3307 6.6665" stroke="white" stroke-width="1.33333"
+                stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M8 10V2" stroke="white" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <span>Télécharger PDF</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- link modal -->
+  <div id="linkModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[16px] shadow-lg max-w-[480px] w-full mx-auto new-drop-shadow p-[28px]">
+        <!-- header -->
+        <div class="flex flex-row items-center justify-between">
+          <h2 class="font-archivo font-semibold text-[18px] text-[#14201F] leading-[27px] tracking-[-0.36px]">
+            Lien de l'enquête
+          </h2>
+          <button onclick="closeModal('linkModal')" class="cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 4.5L4.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4.5 4.5L13.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <!-- content -->
+        <div class="py-5 flex flex-col gap-5">
+          <!-- 1 -->
+          <div>
+            <p class="text-[14px] text-[#14201F] font-medium leading-[21px] tracking-[-0.14px]">Festival Afro Music 2026
+            </p>
+          </div>
+          <!-- 2 -->
+          <div class="flex flex-row justify-between items-center gap-3">
+
+            <input id="copyInput" type="text" value="https://sundayevents.com/enquete/s/festival-afro-music-2026"
+              readonly class="flex-1 w-full h-[44px] bg-[#F3F4F4]
+           border border-[#E8E8E9]
+           focus:border-[#0189D5] focus:outline-none focus:ring-1 focus:ring-[#0189D5]
+           text-[#0189D5] text-[13px] leading-[19px]
+           px-[15px] py-3 rounded-[10px]">
+
+            <button onclick="copyToClipboard()" class="w-[93.33px] h-[44px] rounded-[10px]
+           flex flex-row justify-center items-center gap-[6px]
+           border border-[#DCDEDD] hover:bg-gray-50 transition">
+              <!-- SVG -->
+              <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+                <path
+                  d="M11.6641 4.6665H5.83073C5.1864 4.6665 4.66406 5.18884 4.66406 5.83317V11.6665C4.66406 12.3108 5.1864 12.8332 5.83073 12.8332H11.6641C12.3084 12.8332 12.8307 12.3108 12.8307 11.6665V5.83317C12.8307 5.18884 12.3084 4.6665 11.6641 4.6665Z"
+                  stroke="#14201F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M2.33073 9.33317C1.68906 9.33317 1.16406 8.80817 1.16406 8.1665V2.33317C1.16406 1.6915 1.68906 1.1665 2.33073 1.1665H8.16406C8.80573 1.1665 9.33073 1.6915 9.33073 2.33317"
+                  stroke="#14201F" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+
+              <span id="copyText" class="text-[#14201F] text-[13px] leading-[19px] font-medium">
+                Copier
+              </span>
+            </button>
+
+          </div>
+          <!-- 3 -->
+          <div class="bg-[#FFFBEB] border border-[#FDE68A] rounded-[10px] px-2 py-[10px] flex flex-col gap-[6px] w-fit">
+            <div class="flex items-start gap-[6px]">
+              <svg class="shrink-0 mt-0.5" width="12" height="12" viewBox="0 0 12 12" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2753_123253)">
+                  <path
+                    d="M6 11C8.76142 11 11 8.76142 11 6C11 3.23858 8.76142 1 6 1C3.23858 1 1 3.23858 1 6C1 8.76142 3.23858 11 6 11Z"
+                    stroke="#F59E0B" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M6 8V6" stroke="#F59E0B" stroke-linecap="round" stroke-linejoin="round"></path>
+                  <path d="M6 4H6.005" stroke="#F59E0B" stroke-linecap="round" stroke-linejoin="round"></path>
+                </g>
+                <defs>
+                  <clipPath id="clip0_2753_123253">
+                    <rect width="12" height="12" fill="white"></rect>
+                  </clipPath>
+                </defs>
+              </svg>
+
+              <span class="font-archivo font-medium text-[12px] leading-[18px] text-[#92400E]">Ce lien est valide 72h
+                après la fin de l'événement. Passé ce délai, les participants ne pourront plus répondre à
+                l'enquête.</span>
+            </div>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="flex flex-row justify-end gap-3 items-center">
+          <a href="#" onclick="closeModal('linkModal')"
+            class="font-archivo w-full flex flex-row justify-center items-center gap-[6px] bg-[#FFFFFF] rounded-[10px] cursor-pointer h-[44px] px-5 hover:bg-[#FFFFFF] border border-[#DCDEDD] transition-colors text-sm font-medium text-[#14201F] leading-[21px]">
+            <span>Fermer</span>
+          </a>
+          <a href="#" onclick=""
+            class="font-archivo w-full flex flex-row justify-center items-center gap-[6px] bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)] shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] rounded-[10px] cursor-pointer h-[44px] px-5 hover:bg-[#006496] transition-colors text-sm font-medium text-white leading-[21px]">
+            <svg width="14" height="14" viewBox="0 0 14 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g clip-path="url(#clip0_2753_124723)">
+                <path
+                  d="M10.5 4.6665C11.4665 4.6665 12.25 3.883 12.25 2.9165C12.25 1.95001 11.4665 1.1665 10.5 1.1665C9.5335 1.1665 8.75 1.95001 8.75 2.9165C8.75 3.883 9.5335 4.6665 10.5 4.6665Z"
+                  stroke="white" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M3.5 8.75C4.4665 8.75 5.25 7.9665 5.25 7C5.25 6.0335 4.4665 5.25 3.5 5.25C2.5335 5.25 1.75 6.0335 1.75 7C1.75 7.9665 2.5335 8.75 3.5 8.75Z"
+                  stroke="white" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                <path
+                  d="M10.5 12.8335C11.4665 12.8335 12.25 12.05 12.25 11.0835C12.25 10.117 11.4665 9.3335 10.5 9.3335C9.5335 9.3335 8.75 10.117 8.75 11.0835C8.75 12.05 9.5335 12.8335 10.5 12.8335Z"
+                  stroke="white" stroke-width="1.16667" stroke-linecap="round" stroke-linejoin="round" />
+                <path d="M5.00781 7.88086L8.99198 10.2025" stroke="white" stroke-width="1.16667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+                <path d="M8.98615 3.79736L5.00781 6.11903" stroke="white" stroke-width="1.16667" stroke-linecap="round"
+                  stroke-linejoin="round" />
+              </g>
+              <defs>
+                <clipPath id="clip0_2753_124723">
+                  <rect width="14" height="14" fill="white" />
+                </clipPath>
+              </defs>
+            </svg>
+
+            <span>Partager</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- js -->
+  <script>
+    function copyToClipboard() {
+      const input = document.getElementById("copyInput");
+      const text = document.getElementById("copyText");
+
+      navigator.clipboard.writeText(input.value).then(() => {
+        text.innerText = "Copié ✓";
+
+        setTimeout(() => {
+          text.innerText = "Copier";
+        }, 2000);
+      });
+    }
+  </script>
   <script src="./js/index.js"></script>
 </body>
 

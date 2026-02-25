@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+<html lang="fr" data-theme="light" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8" />
@@ -621,7 +621,7 @@
                     <path d="M5.33594 10.6665H5.3426" stroke="currentColor" stroke-width="1.33333"
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <span onclick="window.location.href = './transactions-mes-ventes-directes.html'">Enquêtes</span>
+                  <span onclick="window.location.href = './enquête-sunday-event-ia-2.html'">Enquêtes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -638,20 +638,20 @@
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href="./transactions-mes-ventes-directes.html"
+                    <a href="./enquête-sunday-event-ia.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Créer
                       une enquête</a>
                   </li>
 
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href="./transactions-mes-ventes-directes.html"
+                    <a href="./enquête-générer-qr-code-lien.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Générer
                       QR code/lien</a>
                   </li>
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
-                    <a href="./transactions-mes-ventes-directes.html"
+                    <a href="./enquête-statistiques.html"
                       class="text-xs leading-2.5 text-[#666E6D] hover:font-semibold hover:text-[#0167A0] transition-all ease-in-out duration-300 pl-3 py-2 pr-2 block">Statistiques</a>
                   </li>
                 </ul>
@@ -1370,7 +1370,8 @@
               <span>Sélectionnez 5 critères dans la liste ci-dessous
               </span>
               <!-- Blue info circle -->
-              <span class="w-[16px] h-[16px] flex items-center justify-center select-none cursor-default shrink-0">
+              <span class="w-[16px] h-[16px] flex items-center justify-center select-none cursor-default shrink-0"
+                onclick="openModal('accueilModal')">
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_2753_122577)">
                     <path
@@ -1766,7 +1767,7 @@
             <p class="font-archivo  text-[13px] text-[#505553] leading-[19px]">Souhaitez-vous permettre aux
               participants de laisser un commentaire libre ?</p>
             <!-- Toggle buttons — radio-pill style -->
-            <div class="flex flex-row items-center gap-3">
+            <div class="flex flex-col md:flex-row md:items-center gap-3">
               <!-- Oui (active by default) -->
               <button id="btn-commentaires-oui"
                 class="flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]"
@@ -1797,7 +1798,7 @@
               class="px-8 py-3 rounded-[12px] border border-[#DCDEDD] h-[46px] bg-white text-[14px] leading-[21px] font-archivo font-medium text-[#14201F] hover:border-[#0167A0] transition-colors cursor-pointer shadow-sm">
               Annuler
             </button>
-            <button
+            <button onclick="openModal('successModal')"
               class="px-8 py-3 rounded-[12px] bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)]
 shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text-[14px] leading-[21px] font-archivo font-medium flex flex-row items-center gap-2 hover:bg-[#015888] transition-colors cursor-pointer shadow-sm">
               Créer l'enquête
@@ -1812,8 +1813,8 @@ shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text
         </div>
 
         <!-- RIGHT: Prévisualisation panel -->
-        <div class="lg:w-[280px] xl:w-[300px] shrink-0 lg:block hidden">
-          <div class="bg-white border border-[#E7E9E9] rounded-[16px] overflow-hidden sticky top-4">
+        <div class="lg:w-[280px] xl:w-[300px] shrink-0 lg:block hidden sticky top-[100px] h-fit">
+          <div class="bg-white border border-[#E7E9E9] rounded-[16px] overflow-hidden">
             <!-- Panel header -->
             <div
               class="bg-gradient-to-b from-[#0189D5] to-[#016EAA] px-4 py-3 flex flex-row items-center gap-2 h-[50px]">
@@ -2097,81 +2098,168 @@ shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text
         </div>
       </div>
 
-      <script>
-        // Custom Dropdown Logic
-        function toggleCustomEventDropdown(event) {
-          if (event) {
-            event.stopPropagation();
-          }
-          const menu = document.getElementById('custom-dropdown-menu');
-          const icon = document.getElementById('dropdown-icon');
 
-          if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-          } else {
-            menu.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          }
-        }
-
-        function selectCustomEventOption(value) {
-          const selectedText = document.getElementById('custom-dropdown-value');
-          selectedText.textContent = value;
-
-          // Close dropdown after selection
-          toggleCustomEventDropdown();
-        }
-
-        // Close dropdown when clicking outside
-        window.addEventListener('click', function (e) {
-          const dropdownTrigger = document.getElementById('custom-dropdown-trigger');
-          const menu = document.getElementById('custom-dropdown-menu');
-          const icon = document.getElementById('dropdown-icon');
-
-          if (dropdownTrigger && !dropdownTrigger.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          }
-        });
-
-        // Current setCommentaires function
-        function setCommentaires(active) {
-          var btnOui = document.getElementById('btn-commentaires-oui');
-          var btnNon = document.getElementById('btn-commentaires-non');
-          var dotOui = document.getElementById('dot-oui');
-          var dotNon = document.getElementById('dot-non');
-          var preview = document.getElementById('preview-commentaires');
-
-          if (active) {
-            // Oui selected
-            btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
-            btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
-            // Dot states
-            dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
-            dotOui.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
-            dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
-            dotNon.innerHTML = '';
-            // Preview
-            if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#16A34A]'; preview.textContent = 'Activé'; }
-          } else {
-            // Non selected
-            btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
-            btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
-            // Dot states
-            dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
-            dotNon.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
-            dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
-            dotOui.innerHTML = '';
-            // Preview
-            if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#6a7271]'; preview.textContent = 'Désactivé'; }
-          }
-        }
-      </script>
       <!-- wrapper here end  -->
     </div>
   </main>
+  <!-- modal -->
+  <div id="accueilModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[16px] shadow-lg max-w-[420px] w-full mx-auto new-drop-shadow p-[28px]">
+        <!-- header -->
+        <div class="flex flex-row items-center justify-between">
+          <div class="flex flex-row items-center gap-[10px]">
+            <div class="w-[30px] h-[30px] bg-[#E6F3FB] rounded-[8px] flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2753_125171)">
+                  <path
+                    d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9 12V9" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M9 6H9.0075" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2753_125171">
+                    <rect width="18" height="18" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="font-archivo font-semibold text-[18px] text-[#14201F] leading-[27px] tracking-[-0.36px]">
+              Accueil
+            </h2>
+          </div>
+          <button onclick="closeModal('accueilModal')" class="cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 4.5L4.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4.5 4.5L13.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <!-- content -->
+        <div class="py-4">
+          <div>
+            <span
+              class="block text-[#0189D5] font-archivo text-[13px] text-[19px] trackig-[-0.13px] font-medium capitalized mb-1">Description</span>
+            <p class="text-[#505553] text-[14px] leading-[22px] font-archivo">Qualité de l'accueil du staff et de
+              l'entrée</p>
+          </div>
+          <div class="mt-3">
+            <span
+              class="block text-[#0189D5] font-archivo text-[13px] text-[19px] trackig-[-0.13px] font-medium capitalized mb-1">Pourquoi
+              c'est pertinent</span>
+            <p class="text-[#505553] text-[14px] leading-[22px] font-archivo">Permet de mesurer la première impression
+              et l'efficacité du personnel</p>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="pt-6 flex flex-row justify-end gap-3 items-center">
+          <a href="#" onclick="deleteEnquete()"
+            class="font-archivo bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)] shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] rounded-[8px] cursor-pointer h-[40px] px-5 flex flex-row items-center justify-center gap-[6px] hover:bg-[#be2424] transition-colors text-sm font-medium text-white leading-[21px]">
+            Compris
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- success modal -->
+  <div id="successModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[20px] shadow-lg max-w-[648px] w-full mx-auto new-drop-shadow p-[32px]">
+        <!-- header -->
+        <div class="text-center flex flex-col justify-center items-center">
+          <img src="./images/checks-llustration.svg" alt="success" class="max-w-[265px]">
+          <h2 class="text-[#161924] font-archivo font-semibold text-[32px] leading-[120%] mt-3">Votre enquête a été
+            créée avec succès</h2>
+        </div>
+        <!-- footer -->
+        <div class="pt-6 flex flex-row justify-center gap-6 items-center">
+          <a href="./dashboard.html"
+            class="min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer max-w-[200px]">
 
+            <span>Retour au tableau de bord</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--js -->
+  <script>
+    // Custom Dropdown Logic
+    function toggleCustomEventDropdown(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      const menu = document.getElementById('custom-dropdown-menu');
+      const icon = document.getElementById('dropdown-icon');
+
+      if (menu.classList.contains('hidden')) {
+        menu.classList.remove('hidden');
+        icon.classList.add('rotate-180');
+      } else {
+        menu.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    }
+
+    function selectCustomEventOption(value) {
+      const selectedText = document.getElementById('custom-dropdown-value');
+      selectedText.textContent = value;
+
+      // Close dropdown after selection
+      toggleCustomEventDropdown();
+    }
+
+    // Close dropdown when clicking outside
+    window.addEventListener('click', function (e) {
+      const dropdownTrigger = document.getElementById('custom-dropdown-trigger');
+      const menu = document.getElementById('custom-dropdown-menu');
+      const icon = document.getElementById('dropdown-icon');
+
+      if (dropdownTrigger && !dropdownTrigger.contains(e.target) && !menu.contains(e.target)) {
+        menu.classList.add('hidden');
+        icon.classList.remove('rotate-180');
+      }
+    });
+
+    // Current setCommentaires function
+    function setCommentaires(active) {
+      var btnOui = document.getElementById('btn-commentaires-oui');
+      var btnNon = document.getElementById('btn-commentaires-non');
+      var dotOui = document.getElementById('dot-oui');
+      var dotNon = document.getElementById('dot-non');
+      var preview = document.getElementById('preview-commentaires');
+
+      if (active) {
+        // Oui selected
+        btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
+        btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
+        // Dot states
+        dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
+        dotOui.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
+        dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
+        dotNon.innerHTML = '';
+        // Preview
+        if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#16A34A]'; preview.textContent = 'Activé'; }
+      } else {
+        // Non selected
+        btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
+        btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
+        // Dot states
+        dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
+        dotNon.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
+        dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
+        dotOui.innerHTML = '';
+        // Preview
+        if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#6a7271]'; preview.textContent = 'Désactivé'; }
+      }
+    }
+  </script>
   <script src="./js/index.js"></script>
 </body>
 

@@ -1,5 +1,5 @@
-<!DOCTYPE html>
-<html lang="fr" data-theme="light" class="scroll-smooth h-full">
+<!doctype html>
+<html lang="fr" data-theme="light" class="scroll-smooth ">
 
 <head>
   <meta charset="UTF-8" />
@@ -12,11 +12,11 @@
   <link rel="manifest" href="./favicon/site.webmanifest" />
 
   <!-- google font  -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
     href="https://fonts.googleapis.com/css2?family=Alegreya:ital,wght@0,400..900;1,400..900&family=Archivo:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Reenie+Beanie&display=swap"
-    rel="stylesheet">
+    rel="stylesheet" />
   <!-- custom font  -->
   <link rel="stylesheet" href="./fonts/stylesheet.css" />
 
@@ -30,8 +30,8 @@
 
   /* Selected: blue fill + visible check on the radio dot */
   .type-card:has(input:checked) .type-radio {
-    background-color: #0189D5;
-    border-color: #0189D5;
+    background-color: #0189d5;
+    border-color: #0189d5;
   }
 
   .type-card:has(input:checked) .type-check {
@@ -99,7 +99,6 @@
       <div class="">
         <!-- single item start  -->
         <div class="p-3 border-b border-[#E7E9E9] space-y-2">
-
           <ul class="flex flex-col gap-3">
             <li>
               <a href="./dashboard.html"
@@ -128,7 +127,7 @@
           </h4>
           <ul class="flex flex-col gap-0.5">
             <!-- Évènements start  -->
-            <li class="accordion ">
+            <li class="accordion">
               <button
                 class="accordion-trigger px-3.5 py-2.5 gap-2 flex flex-row justify-between items-center text-[#666E6D] hover:text-[#0167A0] hover:font-medium hover:shadow hover:shadow-black/10 text-xs leading-3 transition-all duration-400 rounded-lg w-full cursor-pointer">
                 <span class="gap-2 flex flex-row items-center">
@@ -144,7 +143,6 @@
                       stroke-linejoin="round" />
                   </svg>
 
-
                   <span onclick="window.location.href = './évènements.html'">Évènements</span>
                 </span>
 
@@ -158,7 +156,7 @@
               </button>
               <!-- ACCORDION CONTENT -->
               <div
-                class="accordion-content  ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
+                class="accordion-content ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
@@ -193,8 +191,9 @@
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-
-                  <span onclick="window.location.href = './collecte-récapitulatifs.html'">Tickets</span>
+                  <span onclick="
+                        window.location.href = './collecte-récapitulatifs.html'
+                      ">Tickets</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -239,7 +238,6 @@
                       d="M8 8.6665C9.10457 8.6665 10 7.77107 10 6.6665C10 5.56193 9.10457 4.6665 8 4.6665C6.89543 4.6665 6 5.56193 6 6.6665C6 7.77107 6.89543 8.6665 8 8.6665Z"
                       stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-
 
                   <span onclick="window.location.href = './points-de-vente.html'">Points de vente</span>
                 </span>
@@ -292,8 +290,9 @@
                       stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-
-                  <span onclick="window.location.href = './points-de-connexion.html'">Points de connexion</span>
+                  <span onclick="
+                        window.location.href = './points-de-connexion.html'
+                      ">Points de connexion</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -339,7 +338,10 @@
                       stroke="currentColor" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span onclick="window.location.href = './collecte-créer-une-collecte.html'">Collectes</span>
+                  <span onclick="
+                        window.location.href =
+                          './collecte-créer-une-collecte.html'
+                      ">Collectes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -413,7 +415,6 @@
                       stroke-linejoin="round" />
                   </svg>
 
-
                   <span>Réservations</span>
                 </span>
               </a>
@@ -457,7 +458,6 @@
                       d="M11.3333 3.3335H6.33333C5.71449 3.3335 5.121 3.57933 4.68342 4.01691C4.24583 4.4545 4 5.04799 4 5.66683C4 6.28567 4.24583 6.87916 4.68342 7.31675C5.121 7.75433 5.71449 8.00016 6.33333 8.00016H9.66667C10.2855 8.00016 10.879 8.246 11.3166 8.68358C11.7542 9.12117 12 9.71466 12 10.3335C12 10.9523 11.7542 11.5458 11.3166 11.9834C10.879 12.421 10.2855 12.6668 9.66667 12.6668H4"
                       stroke="#666E6D" stroke-width="1.33333" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-
 
                   <span onclick="window.location.href = './cash.html'">Cash</span>
                 </span>
@@ -506,7 +506,6 @@
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-
                   <span onclick="window.location.href = './mes-forfaits.html'">Forfait tarifaire</span>
                 </span>
 
@@ -520,7 +519,7 @@
               </button>
               <!-- ACCORDION CONTENT -->
               <div
-                class="accordion-content  ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
+                class="accordion-content ml-5 relative before:absolute before:h-[calc(100%-13px)] before:border-l before:border-[#DCDEDE]">
                 <ul class="flex flex-col gap-1 pt-2">
                   <li
                     class="relative before:absolute before:h-[1px] before:w-2 before:border-b before:top-1/2 before:-translate-y-1/2 before:border-[#DCDEDE]">
@@ -567,7 +566,6 @@
                       stroke-linejoin="round" />
                   </svg>
 
-
                   <span>Simulateur de prix</span>
                 </span>
               </a>
@@ -592,8 +590,6 @@
                     <path d="M10.6693 11.3335H5.33594" stroke="currentColor" stroke-width="1.33333"
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-
-
 
                   <span>Transactions</span>
                 </span>
@@ -621,7 +617,10 @@
                     <path d="M5.33594 10.6665H5.3426" stroke="currentColor" stroke-width="1.33333"
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
-                  <span onclick="window.location.href = './transactions-mes-ventes-directes.html'">Enquêtes</span>
+                  <span onclick="
+                        window.location.href =
+                          './transactions-mes-ventes-directes.html'
+                      ">Enquêtes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -657,7 +656,6 @@
                 </ul>
               </div>
             </li>
-
           </ul>
         </div>
         <!-- single item end  -->
@@ -736,7 +734,10 @@
                       stroke="currentColor" stroke-width="1.15" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span onclick="window.location.href = './sous-comptes-mes-ventes-directes.html'">Sous-comptes</span>
+                  <span onclick="
+                        window.location.href =
+                          './sous-comptes-mes-ventes-directes.html'
+                      ">Sous-comptes</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -787,7 +788,10 @@
                       stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
 
-                  <span onclick="window.location.href = './sous-comptes-mes-ventes-directes.html'">Mon compte</span>
+                  <span onclick="
+                        window.location.href =
+                          './sous-comptes-mes-ventes-directes.html'
+                      ">Mon compte</span>
                 </span>
 
                 <!-- DROPDOWN ARROW -->
@@ -832,9 +836,6 @@
                       stroke-linejoin="round" />
                   </svg>
 
-
-
-
                   <span>Déconnexion</span>
                 </span>
               </a>
@@ -847,13 +848,15 @@
                   <div class="w-10 h-10 bg-[#E9FBFE] rounded-[10px]"></div>
                   <div class="flex flex-col text-start">
                     <h4 class="font-medium text-[#14201F] text-xs leading-[18px] tracking-[-0.12px]">
-                      Fikri maulana </h4>
+                      Fikri maulana
+                    </h4>
                     <p class="font-normal text-[#666E6D] text-xs leading-[16.5px] tracking-[-0.11px]">
                       fikrimaulana@gmail.com
                     </p>
                   </div>
                 </div>
-                <div><svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <div>
+                  <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path d="M3 4.5L6 7.5L9 4.5" stroke="#666E6D" stroke-linecap="round" stroke-linejoin="round" />
                   </svg>
                 </div>
@@ -893,21 +896,20 @@
       <!-- page title end  -->
       <!-- Page heading -->
       <div class="mb-4 lg:mb-6">
-        <h2 class="font-archivo font-semibold text-[#14201F] text-[28px] leading-[33px] tracking-[-0.56px]">Créer
-          une enquête</h2>
+        <h2 class="font-archivo font-semibold text-[#14201F] text-[28px] leading-[33px] tracking-[-0.56px]">
+          Créer une enquête
+        </h2>
         <p class="font-archivo font-normal text-[#616161] text-sm leading-[22px] tracking-[-0.14px] mt-1">
-          Configurez votre enquête de
-          satisfaction pour un événement.</p>
+          Configurez votre enquête de satisfaction pour un événement.
+        </p>
       </div>
 
       <!-- wrapper here start  -->
       <!-- Créer une enquête wrapper -->
       <div class="flex flex-col lg:flex-row gap-6 w-full pb-6">
-
         <!-- LEFT: form -->
         <div class="flex flex-col gap-4 lg:gap-6 flex-1 min-w-0">
-
-          <div class="lg:w-[280px] xl:w-[300px] shrink-0 lg:hidden block ">
+          <div class="lg:w-[280px] xl:w-[300px] shrink-0 lg:hidden block">
             <div class="bg-white border border-[#E7E9E9] rounded-[16px] overflow-hidden sticky top-4">
               <!-- Panel header -->
               <div
@@ -932,16 +934,15 @@
                     <span class="font-archivo font-normal text-[#DCDEDE] text-[18px] leading-[27px]">?</span>
                   </div>
                   <p class="font-archivo italic font-normal text-[#898F8F] text-[13px] leading-[19px]">
-                    Aucun événement sélectionné</p>
+                    Aucun événement sélectionné
+                  </p>
                 </div>
 
                 <!-- Details list -->
                 <div class="flex flex-col gap-4">
-
                   <!-- Type -->
                   <div class="flex flex-row items-center gap-2">
-                    <span class="font-archivo font-medium text-[#505553] text-[12px] leading-[18px]">Type
-                      :</span>
+                    <span class="font-archivo font-medium text-[#505553] text-[12px] leading-[18px]">Type :</span>
                     <span
                       class="font-archivo font-medium text-[#898F8F] text-[13px] leading-[19px] tracking-[-0.13px] bg-[#F3F4F4] rounded-[4px] px-2 py-[2px]"
                       id="preview-type">Non défini</span>
@@ -981,16 +982,17 @@
             <div class="flex flex-row items-center gap-[10px]">
               <span
                 class="w-[28px] h-[28px] rounded-full bg-[#0189D5] text-white text-[13px] font-semibold flex items-center justify-center leading-[19px] tracking-[0px] shrink-0">1</span>
-              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">Événement rattaché</h3>
+              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">
+                Événement rattaché
+              </h3>
             </div>
-            <p class="font-archivo font-normal text-[#505553] text-[13px] leading-[19px]">Sélectionnez l'événement à
-              venir
-              ou en
-              cours pour lequel vous souhaitez créer une enquête.</p>
+            <p class="font-archivo font-normal text-[#505553] text-[13px] leading-[19px]">
+              Sélectionnez l'événement à venir ou en cours pour lequel vous
+              souhaitez créer une enquête.
+            </p>
             <!-- Dropdown -->
             <!-- Custom Dropdown -->
             <div class="relative max-w-[480px] z-[60]">
-
               <!-- Dropdown Trigger -->
               <div id="custom-dropdown-trigger"
                 class="w-full flex flex-row items-center justify-between bg-white border border-[#DCDEDE] rounded-[10px] h-[46px] px-4 py-3 cursor-pointer"
@@ -1004,7 +1006,6 @@
                   <path d="M4 6L8 10L12 6" stroke="#898F8F" stroke-width="1.33333" stroke-linecap="round"
                     stroke-linejoin="round" />
                 </svg>
-
               </div>
 
               <!-- Dropdown Menu Options -->
@@ -1020,7 +1021,11 @@
                   <!-- Option -->
                   <li
                     class="px-4 py-2 hover:bg-[#F0F8FF] cursor-pointer text-[14px] font-archivo font-medium text-[#14201F] transition-colors"
-                    onclick="selectCustomEventOption('Conférence Leadership & Innovation')">
+                    onclick="
+                        selectCustomEventOption(
+                          'Conférence Leadership & Innovation',
+                        )
+                      ">
                     Conférence Leadership & Innovation
                   </li>
                   <!-- Option -->
@@ -1037,7 +1042,6 @@
                   </li>
                 </ul>
               </div>
-
             </div>
           </div>
 
@@ -1046,11 +1050,12 @@
             <div class="flex flex-row items-center gap-[10px]">
               <span
                 class="w-[28px] h-[28px] rounded-full bg-[#0189D5] text-white text-[13px] font-semibold flex items-center justify-center leading-[19px] tracking-[0px] shrink-0">2</span>
-              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">Type d'enquête</h3>
+              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">
+                Type d'enquête
+              </h3>
             </div>
             <!-- Cards row -->
             <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-
               <!-- Sur site -->
               <label
                 class="type-card relative flex flex-col gap-2 border-[2px] border-[#E8E8E9] rounded-xl p-[18px] cursor-pointer transition-all has-[:checked]:border-[#0189D5] has-[:checked]:bg-[#EBF5FB]">
@@ -1059,7 +1064,7 @@
                 <div class="flex flex-row items-start justify-between">
                   <!-- Red map pin -->
                   <div>
-                    <img src="./images/location-pin.png" alt="location-pin" class="w-[24px]">
+                    <img src="./images/location-pin.png" alt="location-pin" class="w-[24px]" />
                   </div>
 
                   <!-- Custom radio dot -->
@@ -1072,11 +1077,14 @@
                   </span>
                 </div>
                 <!-- Title -->
-                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">Sur site
+                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">
+                  Sur site
                 </p>
                 <!-- Description -->
-                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">QR code à afficher sur
-                  le lieu de l'événement. Valable uniquement pendant la durée de l'événement.</p>
+                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">
+                  QR code à afficher sur le lieu de l'événement. Valable
+                  uniquement pendant la durée de l'événement.
+                </p>
               </label>
 
               <!-- Après l'événement -->
@@ -1087,7 +1095,7 @@
                 <div class="flex flex-row items-start justify-between">
                   <!-- Envelope icon -->
                   <div>
-                    <img src="./images/mail-box.png" alt="mail-box" class="w-[24px]">
+                    <img src="./images/mail-box.png" alt="mail-box" class="w-[24px]" />
                   </div>
                   <!-- Custom radio dot -->
                   <span
@@ -1099,11 +1107,14 @@
                   </span>
                 </div>
                 <!-- Title -->
-                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">Après
-                  l'événement</p>
+                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">
+                  Après l'événement
+                </p>
                 <!-- Description -->
-                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">Lien envoyé aux
-                  participants après l'événement. Valide 72h après la fin.</p>
+                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">
+                  Lien envoyé aux participants après l'événement. Valide 72h
+                  après la fin.
+                </p>
                 <!-- Amber info badge -->
                 <div
                   class="flex flex-row items-start gap-2 bg-[#FFFBEB] border border-[#FDE68A] rounded-lg px-2.5 py-2">
@@ -1112,8 +1123,10 @@
                     <path d="M7 4.5V7.5" stroke="#D97706" stroke-width="1.5" stroke-linecap="round" />
                     <circle cx="7" cy="9.75" r="0.75" fill="#D97706" />
                   </svg>
-                  <p class="font-archivo font-normal text-[#92400E] text-[11px] leading-[16px]">Le lien de l'enquête est
-                    valide 72h après la fin de l'événement.</p>
+                  <p class="font-archivo font-normal text-[#92400E] text-[11px] leading-[16px]">
+                    Le lien de l'enquête est valide 72h après la fin de
+                    l'événement.
+                  </p>
                 </div>
               </label>
 
@@ -1125,7 +1138,7 @@
                 <div class="flex flex-row items-start justify-between">
                   <!-- Sync icon in rounded blue square -->
                   <div>
-                    <img src="./images/repeat-again.png" alt="sync" class="w-[24px]">
+                    <img src="./images/repeat-again.png" alt="sync" class="w-[24px]" />
                   </div>
                   <!-- Custom radio dot -->
                   <span
@@ -1137,30 +1150,33 @@
                   </span>
                 </div>
                 <!-- Title -->
-                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">Hybride
+                <p class="font-archivo font-semibold text-[#14201F] text-sm leading-[21px] tracking-[-0.14px]">
+                  Hybride
                 </p>
                 <!-- Description -->
-                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">QR code sur site + lien
-                  envoyé après. Maximise le nombre de réponses.</p>
+                <p class="font-archivo font-normal text-[#505553] text-[12px] leading-[18px]">
+                  QR code sur site + lien envoyé après. Maximise le nombre de
+                  réponses.
+                </p>
               </label>
-
             </div>
           </div>
-
 
           <!-- ③ Critères d'évaluation -->
           <div class="bg-white border border-[#E8E8E9] rounded-xl p-5 lg:p-[25px] flex flex-col gap-4">
             <div class="flex flex-row items-center gap-[10px]">
               <span
                 class="w-[28px] h-[28px] rounded-full bg-[#0189D5] text-white text-[13px] font-semibold flex items-center justify-center leading-[19px] tracking-[0px] shrink-0">3</span>
-              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">Critères d'évaluation</h3>
+              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">
+                Critères d'évaluation
+              </h3>
             </div>
             <div
               class="flex flex-row flex-wrap items-center gap-1.5 text-[13px] font-archivo text-[#505553] leading-[19px]">
-              <span>Sélectionnez 5 critères dans la liste ci-dessous
-              </span>
+              <span>Sélectionnez 5 critères dans la liste ci-dessous </span>
               <!-- Blue info circle -->
-              <span class="w-[16px] h-[16px] flex items-center justify-center select-none cursor-default shrink-0">
+              <span class="w-[16px] h-[16px] flex items-center justify-center select-none cursor-pointer shrink-0"
+                onclick="openModal('accueilModal')">
                 <svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <g clip-path="url(#clip0_2753_122577)">
                     <path
@@ -1182,7 +1198,6 @@
             </div>
             <!-- Criteria grid — each item is a bordered pill card -->
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-
               <!-- Accueil -->
               <label
                 class="crit-card flex flex-row items-center justify-between px-3 py-3 border border-[#E8E8E9] rounded-[10px] cursor-pointer group has-[:checked]:border-[#0189D5] has-[:checked]:bg-[#EBF5FB] transition-all">
@@ -1193,14 +1208,14 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Accueil</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1208,13 +1223,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
 
               </label>
 
@@ -1228,15 +1244,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Service
                     (rapport qualité/prix)</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_1)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1244,14 +1260,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_1">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Décor / Lieu -->
@@ -1264,15 +1280,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Décor
                     / Lieu</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_2)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1280,14 +1296,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_2">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Qualité de l'événement -->
@@ -1300,15 +1316,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Qualité
                     de l'événement</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_3)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1316,14 +1332,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_3">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Organisation / Logistique -->
@@ -1336,15 +1352,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Organisation
                     / Logistique</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_4)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1352,14 +1368,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_4">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Animation / Contenu -->
@@ -1372,15 +1388,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Animation
                     / Contenu</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_5)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1388,14 +1404,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_5">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Communication -->
@@ -1408,14 +1424,14 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Communication</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_6)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1423,14 +1439,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_6">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Ambiance / Convivialité -->
@@ -1443,15 +1459,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Ambiance
                     / Convivialité</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_7)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1459,14 +1475,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_7">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Restauration / Boissons -->
@@ -1479,15 +1495,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Restauration
                     / Boissons</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_8)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1495,14 +1511,14 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_8">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
 
               <!-- Sécurité / Confort -->
@@ -1515,15 +1531,15 @@
                       <path d="M1 4L3.5 6.5L9 1" stroke="white" stroke-width="1.6" stroke-linecap="round"
                         stroke-linejoin="round" />
                     </svg>
-
                   </div>
                   <input type="checkbox" class="sr-only" />
                   <span
                     class="font-archivo font-medium text-[#14201F] text-[13px] leading-[19px] tracking-[-0.13px]">Sécurité
                     / Confort</span>
                 </div>
-                <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <g clip-path="url(#clip0_2670_61851_9)">
+                <button onclick="openModal('accueilModal')">
+                  <svg width="15" height="15" viewBox="0 0 15 15" fill="none" xmlns="http://www.w3.org/2000/svg" <g
+                    clip-path="url(#clip0_2670_61851)">
                     <path
                       d="M7.5 13.75C10.9518 13.75 13.75 10.9518 13.75 7.5C13.75 4.04822 10.9518 1.25 7.5 1.25C4.04822 1.25 1.25 4.04822 1.25 7.5C1.25 10.9518 4.04822 13.75 7.5 13.75Z"
                       stroke="#0189D5" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round" />
@@ -1531,32 +1547,33 @@
                       stroke-linejoin="round" />
                     <path d="M7.5 5H7.50625" stroke="#0189D5" stroke-width="1.25" stroke-linecap="round"
                       stroke-linejoin="round" />
-                  </g>
-                  <defs>
-                    <clipPath id="clip0_2670_61851_9">
-                      <rect width="15" height="15" fill="white" />
-                    </clipPath>
-                  </defs>
-                </svg>
-
+                    </g>
+                    <defs>
+                      <clipPath id="clip0_2670_61851">
+                        <rect width="15" height="15" fill="white" />
+                      </clipPath>
+                    </defs>
+                  </svg>
+                </button>
               </label>
-
             </div>
           </div>
-
-
 
           <!-- ④ Commentaire(s) -->
           <div class="bg-white border border-[#E8E8E9] rounded-xl p-[25px] flex flex-col gap-4">
             <div class="flex flex-row items-center gap-[10px]">
               <span
                 class="w-[28px] h-[28px] rounded-full bg-[#0189D5] text-white text-[13px] font-semibold flex items-center justify-center leading-[19px] tracking-[0px] shrink-0">4</span>
-              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">Commentaire(s)</h3>
+              <h3 class="font-archivo font-semibold text-[#14201F] text-lg leading-[27px]">
+                Commentaire(s)
+              </h3>
             </div>
-            <p class="font-archivo  text-[13px] text-[#505553] leading-[19px]">Souhaitez-vous permettre aux
-              participants de laisser un commentaire libre ?</p>
+            <p class="font-archivo text-[13px] text-[#505553] leading-[19px]">
+              Souhaitez-vous permettre aux participants de laisser un
+              commentaire libre ?
+            </p>
             <!-- Toggle buttons — radio-pill style -->
-            <div class="flex flex-row items-center gap-3">
+            <div class="flex flex-col md:flex-row md:items-center gap-3">
               <!-- Oui (active by default) -->
               <button id="btn-commentaires-oui"
                 class="flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]"
@@ -1587,9 +1604,8 @@
               class="px-8 py-3 rounded-[12px] border border-[#DCDEDD] h-[46px] bg-white text-[14px] leading-[21px] font-archivo font-medium text-[#14201F] hover:border-[#0167A0] transition-colors cursor-pointer shadow-sm">
               Annuler
             </button>
-            <button
-              class="px-8 py-3 rounded-[12px] bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)]
-shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text-[14px] leading-[21px] font-archivo font-medium flex flex-row items-center gap-2 hover:bg-[#015888] transition-colors cursor-pointer shadow-sm">
+            <button id="btn-create-enquete" disabled onclick="openModal('successModal')"
+              class="px-8 py-3 rounded-[12px] bg-[#73b8d6] shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text-[14px] leading-[21px] font-archivo font-medium flex flex-row items-center gap-2 transition-all cursor-not-allowed opacity-80 shadow-sm">
               Créer l'enquête
               <svg width="14" height="14" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M3.33594 8H12.6693" stroke="white" stroke-width="1.33333" stroke-linecap="round"
@@ -1603,7 +1619,7 @@ shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text
 
         <!-- RIGHT: Prévisualisation panel -->
         <div class="lg:w-[280px] xl:w-[300px] shrink-0 lg:block hidden">
-          <div class="bg-white border border-[#E7E9E9] rounded-[16px] overflow-hidden sticky top-4">
+          <div class="bg-white border border-[#E7E9E9] rounded-[16px] overflow-hidden sticky top-[80px] h-fit">
             <!-- Panel header -->
             <div
               class="bg-gradient-to-b from-[#0189D5] to-[#016EAA] px-4 py-3 flex flex-row items-center gap-2 h-[50px]">
@@ -1627,16 +1643,15 @@ shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text
                   <span class="font-archivo font-normal text-[#DCDEDE] text-[18px] leading-[27px]">?</span>
                 </div>
                 <p class="font-archivo italic font-normal text-[#898F8F] text-[13px] leading-[19px]">
-                  Aucun événement sélectionné</p>
+                  Aucun événement sélectionné
+                </p>
               </div>
 
               <!-- Details list -->
               <div class="flex flex-col gap-4">
-
                 <!-- Type -->
                 <div class="flex flex-row items-center gap-2">
-                  <span class="font-archivo font-medium text-[#505553] text-[12px] leading-[18px]">Type
-                    :</span>
+                  <span class="font-archivo font-medium text-[#505553] text-[12px] leading-[18px]">Type :</span>
                   <span
                     class="font-archivo font-medium text-[#898F8F] text-[12px] leading-[18px] tracking-[-0.12px] bg-[#F3F4F4] rounded-[4px] px-2 py-[2px]"
                     id="preview-type">Non défini</span>
@@ -1672,81 +1687,229 @@ shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] text-white text
         </div>
       </div>
 
-      <script>
-        // Custom Dropdown Logic
-        function toggleCustomEventDropdown(event) {
-          if (event) {
-            event.stopPropagation();
-          }
-          const menu = document.getElementById('custom-dropdown-menu');
-          const icon = document.getElementById('dropdown-icon');
 
-          if (menu.classList.contains('hidden')) {
-            menu.classList.remove('hidden');
-            icon.classList.add('rotate-180');
-          } else {
-            menu.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          }
-        }
-
-        function selectCustomEventOption(value) {
-          const selectedText = document.getElementById('custom-dropdown-value');
-          selectedText.textContent = value;
-
-          // Close dropdown after selection
-          toggleCustomEventDropdown();
-        }
-
-        // Close dropdown when clicking outside
-        window.addEventListener('click', function (e) {
-          const dropdownTrigger = document.getElementById('custom-dropdown-trigger');
-          const menu = document.getElementById('custom-dropdown-menu');
-          const icon = document.getElementById('dropdown-icon');
-
-          if (dropdownTrigger && !dropdownTrigger.contains(e.target) && !menu.contains(e.target)) {
-            menu.classList.add('hidden');
-            icon.classList.remove('rotate-180');
-          }
-        });
-
-        // Current setCommentaires function
-        function setCommentaires(active) {
-          var btnOui = document.getElementById('btn-commentaires-oui');
-          var btnNon = document.getElementById('btn-commentaires-non');
-          var dotOui = document.getElementById('dot-oui');
-          var dotNon = document.getElementById('dot-non');
-          var preview = document.getElementById('preview-commentaires');
-
-          if (active) {
-            // Oui selected
-            btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
-            btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
-            // Dot states
-            dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
-            dotOui.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
-            dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
-            dotNon.innerHTML = '';
-            // Preview
-            if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#16A34A]'; preview.textContent = 'Activé'; }
-          } else {
-            // Non selected
-            btnNon.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]';
-            btnOui.className = 'flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]';
-            // Dot states
-            dotNon.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0';
-            dotNon.innerHTML = '<span class="w-2 h-2 rounded-full bg-white"></span>';
-            dotOui.className = 'w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0';
-            dotOui.innerHTML = '';
-            // Preview
-            if (preview) { preview.className = 'font-archivo font-medium text-[11px] text-[#6a7271]'; preview.textContent = 'Désactivé'; }
-          }
-        }
-      </script>
       <!-- wrapper here end  -->
     </div>
   </main>
+  <!-- modal -->
+  <div id="accueilModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[16px] shadow-lg max-w-[420px] w-full mx-auto new-drop-shadow p-[28px]">
+        <!-- header -->
+        <div class="flex flex-row items-center justify-between">
+          <div class="flex flex-row items-center gap-[10px]">
+            <div class="w-[30px] h-[30px] bg-[#E6F3FB] rounded-[8px] flex items-center justify-center">
+              <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g clip-path="url(#clip0_2753_125171)">
+                  <path
+                    d="M9 16.5C13.1421 16.5 16.5 13.1421 16.5 9C16.5 4.85786 13.1421 1.5 9 1.5C4.85786 1.5 1.5 4.85786 1.5 9C1.5 13.1421 4.85786 16.5 9 16.5Z"
+                    stroke="#0189D5" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                  <path d="M9 12V9" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                  <path d="M9 6H9.0075" stroke="#0189D5" stroke-width="1.5" stroke-linecap="round"
+                    stroke-linejoin="round" />
+                </g>
+                <defs>
+                  <clipPath id="clip0_2753_125171">
+                    <rect width="18" height="18" fill="white" />
+                  </clipPath>
+                </defs>
+              </svg>
+            </div>
+            <h2 class="font-archivo font-semibold text-[18px] text-[#14201F] leading-[27px] tracking-[-0.36px]">
+              Accueil
+            </h2>
+          </div>
+          <button onclick="closeModal('accueilModal')" class="cursor-pointer">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M13.5 4.5L4.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+              <path d="M4.5 4.5L13.5 13.5" stroke="#616161" stroke-width="1.5" stroke-linecap="round"
+                stroke-linejoin="round" />
+            </svg>
+          </button>
+        </div>
+        <!-- content -->
+        <div class="py-4">
+          <div>
+            <span
+              class="block text-[#0189D5] font-archivo text-[13px] text-[19px] trackig-[-0.13px] font-medium capitalized mb-1">Description</span>
+            <p class="text-[#505553] text-[14px] leading-[22px] font-archivo">Qualité de l'accueil du staff et de
+              l'entrée</p>
+          </div>
+          <div class="mt-3">
+            <span
+              class="block text-[#0189D5] font-archivo text-[13px] text-[19px] trackig-[-0.13px] font-medium capitalized mb-1">Pourquoi
+              c'est pertinent</span>
+            <p class="text-[#505553] text-[14px] leading-[22px] font-archivo">Permet de mesurer la première impression
+              et l'efficacité du personnel</p>
+          </div>
+        </div>
+        <!-- footer -->
+        <div class="pt-6 flex flex-row justify-end gap-3 items-center">
+          <button onclick="closeModal('accueilModal')"
+            class="font-archivo bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)] shadow-[0px_2px_4px_rgba(12,39,34,0.15),0px_0px_0px_1px_#016EAA] rounded-[8px] cursor-pointer h-[40px] px-5 flex flex-row items-center justify-center gap-[6px] hover:bg-[#be2424] transition-colors text-sm font-medium text-white leading-[21px]">
+            Compris
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- success modal -->
+  <div id="successModal" class="fixed hidden inset-0 overflow-y-auto modal-overlay z-[99999]">
+    <div class="flex items-center justify-center min-h-screen">
+      <div class="bg-white rounded-[20px] shadow-lg max-w-[648px] w-full mx-auto new-drop-shadow p-[32px]">
+        <!-- header -->
+        <div class="text-center flex flex-col justify-center items-center">
+          <img src="./images/checks-llustration.svg" alt="success" class="max-w-[265px]">
+          <h2 class="text-[#161924] font-archivo font-semibold text-[32px] leading-[120%] mt-3">Votre enquête a été
+            créée avec succès</h2>
+        </div>
+        <!-- footer -->
+        <div class="pt-6 flex flex-row justify-center gap-6 items-center">
+          <a href="./dashboard.html"
+            class="min-h-[40px] w-full rounded-[12px] button-v2 text-[#14201F] font-medium text-sm transition-colors flex items-center justify-center gap-1 cursor-pointer max-w-[200px]">
 
+            <span>Retour au tableau de bord</span>
+          </a>
+
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- js -->
+  <script>
+    // Custom Dropdown Logic
+    function toggleCustomEventDropdown(event) {
+      if (event) {
+        event.stopPropagation();
+      }
+      const menu = document.getElementById("custom-dropdown-menu");
+      const icon = document.getElementById("dropdown-icon");
+
+      if (menu.classList.contains("hidden")) {
+        menu.classList.remove("hidden");
+        icon.classList.add("rotate-180");
+      } else {
+        menu.classList.add("hidden");
+        icon.classList.remove("rotate-180");
+      }
+    }
+
+    function selectCustomEventOption(value) {
+      const selectedText = document.getElementById(
+        "custom-dropdown-value",
+      );
+      selectedText.textContent = value;
+
+      // Close dropdown after selection
+      toggleCustomEventDropdown();
+    }
+
+    // Close dropdown when clicking outside
+    window.addEventListener("click", function (e) {
+      const dropdownTrigger = document.getElementById(
+        "custom-dropdown-trigger",
+      );
+      const menu = document.getElementById("custom-dropdown-menu");
+      const icon = document.getElementById("dropdown-icon");
+
+      if (
+        dropdownTrigger &&
+        !dropdownTrigger.contains(e.target) &&
+        !menu.contains(e.target)
+      ) {
+        menu.classList.add("hidden");
+        icon.classList.remove("rotate-180");
+      }
+    });
+
+    // Current setCommentaires function
+    function setCommentaires(active) {
+      var btnOui = document.getElementById("btn-commentaires-oui");
+      var btnNon = document.getElementById("btn-commentaires-non");
+      var dotOui = document.getElementById("dot-oui");
+      var dotNon = document.getElementById("dot-non");
+      var preview = document.getElementById("preview-commentaires");
+
+      if (active) {
+        // Oui selected
+        btnOui.className =
+          "flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]";
+        btnNon.className =
+          "flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]";
+        // Dot states
+        dotOui.className =
+          "w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0";
+        dotOui.innerHTML =
+          '<span class="w-2 h-2 rounded-full bg-white"></span>';
+        dotNon.className =
+          "w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0";
+        dotNon.innerHTML = "";
+        // Preview
+        if (preview) {
+          preview.className =
+            "font-archivo font-medium text-[11px] text-[#16A34A]";
+          preview.textContent = "Activé";
+        }
+      } else {
+        // Non selected
+        btnNon.className =
+          "flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-[#F0F8FF] text-[#14201F] border-[#0189D5]";
+        btnOui.className =
+          "flex flex-row items-center gap-2.5 px-4 py-2.5 rounded-[10px] border-[2px] text-[13px] leading-[19px] font-archivo font-medium transition-all bg-white text-[#14201F] border-[#E8E8E9]";
+        // Dot states
+        dotNon.className =
+          "w-[18px] h-[18px] rounded-full border-2 border-[#0189D5] bg-[#0189D5] flex items-center justify-center shrink-0";
+        dotNon.innerHTML =
+          '<span class="w-2 h-2 rounded-full bg-white"></span>';
+        dotOui.className =
+          "w-[18px] h-[18px] rounded-full border-2 border-[#E8E8E9] bg-white flex items-center justify-center shrink-0";
+        dotOui.innerHTML = "";
+        // Preview
+        if (preview) {
+          preview.className =
+            "font-archivo font-medium text-[11px] text-[#6a7271]";
+          preview.textContent = "Désactivé";
+        }
+      }
+    }
+
+    // --- Logic to update button color based on criteria selection ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const checkboxes = document.querySelectorAll(
+        '.crit-card input[type="checkbox"]',
+      );
+      const createBtn = document.getElementById("btn-create-enquete");
+
+      function updateBtnState() {
+        if (!createBtn) return;
+        const checkedCount = Array.from(checkboxes).filter(
+          (cb) => cb.checked,
+        ).length;
+        const gradientClass =
+          "bg-[linear-gradient(180deg,rgba(255,255,255,0.03)_0%,rgba(255,255,255,0)_100%),linear-gradient(180deg,#017BC0_0%,#0776B5_100%)]";
+        const defaultClass = "bg-[#73b8d6]";
+
+        if (checkedCount > 0) {
+          createBtn.disabled = false;
+          createBtn.classList.remove(defaultClass, "cursor-not-allowed", "opacity-80");
+          createBtn.classList.add(...gradientClass.split(" "), "cursor-pointer", "hover:bg-[#015888]");
+        } else {
+          createBtn.disabled = true;
+          createBtn.classList.add(defaultClass, "cursor-not-allowed", "opacity-80");
+          createBtn.classList.remove(...gradientClass.split(" "), "cursor-pointer", "hover:bg-[#015888]");
+        }
+      }
+
+      checkboxes.forEach((cb) => {
+        cb.addEventListener("change", updateBtnState);
+      });
+
+      // Run once on load
+      updateBtnState();
+    });
+  </script>
   <script src="./js/index.js"></script>
 </body>
 
