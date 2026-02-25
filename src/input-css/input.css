@@ -68,12 +68,17 @@ body {
 
 /* for the side bar and main content area toggling  */
 .sidebar {
-  transition: transform 200ms ease, visibility 200ms ease;
+  transition:
+    transform 200ms ease,
+    visibility 200ms ease;
   will-change: transform;
+  z-index: 9999 !important;
 }
 
 .main {
-  transition: margin-left 200ms ease, width 200ms ease;
+  transition:
+    margin-left 200ms ease,
+    width 200ms ease;
 }
 
 /* Desktop ≥768 */
@@ -88,6 +93,7 @@ body {
     visibility: visible;
     /* background: #fff; */
     border-right: 1px solid #e7e9e9;
+    z-index: 9999;
   }
 
   .main {
@@ -131,7 +137,8 @@ body {
   }
 }
 .ovbtn {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.03),
       rgba(255, 255, 255, 0) 100%
@@ -139,11 +146,13 @@ body {
     linear-gradient(180deg, rgba(5, 137, 211, 1), rgba(5, 137, 211, 1) 100%);
   box-sizing: border-box;
   border-top: 2px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 2px 4px 0px rgba(12, 39, 34, 0.15),
+  box-shadow:
+    0px 2px 4px 0px rgba(12, 39, 34, 0.15),
     0px 0px 0px 1px rgba(1, 110, 170, 1);
 }
 .blue-gradeint {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.03) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -154,7 +163,9 @@ body {
 .shadow-mini {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
   border: 1.5px solid #e7e9e9;
-  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 2px 4px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
   border-radius: 8px;
 }
 
@@ -175,7 +186,9 @@ header {
 .button-v2 {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
   border: 1px solid #dadcdb;
-  box-shadow: 0px 1px 3px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 1px 3px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
 }
 .button-v2:active {
   background: #dddddd;
@@ -183,7 +196,9 @@ header {
 .forget-bg {
   background: #f9fafa;
   border: 1px solid #e7e9e9;
-  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.03), inset 0px 0px 0px 2px #ffffff;
+  box-shadow:
+    0px 1px 3px rgba(0, 0, 0, 0.03),
+    inset 0px 0px 0px 2px #ffffff;
   border-radius: 12px;
 }
 
@@ -198,7 +213,9 @@ header {
 .button-v3 {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
   border-top: 1px solid #ffffff;
-  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 2px 4px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
 }
 .bar-gradient {
   background: linear-gradient(256.1deg, #20d6f2 15.88%, #0489d3 94.77%);
@@ -207,7 +224,8 @@ header {
   box-shadow: 0px 4px 12px rgba(20, 32, 31, 0.02);
 }
 .bar-1 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.03) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -222,7 +240,8 @@ header {
   border-radius: 6px;
 }
 .bar-3 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.18) 0%,
       rgba(255, 255, 255, 0) 100%
@@ -293,31 +312,41 @@ header {
   background: #e2e2e2;
 }
 .ovbbtn2 {
-  background: linear-gradient(
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.03) 0%,
       rgba(255, 255, 255, 0) 100%
     ),
     linear-gradient(180deg, #017bc0 0%, #0776b5 100%);
   border-top: 1.5px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #016eaa;
+  box-shadow:
+    0px 2px 4px rgba(12, 39, 34, 0.15),
+    0px 0px 0px 1px #016eaa;
 }
-.ovbbtn2:hover, .ovbbtn2:active {
- background: linear-gradient(
+.ovbbtn2:hover,
+.ovbbtn2:active {
+  background:
+    linear-gradient(
       180deg,
       rgba(255, 255, 255, 0.03) 0%,
       rgba(255, 255, 255, 0) 100%
     ),
     linear-gradient(180deg, #0076bb 0%, #005c91 100%);
   border-top: 1.5px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #0077b8;
+  box-shadow:
+    0px 2px 4px rgba(12, 39, 34, 0.15),
+    0px 0px 0px 1px #0077b8;
 }
 
 .ovwbtn {
-  background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%),
+  background:
+    linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%),
     linear-gradient(180deg, #f9fafa 0%, #ffffff 100%);
   border: 1px solid #dadddc;
-  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 2px 4px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
 }
 .ovwbtn:active {
   background: #dddddd;
@@ -327,7 +356,8 @@ header {
 .flatpickr-calendar {
   font-family: "Archivo", sans-serif;
   border-radius: 12px;
-  box-shadow: 0px 4px 6px -1px rgba(0, 0, 0, 0.1),
+  box-shadow:
+    0px 4px 6px -1px rgba(0, 0, 0, 0.1),
     0px 2px 4px -1px rgba(0, 0, 0, 0.06);
   border: 1px solid #e7e9e9;
 }
@@ -477,7 +507,9 @@ input[type="time"]::-webkit-clear-button {
 .participants {
   background: linear-gradient(180deg, #ffffff 0%, #f6f7f7 100%);
   border-top: 1.5px solid #ffffff;
-  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 2px 4px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
   border-radius: 8px;
 }
 .cgd {
@@ -529,18 +561,37 @@ input[type="time"]::-webkit-clear-button {
 .optbtns {
   background: linear-gradient(180deg, #f6f7f7 0%, #eaebeb 100%);
   border: 1px solid rgba(255, 255, 255, 0.25);
-  box-shadow: 0px 2px 4px rgba(198, 210, 207, 0.15), 0px 0px 0px 1px #dcdedd;
+  box-shadow:
+    0px 2px 4px rgba(198, 210, 207, 0.15),
+    0px 0px 0px 1px #dcdedd;
 }
 .optbtns:active {
   background: #cecece;
 }
-.ovbbtn3{
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #0589D3 0%, #0589D3 100%);
-border-top: 1.5px solid rgba(255, 255, 255, 0.25);
-box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #016EAA;
+.ovbbtn3 {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, #0589d3 0%, #0589d3 100%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0px 2px 4px rgba(12, 39, 34, 0.15),
+    0px 0px 0px 1px #016eaa;
 }
-.ovbbtn3:hover, .ovbbtn3:active{
-background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0) 100%), linear-gradient(180deg, #0589D3 0%, #0774b3 100%);
-border-top: 1.5px solid rgba(255, 255, 255, 0.25);
-box-shadow: 0px 2px 4px rgba(12, 39, 34, 0.15), 0px 0px 0px 1px #016EAA;
+.ovbbtn3:hover,
+.ovbbtn3:active {
+  background:
+    linear-gradient(
+      180deg,
+      rgba(255, 255, 255, 0.03) 0%,
+      rgba(255, 255, 255, 0) 100%
+    ),
+    linear-gradient(180deg, #0589d3 0%, #0774b3 100%);
+  border-top: 1.5px solid rgba(255, 255, 255, 0.25);
+  box-shadow:
+    0px 2px 4px rgba(12, 39, 34, 0.15),
+    0px 0px 0px 1px #016eaa;
 }
